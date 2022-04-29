@@ -1,4 +1,18 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: Scurid Docs
+site_name: Scurid
 theme:
   name: material
+  palette:
+    primary: black
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+plugins:
+  - tags
+  - git-revision-date-localized
+markdown_extensions:
+  - meta
+repo_url: https://github.com/scurid-inc/docs
