@@ -1,0 +1,2 @@
+# Scurid Edge Agent
+

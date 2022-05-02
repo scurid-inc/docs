@@ -6,13 +6,34 @@ theme:
     primary: black
   features:
     - navigation.instant
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.indexes
+    - navigation.tracking
     - toc.integrate
 plugins:
   - tags
-  - git-revision-date-localized
+  - search
+  - mike:
+      # these fields are all optional; the defaults are as below...
+      version_selector: true   # set to false to leave out the version selector
+      css_dir: css             # the directory to put the version selector's CSS
+      javascript_dir: js       # the directory to put the version selector's JS
+      canonical_version: null  # the version for <link rel="canonical">; `null`
+                               # uses the version specified via `mike deploy`
 markdown_extensions:
   - meta
 repo_url: https://github.com/scurid-inc/docs
+nav:
+  - Home: 'index.md'
+  - 'Getting started':
+      - 'Quickstart' : 'quickstart.md'
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/scurid_me
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/scurid-ai-tech
+  generator: false
+  version:
+    provider: mike
