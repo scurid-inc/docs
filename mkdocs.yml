@@ -1,39 +1,43 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Scurid
 theme:
+# currently used theme for the docs
   name: material
   palette:
     primary: black
   features:
+# used for defining the navigation configuration
     - navigation.instant
     - navigation.sections
     - navigation.expand
     - navigation.indexes
     - navigation.tracking
     - toc.integrate
+    - content.tabs.link
 plugins:
+# enables the tags on every page
   - tags
+# enables the search bar, with search functionality
   - search
-  - mike:
-      # these fields are all optional; the defaults are as below...
-      version_selector: true   # set to false to leave out the version selector
-      css_dir: css             # the directory to put the version selector's CSS
-      javascript_dir: js       # the directory to put the version selector's JS
-      canonical_version: null  # the version for <link rel="canonical">; `null`
-                               # uses the version specified via `mike deploy`
 markdown_extensions:
-  - meta
-repo_url: https://github.com/scurid-inc/docs
+# enables the tabs options on the pages
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+# Used for aligning the images
+  - attr_list
+  - md_in_html
+# used for controlling the pages and the sub tree under the pages on the doc
 nav:
   - Home: 'index.md'
   - 'Getting started':
       - 'Quickstart' : 'quickstart.md'
 extra:
+# enables icons in the Footer
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/scurid_me
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/scurid-ai-tech
+# disables the footer with mkdocs info
   generator: false
-  version:
-    provider: mike
