@@ -130,3 +130,4 @@ Identity generation produces following public key e.g. `did:scurid:0xe8051e21cBa
 4. Once approved this identity can be viewed in the approved list ![approved identity](https://storage.cloud.google.com/scurid/public/docs/images/approvedID.png){ width=800 }
 5. Device context, recorded together with the identity, is hashed and bound with each identity serving as identity's genesis information. ![Device context for approved ID](https://storage.cloud.google.com/scurid/public/docs/images/approvedid-devicectx.png){ width=800 }
 
+Once approved, an identity's workflow is completed, and it is ready for use with variety of different platforms like IoT or Analytics platforms etc.
