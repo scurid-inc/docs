@@ -1,6 +1,6 @@
 # Quickstart
 
-This page covers how to get started with Scurid Platform by downloading and setting up software elements to help generate identities on the hardware and the dashboard to manage it 
+This page covers how to get started with Scurid Platform by downloading and setting up software elements to on required IoT hardware and the dashboard to manage it 
 
 ### Step 1 : Download and setup Scurid App & Backend server
 
@@ -53,13 +53,13 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
 ## Step 2 : User On-boarding
 This steps sets up the server and certain configurations that are needed in order to complete the user on-boarding process.
 
-1. Launch the Scurid App, downloaded in Step 1 above
-2. Setup the local storage area for the app, ![storage setup](https://storage.cloud.google.com/scurid/public/docs/images/storagesetup.png){ align=left }
-3. Select available permissioned distributed ledger supported by Scurid, currently only Ethereum Clique is supported ![dlt selection](https://storage.cloud.google.com/scurid/public/docs/images/dltselection.png){ align=left }
-4. Select the user type ![user type](https://storage.cloud.google.com/scurid/public/docs/images/usertypes.png){ align=left }
-5. Complete the form and continue, this may take a few seconds to finish. This will set up your account with our services esp. Scurid SSI service using the public/private key which is automatically setup for you by the Scurid backend. This public/private key will be used for authenticating your account with us. ![User form](https://storage.cloud.google.com/scurid/public/docs/images/userprofileform.png){ align=left }
-6. Once completed, navigate to the home page with Direct connectors ![Connectors](https://storage.cloud.google.com/scurid/public/docs/images/connectors.png){ align=left }
-7. This allows complete overview on the agents that are deployed in your network and the identities created using those identities ![Connectors](https://storage.cloud.google.com/scurid/public/docs/images/homepage.png){ align=left }
+1. Launch the Scurid App, downloaded in Step 1 
+2. Setup the local storage area for the app, ![storage setup](https://storage.cloud.google.com/scurid/public/docs/images/storagesetup.png){ width=800 }
+3. Select available permissioned distributed ledger supported by Scurid, currently only Ethereum Clique is supported ![dlt selection](https://storage.cloud.google.com/scurid/public/docs/images/dltselection.png){ width=800 }
+4. Select the user type ![user type](https://storage.cloud.google.com/scurid/public/docs/images/usertypes.png){ width=800 }
+5. Complete the form and continue, this may take a few seconds to finish. This will set up your account with our services esp. Scurid SSI service using the public/private key which is automatically setup for you by the Scurid backend. This public/private key will be used for authenticating your account with us. ![User form](https://storage.cloud.google.com/scurid/public/docs/images/userprofileform.png){ width=800 }
+6. Once completed, navigate to the home page with Direct connectors ![Connectors](https://storage.cloud.google.com/scurid/public/docs/images/connectors.png){ width=800 }
+7. This allows complete overview on the agents that are deployed in your network and the identities created using those identities ![Connectors](https://storage.cloud.google.com/scurid/public/docs/images/homepage.png){ width=800 }
 
 
 That's it. You are now ready to start deploying agents and start creating new identities using them.
@@ -90,3 +90,4 @@ disown
 ```
 
 The agent by default prints out some of the default configurations like the port details etc., additionally the agent starts listening on `localhost`
+ 
