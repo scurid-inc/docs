@@ -32,6 +32,7 @@ nav:
   - 'Getting started':
       - 'Quickstart' : 'quickstart.md'
       - 'Zero-trust to trusted Device Identity' : 'zero-trusttotrustedIdentityforyourIoTDevice.md'
+      - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
       - 'Glossary' : 'glossary.md'
 extra:
 # enables icons in the Footer
