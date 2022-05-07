@@ -1,9 +1,9 @@
 Agent framework, as part of the core functionality, enables you to have your devices generate identity and reach out for identity workflow actions.
 
 ### Features
-a. Simplifies tracking of all agents deployed in your IoT network
-b. Extends device identity tracking not only to  each device but also to each agent
-c. Capabilities to auto-approve an identity when coming from the trsuted agents, further simplifying the individual indentity worklfow
+1. Simplifies tracking of all agents deployed in your IoT network
+2. Extends device identity tracking not only to  each device but also to each agent
+3. Capabilities to auto-approve an identity when coming from the trsuted agents, further simplifying the individual identity workflow
 
 ## Step 1 - Executing Scurid Edge Agent on IoT device
 1. Run agent `./scuridedgeagent` 
@@ -16,11 +16,16 @@ c. Capabilities to auto-approve an identity when coming from the trsuted agents,
 
 ## Step 2 - Agent workflow via Scurid App or APIs
 
+Once the agent is installed and successfully run on an IoT hardware, it will send out onboarding request which can be reviewed either via `Scurid App` or `Scurid Backend's APIs`  
+
 ### Scurid App
-todo : add screenshots
+1. Launch the app to review the pending agents ![pending agents](https://storage.cloud.google.com/scurid/public/docs/images/pendingagents.png){ width=800 }
+2. Select the agent to review and approve. Notice along with the agent identity - it also sends out the related hardware details ![pending agents](https://storage.cloud.google.com/scurid/public/docs/images/pendingAgentDetails.png){ width=800 } 
+3. Once approved, agent will be available for use via the approved list ![pending agents](https://storage.cloud.google.com/scurid/public/docs/images/approvedagent.png){ width=800 }
+
 
 ### Scurid backend's APIs
-Backend exposes following set of Agent ID related workflow APIs under `PlatformAPIv2` 
+Backend exposes following set of Agent ID related workflow APIs under `PlatformAPIv2` which can be integered into your own IoT platform or Analytics platform 
 
 #### Related APIs
 1. `GetAgentsList` : Provides list of all the agent related identities on the backend server
@@ -33,12 +38,20 @@ Backend exposes following set of Agent ID related workflow APIs under `PlatformA
 
 5. `VerifyAgent` : Re-verifies an already approved agent identity,Scurid SSI service call is wrapped within to appropriately handle data on the DLT managed under SSI
 
-### How is automatic Agent ID workflow handled by the Scurid backend and how to enable it?
-1. After the Agent’s approval user will have to take a final step in the ID subsystem, which can be accessed via 
-   1. App's UI : todo add UI flow here
-   2. API endpoint group named `Subsystems` which contains two APIs
-      1. `GetIDSettings` : Allows the caller to get currently configurable settings for the `Subsystem`
-         1. `autoApproveDeviceID` which enables/disables auto-approve function for the device identities
-         2. To offer full control to the users, this settings is set to `false` by default, i.e. users can decide to review each identity despite having an approved agent creating these identities.
-      2. `SetIDSettings` : Allows the caller to set the desired state for configurable settings like `autoApproveDeviceID`
-2. Once the agent is approved and for the time period `autoApproveDeviceID` is enabled - all upcoming new ID requests will be auto approved.
+### Automating device identity
+With agent's setup successfully completed, you can now choose to enable automatic approval of device identities coming from the approved agent.
+By default, this is disabled - requiring manual approval of the identities. 
+
+To enable automatic identity approval, enable required configuration in the ID subsystem, which can be accessed via 
+#### Option 1 : Enable via App's UI
+1. Navigate to the `Settings` page ![general settings](https://storage.cloud.google.com/scurid/public/docs/images/generalsettings.png){ width=800 }
+2. Switch to Identities and enable the `Auto Approve` setting ![id settings](https://storage.cloud.google.com/scurid/public/docs/images/identitiesAutoApproveOn.png){ width=800 } 
+
+#### Option 2 : Enable via Backend APIs
+1. API endpoint group named `Subsystems` which contains two APIs
+2. `GetIDSettings` : Allows the caller to get currently configurable settings for the `Subsystem`
+   1. `autoApproveDeviceID` which enables/disables auto-approve function for the device identities
+   2. To offer full control to the users, this settings is set to `false` by default, i.e. users can decide to review each identity despite having an approved agent creating these identities.
+   3. `SetIDSettings` : Allows the caller to set the desired state for configurable settings like `autoApproveDeviceID`
+
+Once the agent is approved and for the time period `autoApproveDeviceID` is enabled - all upcoming new identities from the approved agents will be auto approved!
