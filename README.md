@@ -25,3 +25,12 @@ Default doc version setup
 ```shell
 mike set-default --push latest
 ```
+
+## Generating docs from Proto
+
+```shell
+docker run --rm \
+  -v $(pwd)/examples/doc:/out \
+  -v $(pwd)/proto:/protos \
+  pseudomuto/protoc-gen-doc --doc_opt=markdown,docs.md
+```
