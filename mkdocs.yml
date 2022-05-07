@@ -44,6 +44,10 @@ nav:
   - 'APIs':
       - 'gRPC':
           - 'Scurid Edge Agent': 'edgeAgent.md'
+          - 'Scurid Backend':
+              - 'Auth' : 'auth.md'
+              - 'Platform API' : 'platformapi.md'
+              - 'Platform API v2' : 'platformapiv2.md'
 extra:
   # enables icons in the Footer
   social:
