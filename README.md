@@ -3,3 +3,25 @@
 # Readme
 
 Contains documentation for Scurid platform
+
+## To Deploy
+
+* Make note of whether you are deploying for major or minor release.
+* Scurid projects uses calVer versioning scheme
+
+Deploy
+
+```shell
+mike deploy --push --update-aliases <release number> latest
+```
+
+example :
+```shell
+mike deploy --push --update-aliases v22.0.0-alpha.2 latest
+```
+
+Default doc version setup
+
+```shell
+mike set-default --push latest
+```
