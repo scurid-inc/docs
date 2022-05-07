@@ -57,6 +57,7 @@ extra:
       link: https://scurid.medium.com/
   version:
     provider: mike
+    default: latest
   # disables the footer with mkdocs info
   generator: false
 copyright: Copyright &copy; 2016 - 2020 Martin Donath
