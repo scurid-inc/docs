@@ -1,6 +1,6 @@
 Agent framework, as part of the core functionality, enables you to have your devices generate identity and reach out for identity workflow actions.
 
-### Features
+## Features
 1. Simplifies tracking of all agents deployed in your IoT network
 2. Extends device identity tracking not only to  each device but also to each agent
 3. Capabilities to auto-approve an identity when coming from the trsuted agents, further simplifying the individual identity workflow
@@ -38,7 +38,7 @@ Backend exposes following set of Agent ID related workflow APIs under `PlatformA
 
 5. `VerifyAgent` : Re-verifies an already approved agent identity,Scurid SSI service call is wrapped within to appropriately handle data on the DLT managed under SSI
 
-### Automating device identity
+## Automating device identity
 With agent's setup successfully completed, you can now choose to enable automatic approval of device identities coming from the approved agent.
 By default, this is disabled - requiring manual approval of the identities. 
 

@@ -1,46 +1,62 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Scurid
 theme:
-# currently used theme for the docs
+  # currently used theme for the docs
   name: material
   palette:
     primary: black
   features:
-# used for defining the navigation configuration
+    # used for defining the navigation configuration
     - navigation.instant
     - navigation.expand
     - navigation.indexes
     - navigation.tracking
     - content.tabs.link
 plugins:
-# enables the tags on every page
+  - mike:
+      # these fields are all optional; the defaults are as below...
+      version_selector: true   # set to false to leave out the version selector
+      css_dir: css             # the directory to put the version selector's CSS
+      javascript_dir: js       # the directory to put the version selector's JS
+      canonical_version: null  # the version for <link rel="canonical">; `null`
+      # uses the version specified via `mike deploy`
+  # enables the tags on every page
   - tags
-# enables the search bar, with search functionality
+  # enables the search bar, with search functionality
   - search
 markdown_extensions:
-# enables the tabs options on the pages
+  # enables the tabs options on the pages
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - tables
-# Used for aligning the images
+  # Used for aligning the images
   - attr_list
   - md_in_html
 # used for controlling the pages and the sub tree under the pages on the doc
 nav:
   - Home: 'index.md'
   - 'Getting started':
-      - 'Quickstart' : 'quickstart.md'
-      - 'Zero-trust to trusted Device Identity' : 'zero-trusttotrustedIdentityforyourIoTDevice.md'
+      - 'Quickstart': 'quickstart.md'
+      - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
       - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
-      - 'Glossary' : 'glossary.md'
+      - 'Glossary': 'glossary.md'
+  - 'APIs':
+      - 'gRPC':
+          - 'Scurid Edge Agent': 'edgeAgent.md'
 extra:
-# enables icons in the Footer
+  # enables icons in the Footer
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/scurid_me
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/scurid-ai-tech
-# disables the footer with mkdocs info
+    - icon: fontawesome/brands/slack
+      link: https://scurid-community.slack.com/
+    - icon: fontawesome/brands/medium
+      link: https://scurid.medium.com/
+  version:
+    provider: mike
+  # disables the footer with mkdocs info
   generator: false
 copyright: Copyright &copy; 2016 - 2020 Martin Donath
