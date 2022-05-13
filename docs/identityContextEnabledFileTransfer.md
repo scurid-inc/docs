@@ -5,10 +5,10 @@ Scurid platform enables you to deliver files to your IoT edge devices, with spec
 2. Identity for which packages are being downloaded must be already approved.  
 
 ## Step 1 :  Stage the files via Scurid App
-1. Log into the app and navigate to the desired approved identity ![approved identity](https://storage.cloud.google.com/scurid/public/docs/images/approvedIdentityForUpload.png){ width=800 }
-2. Click on context menu to add the path ![context menu - add path](https://storage.cloud.google.com/scurid/public/docs/images/contextMenuAddPath.png){ width=800 }
-Once added path will be displayed on the identity card  ![context menu - add path](https://storage.cloud.google.com/scurid/public/docs/images/approvedIdentityWithPath.png){ width=800 }
-3. Click on the the context menu again to click on Upload Package option to upload and stage the files ![context menu - add path](https://storage.cloud.google.com/scurid/public/docs/images/uploadPackage.png){ width=800 }
+1. Log into the app and navigate to the desired approved identity ![approved identity](img/approvedIdentityForUpload.png){ width=800 }
+2. Click on context menu to add the path ![context menu - add path](img/contextMenuAddPath.png){ width=800 }
+Once added path will be displayed on the identity card  ![context menu - add path](img/approvedIdentityWithPath.png){ width=800 }
+3. Click on the context menu again to click on Upload Package option to upload and stage the files ![context menu - add path](img/uploadPackage.png){ width=800 }
 4. Done.
 
 ## Step 2 :  Getting authorized token

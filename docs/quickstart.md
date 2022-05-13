@@ -54,12 +54,12 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
 This steps sets up the server and certain configurations that are needed in order to complete the user on-boarding process.
 
 1. Launch the Scurid App, downloaded in Step 1 
-2. Setup the local storage area for the app, ![storage setup](https://storage.cloud.google.com/scurid/public/docs/images/storagesetup.png){ width=800 }
-3. Select available permissioned distributed ledger supported by Scurid, currently only Ethereum Clique is supported ![dlt selection](https://storage.cloud.google.com/scurid/public/docs/images/dltselection.png){ width=800 }
-4. Select the user type ![user type](https://storage.cloud.google.com/scurid/public/docs/images/usertypes.png){ width=800 }
-5. Complete the form and continue, this may take a few seconds to finish. This will set up your account with our services esp. Scurid SSI service using the public/private key which is automatically setup for you by the Scurid backend. This public/private key will be used for authenticating your account with us. ![User form](https://storage.cloud.google.com/scurid/public/docs/images/userprofileform.png){ width=800 }
-6. Once completed, navigate to the home page with Direct connectors ![Connectors](https://storage.cloud.google.com/scurid/public/docs/images/connectors.png){ width=800 }
-7. This allows complete overview on the agents that are deployed in your network and the identities created using those identities ![Connectors](https://storage.cloud.google.com/scurid/public/docs/images/homepage.png){ width=800 }
+2. Setup the local storage area for the app, ![storage setup](img/storagesetup.png){ width=800 }
+3. Select available permissioned distributed ledger supported by Scurid, currently only Ethereum Clique is supported ![dlt selection](img/dltselection.png){ width=800 }
+4. Select the user type ![user type](img/usertypes.png){ width=800 }
+5. Complete the form and continue, this may take a few seconds to finish. This will set up your account with our services esp. Scurid SSI service using the public/private key which is automatically setup for you by the Scurid backend. This public/private key will be used for authenticating your account with us. ![User form](img/userprofileform.png){ width=800 }
+6. Once completed, navigate to the home page with Direct connectors ![Connectors](img/connectors.png){ width=800 }
+7. This allows complete overview on the agents that are deployed in your network and the identities created using those identities ![Connectors](img/homepage.png){ width=800 }
 
 
 That's it. You are now ready to start deploying agents and start creating new identities using them.
@@ -89,5 +89,5 @@ If you do require to close the terminal you can run the service in the backgroun
 disown
 ```
 
-The agent by default prints out some of the default configurations like the port details etc., additionally the agent starts listening on `localhost`
+The agent by default logs out some of the default configurations like the port details etc., additionally the agent starts listening on `localhost`
  

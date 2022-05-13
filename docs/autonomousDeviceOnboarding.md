@@ -3,7 +3,7 @@ Agent framework, as part of the core functionality, enables you to have your dev
 ## Features
 1. Simplifies tracking of all agents deployed in your IoT network
 2. Extends device identity tracking not only to  each device but also to each agent
-3. Capabilities to auto-approve an identity when coming from the trsuted agents, further simplifying the individual identity workflow
+3. Capabilities to auto-approve an identity when coming from the trusted agents, further simplifying the individual identity workflow
 
 ## Step 1 - Executing Scurid Edge Agent on IoT device
 1. Run agent `./scuridedgeagent` 
@@ -16,12 +16,12 @@ Agent framework, as part of the core functionality, enables you to have your dev
 
 ## Step 2 - Agent workflow via Scurid App or APIs
 
-Once the agent is installed and successfully run on an IoT hardware, it will send out onboarding request which can be reviewed either via `Scurid App` or `Scurid Backend's APIs`  
+Once the agent is installed and successfully run on an IoT hardware, it will send out on-boarding request which can be reviewed either via `Scurid App` or `Scurid Backend's APIs`  
 
 ### Scurid App
-1. Launch the app to review the pending agents ![pending agents](https://storage.cloud.google.com/scurid/public/docs/images/pendingagents.png){ width=800 }
-2. Select the agent to review and approve. Notice along with the agent identity - it also sends out the related hardware details ![pending agents](https://storage.cloud.google.com/scurid/public/docs/images/pendingAgentDetails.png){ width=800 } 
-3. Once approved, agent will be available for use via the approved list ![pending agents](https://storage.cloud.google.com/scurid/public/docs/images/approvedagent.png){ width=800 }
+1. Launch the app to review the pending agents ![pending agents](img/pendingagents.png){ width=800 }
+2. Select the agent to review and approve. Notice along with the agent identity - it also sends out the related hardware details ![pending agents](img/pendingAgentDetails.png){ width=800 } 
+3. Once approved, agent will be available for use via the approved list ![pending agents](img/approvedagent.png){ width=800 }
 
 
 ### Scurid backend's APIs
@@ -44,8 +44,8 @@ By default, this is disabled - requiring manual approval of the identities.
 
 To enable automatic identity approval, enable required configuration in the ID subsystem, which can be accessed via 
 #### Option 1 : Enable via App's UI
-1. Navigate to the `Settings` page ![general settings](https://storage.cloud.google.com/scurid/public/docs/images/generalsettings.png){ width=800 }
-2. Switch to Identities and enable the `Auto Approve` setting ![id settings](https://storage.cloud.google.com/scurid/public/docs/images/identitiesAutoApproveOn.png){ width=800 } 
+1. Navigate to the `Settings` page ![general settings](img/generalsettings.png){ width=800 }
+2. Switch to Identities and enable the `Auto Approve` setting ![id settings](img/identitiesAutoApproveOn.png){ width=800 } 
 
 #### Option 2 : Enable via Backend APIs
 1. API endpoint group named `Subsystems` which contains two APIs
