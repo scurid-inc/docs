@@ -1,8 +1,8 @@
 ## Cryptography terms
 
-| Terms   | Description           |
-|---------|-----------------------|
-| Hashing | TODO: what is hashing |
+| Terms   | Description                                                                    |
+|---------|--------------------------------------------------------------------------------|
+| Hashing | Process of generating fixed length output using variable length input dataset. |
 
 
 ## Distributed Identity terms
