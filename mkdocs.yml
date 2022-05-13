@@ -7,7 +7,6 @@ theme:
     primary: black
   features:
     # used for defining the navigation configuration
-    - navigation.instant
     - navigation.expand
     - navigation.indexes
     - navigation.tracking
@@ -40,6 +39,7 @@ nav:
       - 'Quickstart': 'quickstart.md'
       - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
       - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
+      - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
       - 'Glossary': 'glossary.md'
   - 'APIs':
       - 'gRPC':
