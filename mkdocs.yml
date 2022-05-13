@@ -49,6 +49,7 @@ nav:
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
 extra:
+  homepage: https://scurid.com
   # enables icons in the Footer
   social:
     - icon: fontawesome/brands/twitter
