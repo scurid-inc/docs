@@ -63,5 +63,5 @@ extra:
     provider: mike
     default: latest
   # disables the footer with mkdocs info
-  generator: false
-copyright: Copyright &copy; 2016 - 2020 Martin Donath
+  generator: true
+copyright: Copyright &copy; 2022 Scurid Inc. and others
