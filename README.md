@@ -4,10 +4,19 @@
 
 Contains documentation for Scurid platform
 
-## To Deploy
-
-* Make note of whether you are deploying for major or minor release.
+### Important
 * Scurid projects uses calVer versioning scheme
+
+## To Deploy
+* Make note of whether you are deploying for major or minor release, based on that adjust the version for deployment
+
+
+### Before deploying
+
+Since `mike` which we use for versioning our doc won't do it automatically. 
+```shell
+git fetch
+```
 
 Deploy
 
@@ -16,14 +25,14 @@ mike deploy --push --update-aliases <release number> latest
 ```
 
 example :
+Use rebase if there are git issues with remote branch
 ```shell
-mike deploy --push --update-aliases v22.0.0-alpha.2 latest
+mike deploy --push --update-aliases v22.0.0-alpha.2 latest --rebase
 ```
 
 Default doc version setup
-
 ```shell
-mike set-default --push latest
+mike set-default --push latest --rebase
 ```
 
 ## Generating docs from Proto
