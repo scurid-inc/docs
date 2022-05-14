@@ -49,6 +49,9 @@ nav:
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
 extra:
+  analytics:
+    provider: google
+    property: G-ZCT4VBJY2H
   homepage: https://scurid.com
   # enables icons in the Footer
   social:
