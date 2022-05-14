@@ -6,6 +6,7 @@ Contains documentation for Scurid platform
 
 ### Important
 * Scurid projects uses calVer versioning scheme
+* Branch used for deployment is `gh-pages`
 
 ## To Deploy
 * Make note of whether you are deploying for major or minor release, based on that adjust the version for deployment
