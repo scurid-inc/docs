@@ -47,7 +47,7 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
 
 === "Managed"
 
-    [Contact us](https://scurid.us1.list-manage.com/subscribe?u=5fc1633bf19c6a638aa1dae34&id=c483d8b0a1) to setup an instance for you.
+    [Contact us](https://scurid.us1.list-manage.com/subscribe?u=5fc1633bf19c6a638aa1dae34&id=c483d8b0a1){ .md-button } to setup an instance for you.
 
 
 ## Step 2 : User On-boarding
