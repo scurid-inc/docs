@@ -39,7 +39,7 @@ Depending on where the Scurid backend is deployed you'll need to pass the addres
 
     === "windows"
         ```shell
-        ./scuridedgeagent-xxx-xxx --spaaddr managed-demo.scurid.cloud:50050
+        .\scuridedgeagent-xxx-xxx --spaaddr managed-demo.scurid.cloud:50050
         ```
 Agent exposes a set of local gRPC APIs. That can be compiled in over 10 languages. The following are some examples in different programing languages
 

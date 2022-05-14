@@ -42,7 +42,7 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
 
     === "windows"
         ```shell
-        ./service-beta-vX.X.X-win64
+        .\service-beta-vX.X.X-win64
         ```
 
 === "Managed"
