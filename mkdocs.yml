@@ -49,7 +49,7 @@ nav:
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
   - 'Releases':
-      - 'Scurid Release Notes':
+      - 'Scurid Release Notes': 'releasenotes.md'
 extra:
   analytics:
     provider: google
