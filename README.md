@@ -39,8 +39,5 @@ mike set-default --push latest --rebase
 ## Generating docs from Proto
 
 ```shell
-docker run --rm \
-  -v $(pwd)/examples/doc:/out \
-  -v $(pwd)/proto:/protos \
-  pseudomuto/protoc-gen-doc --doc_opt=markdown,docs.md
+docker run --rm -v /Users/sushantpandey/go/src/bitbucket.org/scurid/scurid-apis/pkg/grpc/examples/doc:/out -v /Users/sushantpandey/go/src/bitbucket.org/scurid/scurid-apis/pkg/grpc/proto:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,docs.md
 ```

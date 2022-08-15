@@ -1,20 +1,15 @@
-## DeviceContext
-
-#### Reference file : deviceContext.proto
+### DeviceContext
 Device context from the device in relation to the device identity
+#### Reference file : deviceContext.proto
 
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent |
-| ipAddress | [string](#string) |  | optional, IP address |
-| cpu | [string](#string) |  | optional, number of CPUs available |
-| ram | [string](#string) |  | optional, RAM size on the device |
-| imeiNumber | [string](#string) |  | optional, International Mobile Equipment Identity, optional, capture if one is available |
-| osType | [OsInfo](#deviceContext-OsInfo) |  |  |
-
-
-
+| Field        | Type                                    | Label    | Description                                                                              |
+|--------------|-----------------------------------------|----------|------------------------------------------------------------------------------------------|
+| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent                       |
+| ipAddress    | [string](#string)                       |          | optional, IP address                                                                     |
+| cpu          | [string](#string)                       |          | optional, number of CPUs available                                                       |
+| ram          | [string](#string)                       |          | optional, RAM size on the device                                                         |
+| imeiNumber   | [string](#string)                       |          | optional, International Mobile Equipment Identity, optional, capture if one is available |
+| osType       | [OsInfo](#deviceContext-OsInfo)         |          |                                                                                          |
 
 
 
@@ -31,28 +26,21 @@ list of macAddresses from the devices
 | name | [string](#string) |  | interface&#39;s name e.g. en0 |
 
 
-
-
-
-
 <a name="deviceContext-OsInfo"></a>
 
 ### OsInfo
 OsInfo message structure defining standard OS info used within the system
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| osType | [string](#string) |  | optional, e.g. darwin, windows, etc. |
-| arch | [string](#string) |  | optional, e.g. amd64 etc. |
-
+| Field  | Type              | Label | Description                          |
+|--------|-------------------|-------|--------------------------------------|
+| osType | [string](#string) |       | optional, e.g. darwin, windows, etc. |
+| arch   | [string](#string) |       | optional, e.g. amd64 etc.            |
 
 
 ## Platform API v2
 
 #### Reference file : platformapiv2.proto
-
-
 
 <a name="platform-v2-AgentsStruct"></a>
 
@@ -75,9 +63,6 @@ OsInfo message structure defining standard OS info used within the system
 | platformIdentity | [string](#string) |  | platform&#39;s identity |
 | approvalKey | [bytes](#bytes) |  | post approval this key is returned to the agent for reference DeviceContext &#43; Requested on &#43; ApprovedOn &#43; Agent&#39;s DID. THIS is also used as the key which will be delivered to |
 | verifiedOn | [int64](#int64) |  | Unix timestamp for verification |
-
-
-
 
 
 
@@ -132,6 +117,36 @@ intentionally left empty
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | list | [AgentsStruct](#platform-v2-AgentsStruct) | repeated | array of all the agents along with their details |
+
+
+
+
+
+
+<a name="platform-v2-GetAppLogsReq"></a>
+
+### GetAppLogsReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| range | [log.LogRange](#log-LogRange) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-GetAppLogsRes"></a>
+
+### GetAppLogsRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| log | [log.AppLog](#log-AppLog) |  | returns log structure |
 
 
 
@@ -196,6 +211,66 @@ response message for GetIdentityInfo
 | tags | [string](#string) | repeated | provides list of tags attached the identity |
 | pendingSince | [int64](#int64) |  | Unix timestamp since identity has been pending for action |
 | deviceContext | [deviceContext.DeviceContext](#deviceContext-DeviceContext) |  | helps to onboard and bind a device to an identity |
+
+
+
+
+
+
+<a name="platform-v2-GetIdentityLogReq"></a>
+
+### GetIdentityLogReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| range | [log.LogRange](#log-LogRange) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-GetIdentityLogRes"></a>
+
+### GetIdentityLogRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| log | [log.IdentityLog](#log-IdentityLog) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-RecordAppLogsReq"></a>
+
+### RecordAppLogsReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| log | [log.AppLog](#log-AppLog) |  | app log structure |
+
+
+
+
+
+
+<a name="platform-v2-RecordAppLogsRes"></a>
+
+### RecordAppLogsRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| res | [bool](#bool) |  |  |
 
 
 
@@ -328,11 +403,11 @@ SetIDSettingsRes is the response from the backend
 
 
 
- 
 
- 
 
- 
+
+
+
 
 
 <a name="platform-v2-Platform"></a>
@@ -359,8 +434,11 @@ Provides configuration possibilities for different components in the system
 | ----------- | ------------ | ------------- | ------------|
 | GetIDSettings | [GetIDSettingsReq](#platform-v2-GetIDSettingsReq) | [GetIDSettingsRes](#platform-v2-GetIDSettingsRes) | GetIDSettings gets currently stored settings about IDs |
 | SetIDSettings | [SetIDSettingsReq](#platform-v2-SetIDSettingsReq) | [SetIDSettingsRes](#platform-v2-SetIDSettingsRes) | SetIDSettings sets up different settings |
+| GetIdentityLog | [GetIdentityLogReq](#platform-v2-GetIdentityLogReq) | [GetIdentityLogRes](#platform-v2-GetIdentityLogRes) stream | GetIdentityLog provides list of log recorded on activities performed on identities. This covers both agent and non agent identities. |
+| RecordAppLogs | [RecordAppLogsReq](#platform-v2-RecordAppLogsReq) | [RecordAppLogsRes](#platform-v2-RecordAppLogsRes) | RecordAppLogs records Scurid App logs |
+| GetAppLogs | [GetAppLogsReq](#platform-v2-GetAppLogsReq) | [GetAppLogsRes](#platform-v2-GetAppLogsRes) stream | GetAppLogs fetches app log persisted as history |
 
- 
+
 
 
 

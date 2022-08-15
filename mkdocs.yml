@@ -40,6 +40,7 @@ nav:
       - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
       - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
       - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
+      - 'Logging': 'logs.md'
       - 'Glossary': 'glossary.md'
   - 'APIs':
       - 'gRPC':
@@ -48,6 +49,8 @@ nav:
               - 'Auth' : 'auth.md'
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
+              - 'Device Context' : 'deviceContext.md'
+              - 'Logs' : 'logsapi.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:

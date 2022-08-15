@@ -1,5 +1,48 @@
 # Release Notes
 
+## August 15, 2022
+
+## General changes
+
+### Scurid Platform App
+* Add helm pkg management for managed scurid backend #SPA-220
+* Add platforminternal service to backend #SPA-188
+* Update look and feel for Scurid Platform App #SPA-144
+* Enable users to add or remove tags from the identities #SPA-99
+* New Scurid Platform App and identity logging visibility
+
+### Scurid Backend
+* Logging APIs #SPA-230
+* Enable authentication on Logging APIs #SPA-237
+* Signed critical identity operations logs built-in #SPA-230
+* SPA-243 Add licensing check
+
+### Enhancement
+* Remove the visit button SPA-200
+* Rename DID to Device Identity on Identity card #SPA-222
+* Make text on the app selectable #SPA-203
+* Add auto approve identity setting #SPA-191
+* Maintain path structures in post verify process on identities #SPA-139
+* Enable path store in Approved identities #SPA-118
+* Update client call in the gRPC dart for Scurid platform App #SPA-103
+* Enable country search while on-boarding new user
+* Make side menu collapsible #SPA-216
+
+### Bug Fixes
+* Pending identities do not show agent version #SPA-239
+* List of related identities to an agent is missing #SPA-238
+* For some identities, agent identity is missing #SPA-236
+* Pending identities do not show context #SPA-234
+* After approval card does not dismiss #SPA-233
+* Bad state : No Element error #SPA-231
+* Clean installation fails, unable to find subsystems #SPA-214
+* A tag can be assigned to an identity multiple times #SPA-180
+* Scurid backend crashes when staged folder is empty #SPA-179
+* Inconsistent error popup #SPA-130
+* Path display inconsistencies #SPA-129
+
+
+
 ## June 13, 2022
 
 ## General changes

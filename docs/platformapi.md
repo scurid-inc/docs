@@ -1,19 +1,19 @@
-## DeviceContext
-
+### DeviceContext
 #### Reference file : deviceContext.proto
+
 <a name="deviceContext-DeviceContext"></a>
 
 Device context from the device in relation to the device identity
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent |
-| ipAddress | [string](#string) |  | optional, IP address |
-| cpu | [string](#string) |  | optional, number of CPUs available |
-| ram | [string](#string) |  | optional, RAM size on the device |
-| imeiNumber | [string](#string) |  | optional, International Mobile Equipment Identity, optional, capture if one is available |
-| osType | [OsInfo](#deviceContext-OsInfo) |  |  |
+| Field        | Type                                    | Label    | Description                                                                              |
+|--------------|-----------------------------------------|----------|------------------------------------------------------------------------------------------|
+| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent                       |
+| ipAddress    | [string](#string)                       |          | optional, IP address                                                                     |
+| cpu          | [string](#string)                       |          | optional, number of CPUs available                                                       |
+| ram          | [string](#string)                       |          | optional, RAM size on the device                                                         |
+| imeiNumber   | [string](#string)                       |          | optional, International Mobile Equipment Identity, optional, capture if one is available |
+| osType       | [OsInfo](#deviceContext-OsInfo)         |          |                                                                                          |
 
 
 
@@ -33,23 +33,19 @@ list of macAddresses from the devices
 | name | [string](#string) |  | interface&#39;s name e.g. en0 |
 
 
-
-
-
-
 <a name="deviceContext-OsInfo"></a>
 
 ### OsInfo
 OsInfo message structure defining standard OS info used within the system
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| osType | [string](#string) |  | optional, e.g. darwin, windows, etc. |
-| arch | [string](#string) |  | optional, e.g. amd64 etc. |
+| Field  | Type              | Label | Description                          |
+|--------|-------------------|-------|--------------------------------------|
+| osType | [string](#string) |       | optional, e.g. darwin, windows, etc. |
+| arch   | [string](#string) |       | optional, e.g. amd64 etc.            |
 
 
-## Platform API
+# Platform API
 #### Reference file platformapi.proto
 
 
@@ -1203,11 +1199,11 @@ This info will be added to the Platform Agent&#39;s local storage
 
 
 
- 
 
- 
 
- 
+
+
+
 
 
 <a name="scuridplatformagentapi-v1-ScuridPlatformAgentAPI"></a>
@@ -1248,7 +1244,7 @@ This info will be added to the Platform Agent&#39;s local storage
 | DownloadFiles | [DownloadFilesReq](#scuridplatformagentapi-v1-DownloadFilesReq) | [DownloadFilesRes](#scuridplatformagentapi-v1-DownloadFilesRes) stream | Used for downloading device pkgs |
 | FileStorePath | [FileStorePathReq](#scuridplatformagentapi-v1-FileStorePathReq) | [FileStorePathRes](#scuridplatformagentapi-v1-FileStorePathRes) | FileStorePath provides path for the device files |
 
- 
+
 
 
 
