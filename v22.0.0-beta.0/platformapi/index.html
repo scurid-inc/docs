@@ -1,0 +1,4283 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.0">
+    
+    
+      
+        <title>Platform API - Scurid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-ZCT4VBJY2H"),document.addEventListener("DOMContentLoaded",function(){if(document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document.forms.feedback){var e,a=document.forms.feedback;for(e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}"undefined"!=typeof location$&&location$.subscribe(function(e){n("config","G-ZCT4VBJY2H",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-ZCT4VBJY2H",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#devicecontext" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://scurid.com" title="Scurid" class="md-header__button md-logo" aria-label="Scurid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Scurid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Platform API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://scurid.com" title="Scurid" class="md-nav__button md-logo" aria-label="Scurid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Scurid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zero-trusttotrustedIdentityforyourIoTDevice/" class="md-nav__link">
+        Zero-trust to trusted Device Identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomousDeviceOnboarding/" class="md-nav__link">
+        Autonomous Device and agent setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identityContextEnabledFileTransfer/" class="md-nav__link">
+        Identity Context enabled file transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logs/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          APIs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="APIs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          APIs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          gRPC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="gRPC" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          gRPC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../edgeAgent/" class="md-nav__link">
+        Scurid Edge Agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" type="checkbox" id="__nav_3_1_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2">
+          Scurid Backend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scurid Backend" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Scurid Backend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/" class="md-nav__link">
+        Auth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Platform API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Platform API
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#devicecontext" class="md-nav__link">
+    DeviceContext
+  </a>
+  
+    <nav class="md-nav" aria-label="DeviceContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-file-devicecontextproto" class="md-nav__link">
+    Reference file : deviceContext.proto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macaddress" class="md-nav__link">
+    MacAddress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osinfo" class="md-nav__link">
+    OsInfo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-api" class="md-nav__link">
+    Platform API
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-file-platformapiproto" class="md-nav__link">
+    Reference file platformapi.proto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtagsreq" class="md-nav__link">
+    AddTagsReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtagsres" class="md-nav__link">
+    AddTagsRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentinfofordid" class="md-nav__link">
+    AgentInfoForDID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alldevicesliststruct" class="md-nav__link">
+    AllDevicesListStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigntagstoidentityreq" class="md-nav__link">
+    AssignTagsToIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigntagstoidentityres" class="md-nav__link">
+    AssignTagsToIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countriesstruct" class="md-nav__link">
+    CountriesStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createidentityreq" class="md-nav__link">
+    CreateIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createidentityres" class="md-nav__link">
+    CreateIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloadfilesreq" class="md-nav__link">
+    DownloadFilesReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloadfilesres" class="md-nav__link">
+    DownloadFilesRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emptyrequest" class="md-nav__link">
+    EmptyRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fileinfo" class="md-nav__link">
+    FileInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filestorepathreq" class="md-nav__link">
+    FileStorePathReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filestorepathres" class="md-nav__link">
+    FileStorePathRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getalldeviceslistreq" class="md-nav__link">
+    GetAllDevicesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getalldeviceslistres" class="md-nav__link">
+    GetAllDevicesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcountrieslistreq" class="md-nav__link">
+    GetCountriesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcountrieslistres" class="md-nav__link">
+    GetCountriesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevicepayloadswithsignaturereq" class="md-nav__link">
+    GetDevicePayloadsWithSignatureReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevicepayloadswithsignatureres" class="md-nav__link">
+    GetDevicePayloadsWithSignatureRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevicepayloadswithsignaturestruct" class="md-nav__link">
+    GetDevicePayloadsWithSignatureStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlicensestatusreq" class="md-nav__link">
+    GetLicenseStatusReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlicensestatusres" class="md-nav__link">
+    GetLicenseStatusRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getonboardingpkgreq" class="md-nav__link">
+    GetOnboardingPkgReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getonboardingpkgres" class="md-nav__link">
+    GetOnboardingPkgRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpendingrequestslistreq" class="md-nav__link">
+    GetPendingRequestsListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpendingrequestslistres" class="md-nav__link">
+    GetPendingRequestsListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getplatformdidreq" class="md-nav__link">
+    GetPlatformDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getplatformdidres" class="md-nav__link">
+    GetPlatformDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrejectedidentitieslistreq" class="md-nav__link">
+    GetRejectedIdentitiesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrejectedidentitieslistres" class="md-nav__link">
+    GetRejectedIdentitiesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettagsreq" class="md-nav__link">
+    GetTagsReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettagsres" class="md-nav__link">
+    GetTagsRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentitieslistreq" class="md-nav__link">
+    GetValidIdentitiesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentitieslistres" class="md-nav__link">
+    GetValidIdentitiesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentityinforeq" class="md-nav__link">
+    GetValidIdentityInfoReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentityinfores" class="md-nav__link">
+    GetValidIdentityInfoRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listidentitiesunderatagreq" class="md-nav__link">
+    ListIdentitiesUnderATagReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listidentitiesunderatagres" class="md-nav__link">
+    ListIdentitiesUnderATagRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localstorageinitreq" class="md-nav__link">
+    LocalStorageInitReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localstorageinitres" class="md-nav__link">
+    LocalStorageInitRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newplatformuserinfo" class="md-nav__link">
+    NewPlatformUserInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pendingrequestsstruct" class="md-nav__link">
+    PendingRequestsStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postdevicedatawithsignaturereq" class="md-nav__link">
+    PostDeviceDataWithSignatureReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postdevicedatawithsignatureres" class="md-nav__link">
+    PostDeviceDataWithSignatureRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postdevicedatawithsignaturestruct" class="md-nav__link">
+    PostDeviceDataWithSignatureStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordrejecteddidreq" class="md-nav__link">
+    RecordRejectedDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordrejecteddidres" class="md-nav__link">
+    RecordRejectedDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerdevicedidreq" class="md-nav__link">
+    RegisterDeviceDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerdevicedidres" class="md-nav__link">
+    RegisterDeviceDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rejectedidentitiesliststruct" class="md-nav__link">
+    RejectedIdentitiesListStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removetagsreq" class="md-nav__link">
+    RemoveTagsReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removetagsres" class="md-nav__link">
+    RemoveTagsRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestidentitystatusreq" class="md-nav__link">
+    RequestIdentityStatusReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestidentitystatusres" class="md-nav__link">
+    RequestIdentityStatusRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestregistrationofdevicereq" class="md-nav__link">
+    RequestRegistrationOfDeviceReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestregistrationofdeviceres" class="md-nav__link">
+    RequestRegistrationOfDeviceRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revokedevicedidreq" class="md-nav__link">
+    RevokeDeviceDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revokedevicedidres" class="md-nav__link">
+    RevokeDeviceDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signbytepayloadwithidentityreq" class="md-nav__link">
+    SignBytePayloadWithIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signbytepayloadwithidentityres" class="md-nav__link">
+    SignBytePayloadWithIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signpayloadreq" class="md-nav__link">
+    SignPayloadReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signpayloadres" class="md-nav__link">
+    SignPayloadRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tagstruct" class="md-nav__link">
+    TagStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadfilesreq" class="md-nav__link">
+    UploadFilesReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadfilesres" class="md-nav__link">
+    UploadFilesRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valididentitiesliststruct" class="md-nav__link">
+    ValidIdentitiesListStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifybytepayloadwithidentityreq" class="md-nav__link">
+    VerifyBytePayloadWithIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifybytepayloadwithidentityres" class="md-nav__link">
+    VerifyBytePayloadWithIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifydevicedidreq" class="md-nav__link">
+    VerifyDeviceDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifydevicedidres" class="md-nav__link">
+    VerifyDeviceDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifysignaturereq" class="md-nav__link">
+    VerifySignatureReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifysignatureres" class="md-nav__link">
+    VerifySignatureRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scuridplatformagentapi" class="md-nav__link">
+    ScuridPlatformAgentAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-value-types" class="md-nav__link">
+    Scalar Value Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platformapiv2/" class="md-nav__link">
+        Platform API v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deviceContext/" class="md-nav__link">
+        Device Context
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logsapi.md" class="md-nav__link">
+        Logs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Releases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releasenotes/" class="md-nav__link">
+        Scurid Release Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#devicecontext" class="md-nav__link">
+    DeviceContext
+  </a>
+  
+    <nav class="md-nav" aria-label="DeviceContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-file-devicecontextproto" class="md-nav__link">
+    Reference file : deviceContext.proto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macaddress" class="md-nav__link">
+    MacAddress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osinfo" class="md-nav__link">
+    OsInfo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-api" class="md-nav__link">
+    Platform API
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-file-platformapiproto" class="md-nav__link">
+    Reference file platformapi.proto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtagsreq" class="md-nav__link">
+    AddTagsReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtagsres" class="md-nav__link">
+    AddTagsRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentinfofordid" class="md-nav__link">
+    AgentInfoForDID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alldevicesliststruct" class="md-nav__link">
+    AllDevicesListStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigntagstoidentityreq" class="md-nav__link">
+    AssignTagsToIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigntagstoidentityres" class="md-nav__link">
+    AssignTagsToIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countriesstruct" class="md-nav__link">
+    CountriesStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createidentityreq" class="md-nav__link">
+    CreateIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createidentityres" class="md-nav__link">
+    CreateIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloadfilesreq" class="md-nav__link">
+    DownloadFilesReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloadfilesres" class="md-nav__link">
+    DownloadFilesRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emptyrequest" class="md-nav__link">
+    EmptyRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fileinfo" class="md-nav__link">
+    FileInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filestorepathreq" class="md-nav__link">
+    FileStorePathReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filestorepathres" class="md-nav__link">
+    FileStorePathRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getalldeviceslistreq" class="md-nav__link">
+    GetAllDevicesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getalldeviceslistres" class="md-nav__link">
+    GetAllDevicesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcountrieslistreq" class="md-nav__link">
+    GetCountriesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcountrieslistres" class="md-nav__link">
+    GetCountriesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevicepayloadswithsignaturereq" class="md-nav__link">
+    GetDevicePayloadsWithSignatureReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevicepayloadswithsignatureres" class="md-nav__link">
+    GetDevicePayloadsWithSignatureRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevicepayloadswithsignaturestruct" class="md-nav__link">
+    GetDevicePayloadsWithSignatureStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlicensestatusreq" class="md-nav__link">
+    GetLicenseStatusReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlicensestatusres" class="md-nav__link">
+    GetLicenseStatusRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getonboardingpkgreq" class="md-nav__link">
+    GetOnboardingPkgReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getonboardingpkgres" class="md-nav__link">
+    GetOnboardingPkgRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpendingrequestslistreq" class="md-nav__link">
+    GetPendingRequestsListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpendingrequestslistres" class="md-nav__link">
+    GetPendingRequestsListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getplatformdidreq" class="md-nav__link">
+    GetPlatformDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getplatformdidres" class="md-nav__link">
+    GetPlatformDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrejectedidentitieslistreq" class="md-nav__link">
+    GetRejectedIdentitiesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrejectedidentitieslistres" class="md-nav__link">
+    GetRejectedIdentitiesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettagsreq" class="md-nav__link">
+    GetTagsReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettagsres" class="md-nav__link">
+    GetTagsRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentitieslistreq" class="md-nav__link">
+    GetValidIdentitiesListReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentitieslistres" class="md-nav__link">
+    GetValidIdentitiesListRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentityinforeq" class="md-nav__link">
+    GetValidIdentityInfoReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalididentityinfores" class="md-nav__link">
+    GetValidIdentityInfoRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listidentitiesunderatagreq" class="md-nav__link">
+    ListIdentitiesUnderATagReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listidentitiesunderatagres" class="md-nav__link">
+    ListIdentitiesUnderATagRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localstorageinitreq" class="md-nav__link">
+    LocalStorageInitReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localstorageinitres" class="md-nav__link">
+    LocalStorageInitRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newplatformuserinfo" class="md-nav__link">
+    NewPlatformUserInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pendingrequestsstruct" class="md-nav__link">
+    PendingRequestsStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postdevicedatawithsignaturereq" class="md-nav__link">
+    PostDeviceDataWithSignatureReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postdevicedatawithsignatureres" class="md-nav__link">
+    PostDeviceDataWithSignatureRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postdevicedatawithsignaturestruct" class="md-nav__link">
+    PostDeviceDataWithSignatureStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordrejecteddidreq" class="md-nav__link">
+    RecordRejectedDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordrejecteddidres" class="md-nav__link">
+    RecordRejectedDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerdevicedidreq" class="md-nav__link">
+    RegisterDeviceDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerdevicedidres" class="md-nav__link">
+    RegisterDeviceDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rejectedidentitiesliststruct" class="md-nav__link">
+    RejectedIdentitiesListStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removetagsreq" class="md-nav__link">
+    RemoveTagsReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removetagsres" class="md-nav__link">
+    RemoveTagsRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestidentitystatusreq" class="md-nav__link">
+    RequestIdentityStatusReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestidentitystatusres" class="md-nav__link">
+    RequestIdentityStatusRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestregistrationofdevicereq" class="md-nav__link">
+    RequestRegistrationOfDeviceReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestregistrationofdeviceres" class="md-nav__link">
+    RequestRegistrationOfDeviceRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revokedevicedidreq" class="md-nav__link">
+    RevokeDeviceDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revokedevicedidres" class="md-nav__link">
+    RevokeDeviceDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signbytepayloadwithidentityreq" class="md-nav__link">
+    SignBytePayloadWithIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signbytepayloadwithidentityres" class="md-nav__link">
+    SignBytePayloadWithIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signpayloadreq" class="md-nav__link">
+    SignPayloadReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signpayloadres" class="md-nav__link">
+    SignPayloadRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tagstruct" class="md-nav__link">
+    TagStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadfilesreq" class="md-nav__link">
+    UploadFilesReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadfilesres" class="md-nav__link">
+    UploadFilesRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valididentitiesliststruct" class="md-nav__link">
+    ValidIdentitiesListStruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifybytepayloadwithidentityreq" class="md-nav__link">
+    VerifyBytePayloadWithIdentityReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifybytepayloadwithidentityres" class="md-nav__link">
+    VerifyBytePayloadWithIdentityRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifydevicedidreq" class="md-nav__link">
+    VerifyDeviceDIDReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifydevicedidres" class="md-nav__link">
+    VerifyDeviceDIDRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifysignaturereq" class="md-nav__link">
+    VerifySignatureReq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifysignatureres" class="md-nav__link">
+    VerifySignatureRes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scuridplatformagentapi" class="md-nav__link">
+    ScuridPlatformAgentAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-value-types" class="md-nav__link">
+    Scalar Value Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  
+
+
+
+<h3 id="devicecontext">DeviceContext</h3>
+<h4 id="reference-file-devicecontextproto">Reference file : deviceContext.proto</h4>
+<p><a name="deviceContext-DeviceContext"></a></p>
+<p>Device context from the device in relation to the device identity</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macAddresses</td>
+<td><a href="#deviceContext-MacAddress">MacAddress</a></td>
+<td>repeated</td>
+<td>optional, all MAC addresses available to be picked up by the agent</td>
+</tr>
+<tr>
+<td>ipAddress</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional, IP address</td>
+</tr>
+<tr>
+<td>cpu</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional, number of CPUs available</td>
+</tr>
+<tr>
+<td>ram</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional, RAM size on the device</td>
+</tr>
+<tr>
+<td>imeiNumber</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional, International Mobile Equipment Identity, optional, capture if one is available</td>
+</tr>
+<tr>
+<td>osType</td>
+<td><a href="#deviceContext-OsInfo">OsInfo</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="deviceContext-MacAddress"></a></p>
+<h3 id="macaddress">MacAddress</h3>
+<p>list of macAddresses from the devices</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mtu</td>
+<td><a href="#int32">int32</a></td>
+<td></td>
+<td>optional, maximum transmission unit</td>
+</tr>
+<tr>
+<td>macAddress</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>interface&#39;s name e.g. en0</td>
+</tr>
+</tbody>
+</table>
+<p><a name="deviceContext-OsInfo"></a></p>
+<h3 id="osinfo">OsInfo</h3>
+<p>OsInfo message structure defining standard OS info used within the system</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>osType</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional, e.g. darwin, windows, etc.</td>
+</tr>
+<tr>
+<td>arch</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>optional, e.g. amd64 etc.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="platform-api">Platform API</h1>
+<h4 id="reference-file-platformapiproto">Reference file platformapi.proto</h4>
+<p><a name="scuridplatformagentapi-v1-AddTagsReq"></a></p>
+<h3 id="addtagsreq">AddTagsReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tags</td>
+<td><a href="#scuridplatformagentapi-v1-TagStruct">TagStruct</a></td>
+<td>repeated</td>
+<td>one or more tags to be created in the system</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-AddTagsRes"></a></p>
+<h3 id="addtagsres">AddTagsRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>boolean result, True if all gets created else false</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-AgentInfoForDID"></a></p>
+<h3 id="agentinfofordid">AgentInfoForDID</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>agentDID</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>if device DID to be bound to an agent</td>
+</tr>
+<tr>
+<td>statusKey</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>to be delivered from the backend</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-AllDevicesListStruct"></a></p>
+<h3 id="alldevicesliststruct">AllDevicesListStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deviceName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>human readable name of the device</td>
+</tr>
+<tr>
+<td>statusOfDID</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>versionInfo</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>createdOn</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-AssignTagsToIdentityReq"></a></p>
+<h3 id="assigntagstoidentityreq">AssignTagsToIdentityReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tags</td>
+<td><a href="#scuridplatformagentapi-v1-TagStruct">TagStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>device identities to be tagged with</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-AssignTagsToIdentityRes"></a></p>
+<h3 id="assigntagstoidentityres">AssignTagsToIdentityRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>true if assignment of tags to identity works; else false; default is false</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-CountriesStruct"></a></p>
+<h3 id="countriesstruct">CountriesStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-CreateIdentityReq"></a></p>
+<h3 id="createidentityreq">CreateIdentityReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerInfo</td>
+<td><a href="#scuridplatformagentapi-v1-NewPlatformUserInfo">NewPlatformUserInfo</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-CreateIdentityRes"></a></p>
+<h3 id="createidentityres">CreateIdentityRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-DownloadFilesReq"></a></p>
+<h3 id="downloadfilesreq">DownloadFilesReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceIdentity</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>device&#39;s identity</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-DownloadFilesRes"></a></p>
+<h3 id="downloadfilesres">DownloadFilesRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>info</td>
+<td><a href="#scuridplatformagentapi-v1-FileInfo">FileInfo</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>chunkData</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-EmptyRequest"></a></p>
+<h3 id="emptyrequest">EmptyRequest</h3>
+<p><a name="scuridplatformagentapi-v1-FileInfo"></a></p>
+<h3 id="fileinfo">FileInfo</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceIdentity</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fileId</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fileType</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-FileStorePathReq"></a></p>
+<h3 id="filestorepathreq">FileStorePathReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceIdentity</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>device DID</td>
+</tr>
+<tr>
+<td>path</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>folder</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-FileStorePathRes"></a></p>
+<h3 id="filestorepathres">FileStorePathRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetAllDevicesListReq"></a></p>
+<h3 id="getalldeviceslistreq">GetAllDevicesListReq</h3>
+<p>empty request</p>
+<p><a name="scuridplatformagentapi-v1-GetAllDevicesListRes"></a></p>
+<h3 id="getalldeviceslistres">GetAllDevicesListRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rows</td>
+<td><a href="#scuridplatformagentapi-v1-AllDevicesListStruct">AllDevicesListStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetCountriesListReq"></a></p>
+<h3 id="getcountrieslistreq">GetCountriesListReq</h3>
+<p>left blank intentionally</p>
+<p><a name="scuridplatformagentapi-v1-GetCountriesListRes"></a></p>
+<h3 id="getcountrieslistres">GetCountriesListRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><a href="#scuridplatformagentapi-v1-CountriesStruct">CountriesStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureReq"></a></p>
+<h3 id="getdevicepayloadswithsignaturereq">GetDevicePayloadsWithSignatureReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceDid</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deviceName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>if deviceName is used all payloads are returned from that device, it may have used multiple DIDs</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureRes"></a></p>
+<h3 id="getdevicepayloadswithsignatureres">GetDevicePayloadsWithSignatureRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rows</td>
+<td><a href="#scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureStruct">GetDevicePayloadsWithSignatureStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureStruct"></a></p>
+<h3 id="getdevicepayloadswithsignaturestruct">GetDevicePayloadsWithSignatureStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceDID</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deviceName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dataTimestamp</td>
+<td><a href="#int32">int32</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>payload</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>signature</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isValid</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetLicenseStatusReq"></a></p>
+<h3 id="getlicensestatusreq">GetLicenseStatusReq</h3>
+<p>ScuridPlatformAgentAPI section</p>
+<p>left blank intentionally</p>
+<p><a name="scuridplatformagentapi-v1-GetLicenseStatusRes"></a></p>
+<h3 id="getlicensestatusres">GetLicenseStatusRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>licStatus</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>false if status not active; true otherwise</td>
+</tr>
+<tr>
+<td>licType</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>type of the license small, developer etc.</td>
+</tr>
+<tr>
+<td>validFrom</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td>valid from timestamp</td>
+</tr>
+<tr>
+<td>validUntil</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td>valid until timestamp</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetOnboardingPkgReq"></a></p>
+<h3 id="getonboardingpkgreq">GetOnboardingPkgReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>identity</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>device&#39;s public identity</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetOnboardingPkgRes"></a></p>
+<h3 id="getonboardingpkgres">GetOnboardingPkgRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pkg1</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>transfers payload in string, any data structure</td>
+</tr>
+<tr>
+<td>pkg2</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>transfers payload in bytes, any data structure</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetPendingRequestsListReq"></a></p>
+<h3 id="getpendingrequestslistreq">GetPendingRequestsListReq</h3>
+<p>empty request</p>
+<p><a name="scuridplatformagentapi-v1-GetPendingRequestsListRes"></a></p>
+<h3 id="getpendingrequestslistres">GetPendingRequestsListRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rows</td>
+<td><a href="#scuridplatformagentapi-v1-PendingRequestsStruct">PendingRequestsStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetPlatformDIDReq"></a></p>
+<h3 id="getplatformdidreq">GetPlatformDIDReq</h3>
+<p>empty request</p>
+<p><a name="scuridplatformagentapi-v1-GetPlatformDIDRes"></a></p>
+<h3 id="getplatformdidres">GetPlatformDIDRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>platform_did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetRejectedIdentitiesListReq"></a></p>
+<h3 id="getrejectedidentitieslistreq">GetRejectedIdentitiesListReq</h3>
+<p>empty request</p>
+<p><a name="scuridplatformagentapi-v1-GetRejectedIdentitiesListRes"></a></p>
+<h3 id="getrejectedidentitieslistres">GetRejectedIdentitiesListRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rows</td>
+<td><a href="#scuridplatformagentapi-v1-RejectedIdentitiesListStruct">RejectedIdentitiesListStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetTagsReq"></a></p>
+<h3 id="gettagsreq">GetTagsReq</h3>
+<p>left empty</p>
+<p><a name="scuridplatformagentapi-v1-GetTagsRes"></a></p>
+<h3 id="gettagsres">GetTagsRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td><a href="#scuridplatformagentapi-v1-TagStruct">TagStruct</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetValidIdentitiesListReq"></a></p>
+<h3 id="getvalididentitieslistreq">GetValidIdentitiesListReq</h3>
+<p>empty request</p>
+<p><a name="scuridplatformagentapi-v1-GetValidIdentitiesListRes"></a></p>
+<h3 id="getvalididentitieslistres">GetValidIdentitiesListRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rows</td>
+<td><a href="#scuridplatformagentapi-v1-ValidIdentitiesListStruct">ValidIdentitiesListStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetValidIdentityInfoReq"></a></p>
+<h3 id="getvalididentityinforeq">GetValidIdentityInfoReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-GetValidIdentityInfoRes"></a></p>
+<h3 id="getvalididentityinfores">GetValidIdentityInfoRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vInfo</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>edge agent version used for creating DID</td>
+</tr>
+<tr>
+<td>lastVerifiedOn</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_on</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>device_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isLocal</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>if checked identities are not registered on DLT but only local database</td>
+</tr>
+<tr>
+<td>path</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>device pkg file store on the client side</td>
+</tr>
+<tr>
+<td>deviceContext</td>
+<td><a href="#deviceContext-DeviceContext">deviceContext.DeviceContext</a></td>
+<td></td>
+<td>helps to onboard and bind a device to an identity</td>
+</tr>
+<tr>
+<td>agentInfoForDID</td>
+<td><a href="#scuridplatformagentapi-v1-AgentInfoForDID">AgentInfoForDID</a></td>
+<td></td>
+<td>if there is an agent to which this identity belongs</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-ListIdentitiesUnderATagReq"></a></p>
+<h3 id="listidentitiesunderatagreq">ListIdentitiesUnderATagReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td><a href="#scuridplatformagentapi-v1-TagStruct">TagStruct</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-ListIdentitiesUnderATagRes"></a></p>
+<h3 id="listidentitiesunderatagres">ListIdentitiesUnderATagRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-LocalStorageInitReq"></a></p>
+<h3 id="localstorageinitreq">LocalStorageInitReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>storagePath</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-LocalStorageInitRes"></a></p>
+<h3 id="localstorageinitres">LocalStorageInitRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>try to return actual error from the OS if any, a success message</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-NewPlatformUserInfo"></a></p>
+<h3 id="newplatformuserinfo">NewPlatformUserInfo</h3>
+<p>struct to be attached to the Platform&#39;s DID registration</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firstName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lastName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isEnterpriseUser</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>enterpriseFullName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-PendingRequestsStruct"></a></p>
+<h3 id="pendingrequestsstruct">PendingRequestsStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>requestTimestamp</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>versionInfo</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_on</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>device_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isLocal</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deviceContext</td>
+<td><a href="#deviceContext-DeviceContext">deviceContext.DeviceContext</a></td>
+<td></td>
+<td>helps to onboard and bind a device to an identity</td>
+</tr>
+<tr>
+<td>agentInfoForDID</td>
+<td><a href="#scuridplatformagentapi-v1-AgentInfoForDID">AgentInfoForDID</a></td>
+<td></td>
+<td>if there is an agent to which this identity belongs</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-PostDeviceDataWithSignatureReq"></a></p>
+<h3 id="postdevicedatawithsignaturereq">PostDeviceDataWithSignatureReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dataSet</td>
+<td><a href="#scuridplatformagentapi-v1-PostDeviceDataWithSignatureStruct">PostDeviceDataWithSignatureStruct</a></td>
+<td>repeated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-PostDeviceDataWithSignatureRes"></a></p>
+<h3 id="postdevicedatawithsignatureres">PostDeviceDataWithSignatureRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-PostDeviceDataWithSignatureStruct"></a></p>
+<h3 id="postdevicedatawithsignaturestruct">PostDeviceDataWithSignatureStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceDID</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deviceName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dataTimestamp</td>
+<td><a href="#int32">int32</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>payload</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>signature</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RecordRejectedDIDReq"></a></p>
+<h3 id="recordrejecteddidreq">RecordRejectedDIDReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>rejectedOn</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td>timestamp of rejection // UTC</td>
+</tr>
+<tr>
+<td>isLocal</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>defaults to false, if the identity was approved previously use that state</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RecordRejectedDIDRes"></a></p>
+<h3 id="recordrejecteddidres">RecordRejectedDIDRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RegisterDeviceDIDReq"></a></p>
+<h3 id="registerdevicedidreq">RegisterDeviceDIDReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceDid</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>platformDid</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>platform did</td>
+</tr>
+<tr>
+<td>isLocal</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>if checked identites are not registered on DLT but only local database</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RegisterDeviceDIDRes"></a></p>
+<h3 id="registerdevicedidres">RegisterDeviceDIDRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RejectedIdentitiesListStruct"></a></p>
+<h3 id="rejectedidentitiesliststruct">RejectedIdentitiesListStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vInfo</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>edge agent version used for creating DID</td>
+</tr>
+<tr>
+<td>rejectionTimestamp</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>revokedOn</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_on</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>device_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isLocal</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>if checked identities are not registered on DLT but only local database</td>
+</tr>
+<tr>
+<td>deviceContext</td>
+<td><a href="#deviceContext-DeviceContext">deviceContext.DeviceContext</a></td>
+<td></td>
+<td>helps to onboard and bind a device to an identity</td>
+</tr>
+<tr>
+<td>agentInfoForDID</td>
+<td><a href="#scuridplatformagentapi-v1-AgentInfoForDID">AgentInfoForDID</a></td>
+<td></td>
+<td>if there is an agent to which this identity belongs</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RemoveTagsReq"></a></p>
+<h3 id="removetagsreq">RemoveTagsReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tags</td>
+<td><a href="#scuridplatformagentapi-v1-TagStruct">TagStruct</a></td>
+<td>repeated</td>
+<td>tags to be deleted from the system</td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>this generally the device identity</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RemoveTagsRes"></a></p>
+<h3 id="removetagsres">RemoveTagsRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>boolean result, True if all gets deleted else false</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RequestIdentityStatusReq"></a></p>
+<h3 id="requestidentitystatusreq">RequestIdentityStatusReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceDID</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RequestIdentityStatusRes"></a></p>
+<h3 id="requestidentitystatusres">RequestIdentityStatusRes</h3>
+<p>response is one of the following</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RequestRegistrationOfDeviceReq"></a></p>
+<h3 id="requestregistrationofdevicereq">RequestRegistrationOfDeviceReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceDID</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>requestedOn</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td>UTC timestamp of request from device, this value MUST come from device</td>
+</tr>
+<tr>
+<td>vInfo</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>edge agent version used for generating DID</td>
+</tr>
+<tr>
+<td>device_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>name with which customer, user identifies it uniquely, this could also be a name in the IIoT Platform</td>
+</tr>
+<tr>
+<td>deviceContext</td>
+<td><a href="#deviceContext-DeviceContext">deviceContext.DeviceContext</a></td>
+<td></td>
+<td>helps to onboard and bind a device to an identity</td>
+</tr>
+<tr>
+<td>signatureOnDeviceContext</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>hash calculated on the fields requestedOn &#43; deviceDID. THIS must be sent by the agent and will be recorded on the backend and used for future verification.</td>
+</tr>
+<tr>
+<td>agentInfoForDID</td>
+<td><a href="#scuridplatformagentapi-v1-AgentInfoForDID">AgentInfoForDID</a></td>
+<td></td>
+<td>if there is an agent to which this identity belongs</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RequestRegistrationOfDeviceRes"></a></p>
+<h3 id="requestregistrationofdeviceres">RequestRegistrationOfDeviceRes</h3>
+<p>this only provides a confirmation if request has been successfully received.
+Whether it&#39;s approved or rejected, will be handled by respective service
+This info will be added to the Platform Agent&#39;s local storage</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>only returns confirmation that the request has been received</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RevokeDeviceDIDReq"></a></p>
+<h3 id="revokedevicedidreq">RevokeDeviceDIDReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>device_did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>platform_did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-RevokeDeviceDIDRes"></a></p>
+<h3 id="revokedevicedidres">RevokeDeviceDIDRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-SignBytePayloadWithIdentityReq"></a></p>
+<h3 id="signbytepayloadwithidentityreq">SignBytePayloadWithIdentityReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payload</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>array if bytes to be signed</td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>identity i.e. did:scurid:XXXXXXXXXXX ; NOTE identity is case sensitive</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-SignBytePayloadWithIdentityRes"></a></p>
+<h3 id="signbytepayloadwithidentityres">SignBytePayloadWithIdentityRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>generated signature</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-SignPayloadReq"></a></p>
+<h3 id="signpayloadreq">SignPayloadReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payload</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-SignPayloadRes"></a></p>
+<h3 id="signpayloadres">SignPayloadRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-TagStruct"></a></p>
+<h3 id="tagstruct">TagStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tagName</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-UploadFilesReq"></a></p>
+<h3 id="uploadfilesreq">UploadFilesReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>info</td>
+<td><a href="#scuridplatformagentapi-v1-FileInfo">FileInfo</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>chunkData</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-UploadFilesRes"></a></p>
+<h3 id="uploadfilesres">UploadFilesRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>true if successfully transferred the files.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-ValidIdentitiesListStruct"></a></p>
+<h3 id="valididentitiesliststruct">ValidIdentitiesListStruct</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vInfo</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>edge agent version used for creating DID</td>
+</tr>
+<tr>
+<td>created_on</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_verified_on</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>device_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>isLocal</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>if checked identities are not registered on DLT but only local database</td>
+</tr>
+<tr>
+<td>path</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>device pkg file store on the client side</td>
+</tr>
+<tr>
+<td>deviceContext</td>
+<td><a href="#deviceContext-DeviceContext">deviceContext.DeviceContext</a></td>
+<td></td>
+<td>helps to onboard and bind a device to an identity</td>
+</tr>
+<tr>
+<td>agentInfoForDID</td>
+<td><a href="#scuridplatformagentapi-v1-AgentInfoForDID">AgentInfoForDID</a></td>
+<td></td>
+<td>if there is an agent to which this identity belongs</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-VerifyBytePayloadWithIdentityReq"></a></p>
+<h3 id="verifybytepayloadwithidentityreq">VerifyBytePayloadWithIdentityReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>payload</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>identity i.e. did:scurid:XXXXXXXXXXX ; NOTE: identity is case sensitive</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-VerifyBytePayloadWithIdentityRes"></a></p>
+<h3 id="verifybytepayloadwithidentityres">VerifyBytePayloadWithIdentityRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isValid</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>true if valid, else false (Defaults to False)</td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-VerifyDeviceDIDReq"></a></p>
+<h3 id="verifydevicedidreq">VerifyDeviceDIDReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>platform_did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>device_did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-VerifyDeviceDIDRes"></a></p>
+<h3 id="verifydevicedidres">VerifyDeviceDIDRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-VerifySignatureReq"></a></p>
+<h3 id="verifysignaturereq">VerifySignatureReq</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>payload</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>did</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-VerifySignatureRes"></a></p>
+<h3 id="verifysignatureres">VerifySignatureRes</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isValid</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="scuridplatformagentapi-v1-ScuridPlatformAgentAPI"></a></p>
+<h3 id="scuridplatformagentapi">ScuridPlatformAgentAPI</h3>
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th>Request Type</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetPendingRequestsList</td>
+<td><a href="#scuridplatformagentapi-v1-GetPendingRequestsListReq">GetPendingRequestsListReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetPendingRequestsListRes">GetPendingRequestsListRes</a></td>
+<td>Track requests from new devices to register them on the SSI Service</td>
+</tr>
+<tr>
+<td>VerifySignature</td>
+<td><a href="#scuridplatformagentapi-v1-VerifySignatureReq">VerifySignatureReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-VerifySignatureRes">VerifySignatureRes</a></td>
+<td>Verify signature of the payload Currently only string payloads are supported</td>
+</tr>
+<tr>
+<td>CreateIdentity</td>
+<td><a href="#scuridplatformagentapi-v1-CreateIdentityReq">CreateIdentityReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-CreateIdentityRes">CreateIdentityRes</a></td>
+<td>Primarily to be used for DID Generation of the platform to be used for registering platform application for that customer This should make an internal call to the Scurid SSI Service and store the DID value in local storage in encrypted wallet</td>
+</tr>
+<tr>
+<td>SignPayload</td>
+<td><a href="#scuridplatformagentapi-v1-SignPayloadReq">SignPayloadReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-SignPayloadRes">SignPayloadRes</a></td>
+<td>Sign a given payload with platform&#39;s DID</td>
+</tr>
+<tr>
+<td>GetRejectedIdentitiesList</td>
+<td><a href="#scuridplatformagentapi-v1-GetRejectedIdentitiesListReq">GetRejectedIdentitiesListReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetRejectedIdentitiesListRes">GetRejectedIdentitiesListRes</a></td>
+<td>As platform agent must track every incoming request for DID registration in local DB storage, this service returns the list of all the DIDs that were rejected by the customer to be registered with Scurid SSI Service. This is mainly a bookkeeping service</td>
+</tr>
+<tr>
+<td>GetValidIdentitiesList</td>
+<td><a href="#scuridplatformagentapi-v1-GetValidIdentitiesListReq">GetValidIdentitiesListReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetValidIdentitiesListRes">GetValidIdentitiesListRes</a></td>
+<td>Fetches the list of all the DIDs that were successfully registered in Scurid SSI Service, this list must be kept internally fresh by the platform&#39;s internal service</td>
+</tr>
+<tr>
+<td>GetValidIdentityInfo</td>
+<td><a href="#scuridplatformagentapi-v1-GetValidIdentityInfoReq">GetValidIdentityInfoReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetValidIdentityInfoRes">GetValidIdentityInfoRes</a></td>
+<td>Fetches details available on a given identity in local DB storage, data on this identity must be kept fresh by internal services</td>
+</tr>
+<tr>
+<td>RecordRejectedDID</td>
+<td><a href="#scuridplatformagentapi-v1-RecordRejectedDIDReq">RecordRejectedDIDReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-RecordRejectedDIDRes">RecordRejectedDIDRes</a></td>
+<td>Identities returned by GetPendingRequestsList if they are rejected by the customer from the flutter app, they of course MUST not be registered with Scurid SSI Service, but at the same time should be recorded in the local DB</td>
+</tr>
+<tr>
+<td>RequestRegistrationOfDevice</td>
+<td><a href="#scuridplatformagentapi-v1-RequestRegistrationOfDeviceReq">RequestRegistrationOfDeviceReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-RequestRegistrationOfDeviceRes">RequestRegistrationOfDeviceRes</a></td>
+<td>this endpoint is for devices to call Platform Agent to register them Normally will be used by devices wanting to registering for the first time, or if a new DID has been generated on an existing device</td>
+</tr>
+<tr>
+<td>RequestIdentityStatus</td>
+<td><a href="#scuridplatformagentapi-v1-RequestIdentityStatusReq">RequestIdentityStatusReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-RequestIdentityStatusRes">RequestIdentityStatusRes</a></td>
+<td>This endpoint is primarily meant for devices to get validation from Platform Application if their DID was registered on the blockchain</td>
+</tr>
+<tr>
+<td>LocalStorageInit</td>
+<td><a href="#scuridplatformagentapi-v1-LocalStorageInitReq">LocalStorageInitReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-LocalStorageInitRes">LocalStorageInitRes</a></td>
+<td>To be called from desktop app for getting the path where DB should be initialized</td>
+</tr>
+<tr>
+<td>GetAllDevicesList</td>
+<td><a href="#scuridplatformagentapi-v1-GetAllDevicesListReq">GetAllDevicesListReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetAllDevicesListRes">GetAllDevicesListRes</a></td>
+<td>A call to local storage to get list of all available device DIDs</td>
+</tr>
+<tr>
+<td>VerifyDeviceDID</td>
+<td><a href="#scuridplatformagentapi-v1-VerifyDeviceDIDReq">VerifyDeviceDIDReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-VerifyDeviceDIDRes">VerifyDeviceDIDRes</a></td>
+<td>Wraps the call for SSI Service API with same name VerifyDeviceDID</td>
+</tr>
+<tr>
+<td>RevokeDeviceDID</td>
+<td><a href="#scuridplatformagentapi-v1-RevokeDeviceDIDReq">RevokeDeviceDIDReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-RevokeDeviceDIDRes">RevokeDeviceDIDRes</a></td>
+<td>Wraps the call for SSI Service API with same name RevokeDeviceDID</td>
+</tr>
+<tr>
+<td>RegisterDeviceDID</td>
+<td><a href="#scuridplatformagentapi-v1-RegisterDeviceDIDReq">RegisterDeviceDIDReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-RegisterDeviceDIDRes">RegisterDeviceDIDRes</a></td>
+<td>Wraps the call for SSI Service API with same name RegisterDeviceDID</td>
+</tr>
+<tr>
+<td>GetPlatformDID</td>
+<td><a href="#scuridplatformagentapi-v1-GetPlatformDIDReq">GetPlatformDIDReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetPlatformDIDRes">GetPlatformDIDRes</a></td>
+<td>To provide Platform DID from the local gRPC platform storage</td>
+</tr>
+<tr>
+<td>GetDevicePayloadsWithSignature</td>
+<td><a href="#scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureReq">GetDevicePayloadsWithSignatureReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureRes">GetDevicePayloadsWithSignatureRes</a></td>
+<td>Provides device&#39;s data with signature for each payload returned rows have boolean confirmation attached to each row True denotes that the device&#39;s payload has valid signature, false denotes otherwise</td>
+</tr>
+<tr>
+<td>PostDeviceDataWithSignature</td>
+<td><a href="#scuridplatformagentapi-v1-PostDeviceDataWithSignatureReq">PostDeviceDataWithSignatureReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-PostDeviceDataWithSignatureRes">PostDeviceDataWithSignatureRes</a></td>
+<td>PostDeviceDataWithSignature to be called from edge devices to post / send their device data with signature to Platform</td>
+</tr>
+<tr>
+<td>GetCountriesList</td>
+<td><a href="#scuridplatformagentapi-v1-GetCountriesListReq">GetCountriesListReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetCountriesListRes">GetCountriesListRes</a></td>
+<td>Provides list of countries</td>
+</tr>
+<tr>
+<td>GetLicenseStatus</td>
+<td><a href="#scuridplatformagentapi-v1-GetLicenseStatusReq">GetLicenseStatusReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetLicenseStatusRes">GetLicenseStatusRes</a></td>
+<td></td>
+</tr>
+<tr>
+<td>SignBytePayloadWithIdentity</td>
+<td><a href="#scuridplatformagentapi-v1-SignBytePayloadWithIdentityReq">SignBytePayloadWithIdentityReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-SignBytePayloadWithIdentityRes">SignBytePayloadWithIdentityRes</a></td>
+<td>Signs a byte array payload with identity</td>
+</tr>
+<tr>
+<td>VerifyBytePayloadWithIdentity</td>
+<td><a href="#scuridplatformagentapi-v1-VerifyBytePayloadWithIdentityReq">VerifyBytePayloadWithIdentityReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-VerifyBytePayloadWithIdentityRes">VerifyBytePayloadWithIdentityRes</a></td>
+<td>Verifies a byte array payload with identity</td>
+</tr>
+<tr>
+<td>AddTags</td>
+<td><a href="#scuridplatformagentapi-v1-AddTagsReq">AddTagsReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-AddTagsRes">AddTagsRes</a></td>
+<td>Adds tags for categorization of the identities</td>
+</tr>
+<tr>
+<td>RemoveTags</td>
+<td><a href="#scuridplatformagentapi-v1-RemoveTagsReq">RemoveTagsReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-RemoveTagsRes">RemoveTagsRes</a></td>
+<td>Removes existing tags from the identity</td>
+</tr>
+<tr>
+<td>GetTags</td>
+<td><a href="#scuridplatformagentapi-v1-GetTagsReq">GetTagsReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-GetTagsRes">GetTagsRes</a> stream</td>
+<td>Get existing tags</td>
+</tr>
+<tr>
+<td>AssignTagsToIdentity</td>
+<td><a href="#scuridplatformagentapi-v1-AssignTagsToIdentityReq">AssignTagsToIdentityReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-AssignTagsToIdentityRes">AssignTagsToIdentityRes</a></td>
+<td>AssignTagsToIdentity assign one more tags to an identity</td>
+</tr>
+<tr>
+<td>ListIdentitiesUnderATag</td>
+<td><a href="#scuridplatformagentapi-v1-ListIdentitiesUnderATagReq">ListIdentitiesUnderATagReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-ListIdentitiesUnderATagRes">ListIdentitiesUnderATagRes</a> stream</td>
+<td>Lists all the identities assigned to a Tag</td>
+</tr>
+<tr>
+<td>UploadFiles</td>
+<td><a href="#scuridplatformagentapi-v1-UploadFilesReq">UploadFilesReq</a> stream</td>
+<td><a href="#scuridplatformagentapi-v1-UploadFilesRes">UploadFilesRes</a></td>
+<td>Used for uploading files to the server</td>
+</tr>
+<tr>
+<td>DownloadFiles</td>
+<td><a href="#scuridplatformagentapi-v1-DownloadFilesReq">DownloadFilesReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-DownloadFilesRes">DownloadFilesRes</a> stream</td>
+<td>Used for downloading device pkgs</td>
+</tr>
+<tr>
+<td>FileStorePath</td>
+<td><a href="#scuridplatformagentapi-v1-FileStorePathReq">FileStorePathReq</a></td>
+<td><a href="#scuridplatformagentapi-v1-FileStorePathRes">FileStorePathRes</a></td>
+<td>FileStorePath provides path for the device files</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scalar-value-types">Scalar Value Types</h2>
+<table>
+<thead>
+<tr>
+<th>.proto Type</th>
+<th>Notes</th>
+<th>C++</th>
+<th>Java</th>
+<th>Python</th>
+<th>Go</th>
+<th>C#</th>
+<th>PHP</th>
+<th>Ruby</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="double" /> double</td>
+<td></td>
+<td>double</td>
+<td>double</td>
+<td>float</td>
+<td>float64</td>
+<td>double</td>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td><a name="float" /> float</td>
+<td></td>
+<td>float</td>
+<td>float</td>
+<td>float</td>
+<td>float32</td>
+<td>float</td>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td><a name="int32" /> int32</td>
+<td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+<td>int32</td>
+<td>int</td>
+<td>int</td>
+<td>int32</td>
+<td>int</td>
+<td>integer</td>
+<td>Bignum or Fixnum (as required)</td>
+</tr>
+<tr>
+<td><a name="int64" /> int64</td>
+<td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+<td>int64</td>
+<td>long</td>
+<td>int/long</td>
+<td>int64</td>
+<td>long</td>
+<td>integer/string</td>
+<td>Bignum</td>
+</tr>
+<tr>
+<td><a name="uint32" /> uint32</td>
+<td>Uses variable-length encoding.</td>
+<td>uint32</td>
+<td>int</td>
+<td>int/long</td>
+<td>uint32</td>
+<td>uint</td>
+<td>integer</td>
+<td>Bignum or Fixnum (as required)</td>
+</tr>
+<tr>
+<td><a name="uint64" /> uint64</td>
+<td>Uses variable-length encoding.</td>
+<td>uint64</td>
+<td>long</td>
+<td>int/long</td>
+<td>uint64</td>
+<td>ulong</td>
+<td>integer/string</td>
+<td>Bignum or Fixnum (as required)</td>
+</tr>
+<tr>
+<td><a name="sint32" /> sint32</td>
+<td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+<td>int32</td>
+<td>int</td>
+<td>int</td>
+<td>int32</td>
+<td>int</td>
+<td>integer</td>
+<td>Bignum or Fixnum (as required)</td>
+</tr>
+<tr>
+<td><a name="sint64" /> sint64</td>
+<td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+<td>int64</td>
+<td>long</td>
+<td>int/long</td>
+<td>int64</td>
+<td>long</td>
+<td>integer/string</td>
+<td>Bignum</td>
+</tr>
+<tr>
+<td><a name="fixed32" /> fixed32</td>
+<td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+<td>uint32</td>
+<td>int</td>
+<td>int</td>
+<td>uint32</td>
+<td>uint</td>
+<td>integer</td>
+<td>Bignum or Fixnum (as required)</td>
+</tr>
+<tr>
+<td><a name="fixed64" /> fixed64</td>
+<td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+<td>uint64</td>
+<td>long</td>
+<td>int/long</td>
+<td>uint64</td>
+<td>ulong</td>
+<td>integer/string</td>
+<td>Bignum</td>
+</tr>
+<tr>
+<td><a name="sfixed32" /> sfixed32</td>
+<td>Always four bytes.</td>
+<td>int32</td>
+<td>int</td>
+<td>int</td>
+<td>int32</td>
+<td>int</td>
+<td>integer</td>
+<td>Bignum or Fixnum (as required)</td>
+</tr>
+<tr>
+<td><a name="sfixed64" /> sfixed64</td>
+<td>Always eight bytes.</td>
+<td>int64</td>
+<td>long</td>
+<td>int/long</td>
+<td>int64</td>
+<td>long</td>
+<td>integer/string</td>
+<td>Bignum</td>
+</tr>
+<tr>
+<td><a name="bool" /> bool</td>
+<td></td>
+<td>bool</td>
+<td>boolean</td>
+<td>boolean</td>
+<td>bool</td>
+<td>bool</td>
+<td>boolean</td>
+<td>TrueClass/FalseClass</td>
+</tr>
+<tr>
+<td><a name="string" /> string</td>
+<td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+<td>string</td>
+<td>String</td>
+<td>str/unicode</td>
+<td>string</td>
+<td>string</td>
+<td>string</td>
+<td>String (UTF-8)</td>
+</tr>
+<tr>
+<td><a name="bytes" /> bytes</td>
+<td>May contain any arbitrary sequence of bytes.</td>
+<td>string</td>
+<td>ByteString</td>
+<td>str</td>
+<td>[]byte</td>
+<td>ByteString</td>
+<td>string</td>
+<td>String (ASCII-8BIT)</td>
+</tr>
+</tbody>
+</table>
+
+
+  
+
+
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../auth/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Auth" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Auth
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../platformapiv2/" class="md-footer__link md-footer__link--next" aria-label="Next: Platform API v2" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Platform API v2
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Scurid Inc. and others
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/scurid_me" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/scurid-ai-tech" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://scurid-community.slack.com/" target="_blank" rel="noopener" title="scurid-community.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://scurid.medium.com/" target="_blank" rel="noopener" title="scurid.medium.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M180.5 74.262C80.813 74.262 0 155.633 0 256s80.819 181.738 180.5 181.738S361 356.373 361 256 280.191 74.262 180.5 74.262Zm288.25 10.646c-49.845 0-90.245 76.619-90.245 171.095s40.406 171.1 90.251 171.1 90.251-76.619 90.251-171.1H559c0-94.503-40.4-171.095-90.248-171.095Zm139.506 17.821c-17.526 0-31.735 68.628-31.735 153.274s14.2 153.274 31.735 153.274S640 340.631 640 256c0-84.649-14.215-153.271-31.742-153.271Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.indexes", "navigation.tracking", "content.tabs.link"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
