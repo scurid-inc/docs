@@ -50,7 +50,7 @@ nav:
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
               - 'Device Context' : 'deviceContext.md'
-              - 'Logs' : 'logsapi.md'
+              - 'Logs' : 'logapi.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:

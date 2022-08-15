@@ -5,9 +5,6 @@
 ## deviceContext.proto
 
 
-
-<a name="deviceContext-DeviceContext"></a>
-
 ### DeviceContext
 Device context from the device in relation to the device identity
 

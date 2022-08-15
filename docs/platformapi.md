@@ -1,4 +1,9 @@
+# Platform API
+
 ### DeviceContext
+
+Device context from the device in relation to the device identity
+
 #### Reference file : deviceContext.proto
 
 <a name="deviceContext-DeviceContext"></a>

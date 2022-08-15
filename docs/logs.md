@@ -3,6 +3,7 @@ Like any other application, logging is an essential part within Scurid. It is al
 Logs are delivered right within the app and are stored in the Scurid Backend. In addition to logging critical operations, they are also signed and can be verified on demand to prevent any kind of tampering.
 
 Logs are divided into two major categories :
+
 * Application (App) log, which is essentially set of operational records of the Scurid Platform App application
 * Identity log, which is specifically recorded as user or as backend automates the identity workflow processing
 

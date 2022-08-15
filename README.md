@@ -19,6 +19,18 @@ Since `mike` which we use for versioning our doc won't do it automatically.
 git fetch
 ```
 
+## Creating new version
+This be used for first testing it locally
+
+````shell
+mike deploy <major.minor> <alias>
+````
+
+e.g.
+````shell
+mike deploy v22.0.0-beta.0 v22.0.0
+````
+
 Deploy
 
 ```shell

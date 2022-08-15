@@ -1,4 +1,3 @@
-## Logs
 #### Reference file : log.proto
 
 <a name="log-AppLog"></a>
