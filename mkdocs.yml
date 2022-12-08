@@ -52,7 +52,10 @@ nav:
               - 'Device Context' : 'deviceContext.md'
               - 'Logs' : 'logapi.md'
   - 'Microscurid':
+      - 'Create Identity Using Microscurid': 'createIdentity.md'
       - 'Sending Registration Request of Identity from Microscurid': 'registrationRequestOfIdentity.md'
+      - 'How to Get Started with Microscurid': 'gettingStarted.md'
+      - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:
