@@ -51,6 +51,8 @@ nav:
               - 'Platform API v2' : 'platformapiv2.md'
               - 'Device Context' : 'deviceContext.md'
               - 'Logs' : 'logapi.md'
+  - 'Microscurid':
+      - 'Sending Registration Request of Identity from Microscurid': 'registrationRequestOfIdentity.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:
