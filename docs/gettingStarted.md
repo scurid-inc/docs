@@ -14,6 +14,7 @@ Contact us at TODO: email address or link
 === "STM32"
 
     Microscurid-c works on the [STM32WB Series](https://www.st.com/en/microcontrollers-microprocessors/stm32wb-series.html).
+    A separate adapter for ethernet connection may be needed, e.g. [PoE FeatherWing](https://www.crowdsupply.com/silicognition/poe-featherwing)
 
     Getting started with the example code may help you grasp the idea of what Microscurid-c is doing.
     Below are the instructions of how to configure the network and timestamp settings.

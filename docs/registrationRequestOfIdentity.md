@@ -1,16 +1,3 @@
-
-
-=== "STM32"
-    ```c
-
-    ```
-
-Pass the DID to the `run_tcp_client` function.
-The TCP client with TLS will send the data to the Scurid server.
-
-=== "AMD64"
-    ```c
-
-    ```
-
 ## Scurid App
+
+Once the data is sent via the TLS connection, you can approve the device on the Scurid App.

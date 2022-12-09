@@ -21,6 +21,8 @@ You must include the header file and create the DID
             printf("Error generating did, trying again in 100ms...\r\n");
             HAL_Delay(100);
         }
+
+        printf("\ndid:%s:%s\r\n\n", did.method, did.identifier);
     }
     ```
 
