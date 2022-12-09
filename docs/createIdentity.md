@@ -8,28 +8,24 @@ You must download the microscurid-c library.
 
 ## Steps
 
+You must include the header file and create the DID
+
 === "STM32"
-
-Pass the random number generator and the pointer of the DID struct to the `create_identity` function.
-
     ```c
     #include "microscurid.h"
 
-...
-
-    scurid_did_t did;
-    while (create_identity(task_interface->hrng, &did) == -1)
     {
-        printf("Error generating did, trying again in 100ms...\r\n");
-        HAL_Delay(100);
+        scurid_did_t did;
+        while (create_identity(task_interface->hrng, &did) == -1)
+        {
+            printf("Error generating did, trying again in 100ms...\r\n");
+            HAL_Delay(100);
+        }
     }
     ```
 
 
 === "AMD64"
-
-Pass the pointer of the DID struct to the `create_identity` function.
-
     ```c
     #include "microscurid.h"
 
@@ -37,7 +33,6 @@ Pass the pointer of the DID struct to the `create_identity` function.
         scurid_did_t did;
 
         create_identity(&did);
+        return 0;
     }
-
-    return 0;
     ```
