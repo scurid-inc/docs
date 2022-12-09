@@ -7,59 +7,58 @@ Microscurid-c can be used to generate identities and register them on the server
 
 ### Setting up
 
-Contact us
+Contact us at TODO: email address or link
 
 ### Platform Details
 
-#### Microcontroller
+=== "STM32"
 
-Getting started with the example code may help you grasp the idea of what Microscurid-c is doing.
-Below are the instructions of how to configure the network and timestamp settings.
+    Microscurid-c works on the [STM32WB Series](https://www.st.com/en/microcontrollers-microprocessors/stm32wb-series.html).
 
-##### Configuring the server IP, gateway IP, and server port
+    Getting started with the example code may help you grasp the idea of what Microscurid-c is doing.
+    Below are the instructions of how to configure the network and timestamp settings.
 
-The gateway IP, subnet masks, etc. can be configured in
-`examples/p-nucleo-wb55/Core/Src/app_freertos.c`.
+    #### Configuring the server IP / gateway IP / server port
 
-```
-#define BACKEND_SERVER_PORT 8888
+    The gateway IP, subnet masks, etc. can be configured in
+    `examples/p-nucleo-wb55/Core/Src/app_freertos.c`.
 
-static wiz_NetInfo g_net_info = { .mac = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },// MAC address
-		.ip = { 192, 168, 151, 127 },                    // IP address
-		.sn = { 255, 255, 254, 0 },                    	// Subnet Mask
-		.gw = { 192, 168, 150, 1 },                     // Gateway
-		.dns = { 192, 168, 150, 1 },                    // DNS server
-		.dhcp = NETINFO_DHCP                       	// DHCP enable/disable
-		};
+    ```
+    #define BACKEND_SERVER_PORT 8888
 
-unsigned char BACKEND_SERVER_IP[4] = {192,168,151,128};
-```
+    static wiz_NetInfo g_net_info = { .mac = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },// MAC address
+            .ip = { 192, 168, 151, 127 },                    // IP address
+            .sn = { 255, 255, 254, 0 },                    	// Subnet Mask
+            .gw = { 192, 168, 150, 1 },                     // Gateway
+            .dns = { 192, 168, 150, 1 },                    // DNS server
+            .dhcp = NETINFO_DHCP                       	// DHCP enable/disable
+            };
 
-##### Configuring the RTC timer
+    unsigned char BACKEND_SERVER_IP[4] = {192,168,151,128};
+    ```
 
-The RTC timer must be configured to provide an accurate timestamp.
-Configure them here in: `microscurid-c/examples/p-nucleo-wb55/Core/Src/main.c`
+    #### Configuring the RTC timer
 
-```
-  sTime.Hours = 0x11;
-  sTime.Minutes = 0x32;
-  sTime.Seconds = 0x0;
-  sTime.SubSeconds = 0x0;
-  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sDate.WeekDay = RTC_WEEKDAY_SATURDAY;
-  sDate.Month = RTC_MONTH_NOVEMBER;
-  sDate.Date = 0x26;
-  sDate.Year = 0x2022;
-```
+    The RTC timer must be configured to provide an accurate timestamp.
+    Configure them here in: `microscurid-c/examples/p-nucleo-wb55/Core/Src/main.c`
 
-#### Linux
+    ```
+    sTime.Hours = 0x11;
+    sTime.Minutes = 0x32;
+    sTime.Seconds = 0x0;
+    sTime.SubSeconds = 0x0;
+    sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+    sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+    if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    sDate.WeekDay = RTC_WEEKDAY_SATURDAY;
+    sDate.Month = RTC_MONTH_NOVEMBER;
+    sDate.Date = 0x26;
+    sDate.Year = 0x2022;
+    ```
 
-Write about
+=== "Linux"
 
-- where to place the certificate file
-- how to configure the IP address
+    Coming soon.

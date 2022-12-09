@@ -1,34 +1,19 @@
-#### Network Configurations
-
-```
-static wiz_NetInfo g_net_info = { .mac = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },// MAC address
-		.ip = { 192, 168, 151, 127 },                    // IP address, fill in random numbers if using DHCP
-		.sn = { 255, 255, 254, 0 },                    	// Subnet Mask
-		.gw = { 192, 168, 150, 1 },                     // Gateway
-		.dns = { 192, 168, 150, 1 },                    // DNS server
-		.dhcp = NETINFO_DHCP                       	// DHCP enable/disable
-		};
-
-```
-
-#### 
-
 #### Adding the certificate
 
 === "STM32"
 
-Add the content of the certificate to `examples/p-nucleo-wb55/Drivers/TLS/certificate.h`.
+    Add the content of the certificate to `examples/p-nucleo-wb55/Drivers/TLS/certificate.h`.
 
 === "AMD64"
 
-Place the certificate file to the same directory as the binary file to be run.
+    Place the certificate file to the same directory as the binary file to be run.
 
 #### Actual code
 
 
 === "STM32"
     ```c
-wiz_tls_context tlsContext;
+    wiz_tls_context tlsContext;
 
 	ret = wiz_tls_init(&tlsContext,&server_fd); // should return 1
 
@@ -53,9 +38,6 @@ wiz_tls_context tlsContext;
     ret = wiz_tls_write(&tlsContext, g_send_buf, data_len);
     ```
 
-Pass the DID to the `run_tcp_client` function.
-The TCP client with TLS will send the data to the Scurid server.
-
 === "AMD64"
     ```c
     scurid_did_t did;
@@ -64,3 +46,5 @@ The TCP client with TLS will send the data to the Scurid server.
 
     run_tcp_client(did);
     ```
+    Pass the DID to the `run_tcp_client` function.
+    The TCP client with TLS will send the data to the Scurid server.
