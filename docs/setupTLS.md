@@ -18,6 +18,22 @@
     "-----END CERTIFICATE----- \r\n";
     ```
 
+    Here is a simple python script to edit the certificate to this format:
+
+    ```python
+    file1 = open('ca.crt', 'r')
+    Lines = file1.readlines()
+    n = len(Lines)
+    print(n)
+    
+    with open('ca-edited.crt', 'w') as f:
+        for i, line in enumerate(Lines):
+            if i == n - 1:
+                f.write('"' + line.strip() + ' \\r\\n' + '"' + ";\n")
+                break
+            f.write('"' + line.strip() + ' \\r\\n' + '"' + " \\" + "\n")
+    ```
+
 === "AMD64"
 
     Coming soon.
