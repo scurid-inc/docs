@@ -1,7 +1,7 @@
 #### Adding the certificate
 
 === "STM32"
-
+    STM32 uses [Mbed TLS](https://github.com/Mbed-TLS/mbedtls) and its APIs.
     Add the content of the certificate to `examples/p-nucleo-wb55/Drivers/TLS/certificate.h`.
     To use the certificate in STM32, we must format the file so that it resembles the one below:
 
@@ -26,6 +26,8 @@
 
 
 === "STM32"
+    It takes about 2~3 minutes to establish the TLS connection on the STM32.
+
     ```c
     wiz_tls_context tlsContext;
 
@@ -46,6 +48,9 @@
     /*  Write data to the SSL channel  */
     ret = wiz_tls_write(&tlsContext, g_send_buf, data_len);
     ```
+
+    If running locally, you can check on Wireshark what is happening.
+    The flow graph should look similar to here: ![flow_graph](img/tls_flow_graph.png)
 
 === "AMD64"
     Coming soon.

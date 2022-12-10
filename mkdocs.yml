@@ -54,8 +54,8 @@ nav:
   - 'Microscurid':
       - 'How to Get Started with Microscurid': 'gettingStarted.md'
       - 'Create Identity Using Microscurid': 'createIdentity.md'
-      - 'Sending Registration Request of Identity from Microscurid': 'registrationRequestOfIdentity.md'
       - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
+      - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:
