@@ -30,19 +30,31 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
 === "On-Premise"
 
     1. Download the binary for your platform from [here](https://drive.google.com/drive/folders/1cy_GmsOhy23SdMFTmfclmlHoKtDz7p_s?usp=sharing)
-    2. Open a terminal and execute the binary
+    2. Create a config folder accessible by the binary, and create config.yaml file, with following
+        ```shell
+        ServerCert:
+         CommonName: example.com
+         Country: JP
+         Province: Tokyo
+         Locality: Tokyo
+         Organization: Example Inc
+         OrganizationalUnit: Software Team
+         EmailAddress: info@example.com
+         LifetimeDays: 730 # default 2 years, minimum 1 month, maximum 10 years
+        ```
+    3. Open a terminal and execute the binary
     === "linux"
         ```shell
-        ./service-beta-vX.X.X-linux
+        ./service-beta-vX.X.X-linux -config config/config.yaml
         ``` 
     === "macos"
         ```shell
-        ./service-beta-vX.X.X-darwin
+        ./service-beta-vX.X.X-darwin -config config/config.yaml
         ```
 
     === "windows"
         ```shell
-        .\service-beta-vX.X.X-win64
+        .\service-beta-vX.X.X-win64 -config config/config.yaml
         ```
 
 === "Managed"
