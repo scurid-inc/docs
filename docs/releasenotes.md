@@ -1,5 +1,33 @@
 # Release Notes
 
+## December 11, 2022
+
+## General changes
+* Support for Microcontrollers esp. STM32, with launch of MicroScurid-C library
+* Integration into CockroachDB for offering low code global storage for IoT/IIoT data
+* Communication between Microcontroller and Scurid Server over protocol buffers
+* Renaming Scurid backend to Scurid Server
+* Each Scurid Server deployment to generate and manage its own server certificate
+
+### Scurid App
+* Select and create desired region for data storage
+* Simplified flow to create database from the App
+* Enhanced user on-boarding process to define data storage region
+* Assign agents to data storage region
+
+### Scurid Server
+* Added TCP server to handle communication with Microcontrollers
+* Several new internal APIs for subsystems, and data stream handling
+* Region and connection handler for CockroachDB
+* Database creation support with CockroachDB
+* 
+
+### MicroScurid-C
+* Create distributed identity (DID)
+* Registration of identity with Scurid Server
+* Setup TLS connection with Scurid Server
+
+
 ## August 15, 2022
 
 ## General changes
