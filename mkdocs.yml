@@ -42,6 +42,11 @@ nav:
       - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
       - 'Logging': 'logs.md'
       - 'Glossary': 'glossary.md'
+  - 'MicroScurid':
+      - 'How to Get Started with Microscurid': 'gettingStartedMicroscurid.md'
+      - 'Create Identity Using Microscurid': 'createIdentity.md'
+      - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
+      - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
   - 'APIs':
       - 'gRPC':
           - 'Scurid Edge Agent': 'edgeAgent.md'
@@ -50,12 +55,9 @@ nav:
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
               - 'Device Context' : 'deviceContext.md'
+              - 'Device Data' : 'deviceData.md'
+              - 'MicroScurid' : 'microscurid.md'
               - 'Logs' : 'logapi.md'
-  - 'Microscurid':
-      - 'How to Get Started with Microscurid': 'gettingStarted.md'
-      - 'Create Identity Using Microscurid': 'createIdentity.md'
-      - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
-      - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:

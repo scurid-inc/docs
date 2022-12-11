@@ -4,11 +4,11 @@ Microscurid enables you to create identities on your MCUs.
 
 ## Pre-requisites
 
-You must download the microscurid-c library.
+You must download the MicroScurid-c library. Contact us at info@scurid.com
 
 ## Steps
 
-You must include the header file and create the DID
+You must include the header file and create the identity
 
 === "STM32"
     ```c

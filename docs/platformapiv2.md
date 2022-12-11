@@ -1,15 +1,74 @@
+# Platform APIv2 Documentation
+<a name="top"></a>
+
+## Table of Contents
+
+- [deviceContext.proto](#deviceContext-proto)
+    - [DeviceContext](#deviceContext-DeviceContext)
+    - [MacAddress](#deviceContext-MacAddress)
+    - [OsInfo](#deviceContext-OsInfo)
+  
+- [log.proto](#log-proto)
+    - [AppLog](#log-AppLog)
+    - [IdentityLog](#log-IdentityLog)
+    - [LogRange](#log-LogRange)
+  
+- [platformapiv2.proto](#platformapiv2-proto)
+    - [AgentsStruct](#platform-v2-AgentsStruct)
+    - [GetAgentInfoReq](#platform-v2-GetAgentInfoReq)
+    - [GetAgentInfoRes](#platform-v2-GetAgentInfoRes)
+    - [GetAgentsListReq](#platform-v2-GetAgentsListReq)
+    - [GetAgentsListRes](#platform-v2-GetAgentsListRes)
+    - [GetAppLogsReq](#platform-v2-GetAppLogsReq)
+    - [GetAppLogsRes](#platform-v2-GetAppLogsRes)
+    - [GetIDSettingsReq](#platform-v2-GetIDSettingsReq)
+    - [GetIDSettingsRes](#platform-v2-GetIDSettingsRes)
+    - [GetIdentityInfoReq](#platform-v2-GetIdentityInfoReq)
+    - [GetIdentityInfoRes](#platform-v2-GetIdentityInfoRes)
+    - [GetIdentityLogReq](#platform-v2-GetIdentityLogReq)
+    - [GetIdentityLogRes](#platform-v2-GetIdentityLogRes)
+    - [RecordAppLogsReq](#platform-v2-RecordAppLogsReq)
+    - [RecordAppLogsRes](#platform-v2-RecordAppLogsRes)
+    - [RegisterAgentReq](#platform-v2-RegisterAgentReq)
+    - [RegisterAgentRes](#platform-v2-RegisterAgentRes)
+    - [RevokeAgentReq](#platform-v2-RevokeAgentReq)
+    - [RevokeAgentRes](#platform-v2-RevokeAgentRes)
+    - [SetIDSettingsReq](#platform-v2-SetIDSettingsReq)
+    - [SetIDSettingsRes](#platform-v2-SetIDSettingsRes)
+    - [VerifyAgentReq](#platform-v2-VerifyAgentReq)
+    - [VerifyAgentRes](#platform-v2-VerifyAgentRes)
+  
+    - [ScuridServerV2](#platform-v2-Platform)
+    - [Subsystems](#platform-v2-Subsystems)
+  
+- [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="deviceContext-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## deviceContext.proto
+
+
+
+<a name="deviceContext-DeviceContext"></a>
+
 ### DeviceContext
 Device context from the device in relation to the device identity
-#### Reference file : deviceContext.proto
 
-| Field        | Type                                    | Label    | Description                                                                              |
-|--------------|-----------------------------------------|----------|------------------------------------------------------------------------------------------|
-| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent                       |
-| ipAddress    | [string](#string)                       |          | optional, IP address                                                                     |
-| cpu          | [string](#string)                       |          | optional, number of CPUs available                                                       |
-| ram          | [string](#string)                       |          | optional, RAM size on the device                                                         |
-| imeiNumber   | [string](#string)                       |          | optional, International Mobile Equipment Identity, optional, capture if one is available |
-| osType       | [OsInfo](#deviceContext-OsInfo)         |          |                                                                                          |
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent |
+| ipAddress | [string](#string) |  | optional, IP address |
+| cpu | [string](#string) |  | optional, number of CPUs available |
+| ram | [string](#string) |  | optional, RAM size on the device |
+| imeiNumber | [string](#string) |  | optional, International Mobile Equipment Identity, optional, capture if one is available |
+| osType | [OsInfo](#deviceContext-OsInfo) |  |  |
+
+
+
 
 
 
@@ -26,21 +85,109 @@ list of macAddresses from the devices
 | name | [string](#string) |  | interface&#39;s name e.g. en0 |
 
 
+
+
+
+
 <a name="deviceContext-OsInfo"></a>
 
 ### OsInfo
 OsInfo message structure defining standard OS info used within the system
 
 
-| Field  | Type              | Label | Description                          |
-|--------|-------------------|-------|--------------------------------------|
-| osType | [string](#string) |       | optional, e.g. darwin, windows, etc. |
-| arch   | [string](#string) |       | optional, e.g. amd64 etc.            |
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| osType | [string](#string) |  | optional, e.g. darwin, windows, etc. |
+| arch | [string](#string) |  | optional, e.g. amd64 etc. |
 
 
-## Platform API v2
 
-#### Reference file : platformapiv2.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="log-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## log.proto
+
+
+
+<a name="log-AppLog"></a>
+
+### AppLog
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [string](#string) |  | INFO, WARN, DEBUG, TRACE, ERROR |
+| message | [string](#string) |  | string value of the message |
+| eventTime | [int64](#int64) |  | UNIX NANO timestamp |
+
+
+
+
+
+
+<a name="log-IdentityLog"></a>
+
+### IdentityLog
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| action | [string](#string) |  | e.g. approved, revoked, pending or rejected. |
+| eventTimestamp | [int64](#int64) |  | recorded timestamp of the event |
+| signature | [string](#string) |  | tamper evident signature on the |
+| platformDID | [string](#string) |  | user who performed the action - currently this is going to be the Platform DID |
+| did | [string](#string) |  | identity for device or agents |
+
+
+
+
+
+
+<a name="log-LogRange"></a>
+
+### LogRange
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| from | [int64](#int64) |  | start timestamp |
+| to | [int64](#int64) |  | stop timestamp |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="platformapiv2-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## platformapiv2.proto
+
+
 
 <a name="platform-v2-AgentsStruct"></a>
 
@@ -63,6 +210,9 @@ OsInfo message structure defining standard OS info used within the system
 | platformIdentity | [string](#string) |  | platform&#39;s identity |
 | approvalKey | [bytes](#bytes) |  | post approval this key is returned to the agent for reference DeviceContext &#43; Requested on &#43; ApprovedOn &#43; Agent&#39;s DID. THIS is also used as the key which will be delivered to |
 | verifiedOn | [int64](#int64) |  | Unix timestamp for verification |
+
+
+
 
 
 
@@ -403,11 +553,11 @@ SetIDSettingsRes is the response from the backend
 
 
 
+ 
 
+ 
 
-
-
-
+ 
 
 
 <a name="platform-v2-Platform"></a>
@@ -438,7 +588,7 @@ Provides configuration possibilities for different components in the system
 | RecordAppLogs | [RecordAppLogsReq](#platform-v2-RecordAppLogsReq) | [RecordAppLogsRes](#platform-v2-RecordAppLogsRes) | RecordAppLogs records Scurid App logs |
 | GetAppLogs | [GetAppLogsReq](#platform-v2-GetAppLogsReq) | [GetAppLogsRes](#platform-v2-GetAppLogsRes) stream | GetAppLogs fetches app log persisted as history |
 
-
+ 
 
 
 

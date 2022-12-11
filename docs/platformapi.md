@@ -1,24 +1,116 @@
-# Platform API
+# Platform API Documentation
+<a name="top"></a>
 
-### DeviceContext
+## Table of Contents
 
-Device context from the device in relation to the device identity
+- [deviceContext.proto](#deviceContext-proto)
+    - [DeviceContext](#deviceContext-DeviceContext)
+    - [MacAddress](#deviceContext-MacAddress)
+    - [OsInfo](#deviceContext-OsInfo)
+  
+- [platformapi.proto](#platformapi-proto)
+    - [AddTagsReq](#scuridplatformagentapi-v1-AddTagsReq)
+    - [AddTagsRes](#scuridplatformagentapi-v1-AddTagsRes)
+    - [AgentInfoForDID](#scuridplatformagentapi-v1-AgentInfoForDID)
+    - [AllDevicesListStruct](#scuridplatformagentapi-v1-AllDevicesListStruct)
+    - [AssignTagsToIdentityReq](#scuridplatformagentapi-v1-AssignTagsToIdentityReq)
+    - [AssignTagsToIdentityRes](#scuridplatformagentapi-v1-AssignTagsToIdentityRes)
+    - [CountriesStruct](#scuridplatformagentapi-v1-CountriesStruct)
+    - [CreateIdentityReq](#scuridplatformagentapi-v1-CreateIdentityReq)
+    - [CreateIdentityRes](#scuridplatformagentapi-v1-CreateIdentityRes)
+    - [DownloadFilesReq](#scuridplatformagentapi-v1-DownloadFilesReq)
+    - [DownloadFilesRes](#scuridplatformagentapi-v1-DownloadFilesRes)
+    - [EmptyRequest](#scuridplatformagentapi-v1-EmptyRequest)
+    - [FileInfo](#scuridplatformagentapi-v1-FileInfo)
+    - [FileStorePathReq](#scuridplatformagentapi-v1-FileStorePathReq)
+    - [FileStorePathRes](#scuridplatformagentapi-v1-FileStorePathRes)
+    - [GetAllDevicesListReq](#scuridplatformagentapi-v1-GetAllDevicesListReq)
+    - [GetAllDevicesListRes](#scuridplatformagentapi-v1-GetAllDevicesListRes)
+    - [GetCountriesListReq](#scuridplatformagentapi-v1-GetCountriesListReq)
+    - [GetCountriesListRes](#scuridplatformagentapi-v1-GetCountriesListRes)
+    - [GetDevicePayloadsWithSignatureReq](#scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureReq)
+    - [GetDevicePayloadsWithSignatureRes](#scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureRes)
+    - [GetDevicePayloadsWithSignatureStruct](#scuridplatformagentapi-v1-GetDevicePayloadsWithSignatureStruct)
+    - [GetLicenseStatusReq](#scuridplatformagentapi-v1-GetLicenseStatusReq)
+    - [GetLicenseStatusRes](#scuridplatformagentapi-v1-GetLicenseStatusRes)
+    - [GetOnboardingPkgReq](#scuridplatformagentapi-v1-GetOnboardingPkgReq)
+    - [GetOnboardingPkgRes](#scuridplatformagentapi-v1-GetOnboardingPkgRes)
+    - [GetPendingRequestsListReq](#scuridplatformagentapi-v1-GetPendingRequestsListReq)
+    - [GetPendingRequestsListRes](#scuridplatformagentapi-v1-GetPendingRequestsListRes)
+    - [GetPlatformDIDReq](#scuridplatformagentapi-v1-GetPlatformDIDReq)
+    - [GetPlatformDIDRes](#scuridplatformagentapi-v1-GetPlatformDIDRes)
+    - [GetRejectedIdentitiesListReq](#scuridplatformagentapi-v1-GetRejectedIdentitiesListReq)
+    - [GetRejectedIdentitiesListRes](#scuridplatformagentapi-v1-GetRejectedIdentitiesListRes)
+    - [GetTagsReq](#scuridplatformagentapi-v1-GetTagsReq)
+    - [GetTagsRes](#scuridplatformagentapi-v1-GetTagsRes)
+    - [GetValidIdentitiesListReq](#scuridplatformagentapi-v1-GetValidIdentitiesListReq)
+    - [GetValidIdentitiesListRes](#scuridplatformagentapi-v1-GetValidIdentitiesListRes)
+    - [GetValidIdentityInfoReq](#scuridplatformagentapi-v1-GetValidIdentityInfoReq)
+    - [GetValidIdentityInfoRes](#scuridplatformagentapi-v1-GetValidIdentityInfoRes)
+    - [ListIdentitiesUnderATagReq](#scuridplatformagentapi-v1-ListIdentitiesUnderATagReq)
+    - [ListIdentitiesUnderATagRes](#scuridplatformagentapi-v1-ListIdentitiesUnderATagRes)
+    - [LocalStorageInitReq](#scuridplatformagentapi-v1-LocalStorageInitReq)
+    - [LocalStorageInitRes](#scuridplatformagentapi-v1-LocalStorageInitRes)
+    - [NewPlatformUserInfo](#scuridplatformagentapi-v1-NewPlatformUserInfo)
+    - [PendingRequestsStruct](#scuridplatformagentapi-v1-PendingRequestsStruct)
+    - [PostDeviceDataWithSignatureReq](#scuridplatformagentapi-v1-PostDeviceDataWithSignatureReq)
+    - [PostDeviceDataWithSignatureRes](#scuridplatformagentapi-v1-PostDeviceDataWithSignatureRes)
+    - [PostDeviceDataWithSignatureStruct](#scuridplatformagentapi-v1-PostDeviceDataWithSignatureStruct)
+    - [RecordRejectedDIDReq](#scuridplatformagentapi-v1-RecordRejectedDIDReq)
+    - [RecordRejectedDIDRes](#scuridplatformagentapi-v1-RecordRejectedDIDRes)
+    - [RegisterDeviceDIDReq](#scuridplatformagentapi-v1-RegisterDeviceDIDReq)
+    - [RegisterDeviceDIDRes](#scuridplatformagentapi-v1-RegisterDeviceDIDRes)
+    - [RejectedIdentitiesListStruct](#scuridplatformagentapi-v1-RejectedIdentitiesListStruct)
+    - [RemoveTagsReq](#scuridplatformagentapi-v1-RemoveTagsReq)
+    - [RemoveTagsRes](#scuridplatformagentapi-v1-RemoveTagsRes)
+    - [RequestIdentityStatusReq](#scuridplatformagentapi-v1-RequestIdentityStatusReq)
+    - [RequestIdentityStatusRes](#scuridplatformagentapi-v1-RequestIdentityStatusRes)
+    - [RequestRegistrationOfDeviceReq](#scuridplatformagentapi-v1-RequestRegistrationOfDeviceReq)
+    - [RequestRegistrationOfDeviceRes](#scuridplatformagentapi-v1-RequestRegistrationOfDeviceRes)
+    - [RevokeDeviceDIDReq](#scuridplatformagentapi-v1-RevokeDeviceDIDReq)
+    - [RevokeDeviceDIDRes](#scuridplatformagentapi-v1-RevokeDeviceDIDRes)
+    - [SignBytePayloadWithIdentityReq](#scuridplatformagentapi-v1-SignBytePayloadWithIdentityReq)
+    - [SignBytePayloadWithIdentityRes](#scuridplatformagentapi-v1-SignBytePayloadWithIdentityRes)
+    - [SignPayloadReq](#scuridplatformagentapi-v1-SignPayloadReq)
+    - [SignPayloadRes](#scuridplatformagentapi-v1-SignPayloadRes)
+    - [TagStruct](#scuridplatformagentapi-v1-TagStruct)
+    - [UploadFilesReq](#scuridplatformagentapi-v1-UploadFilesReq)
+    - [UploadFilesRes](#scuridplatformagentapi-v1-UploadFilesRes)
+    - [ValidIdentitiesListStruct](#scuridplatformagentapi-v1-ValidIdentitiesListStruct)
+    - [VerifyBytePayloadWithIdentityReq](#scuridplatformagentapi-v1-VerifyBytePayloadWithIdentityReq)
+    - [VerifyBytePayloadWithIdentityRes](#scuridplatformagentapi-v1-VerifyBytePayloadWithIdentityRes)
+    - [VerifyDeviceDIDReq](#scuridplatformagentapi-v1-VerifyDeviceDIDReq)
+    - [VerifyDeviceDIDRes](#scuridplatformagentapi-v1-VerifyDeviceDIDRes)
+    - [VerifySignatureReq](#scuridplatformagentapi-v1-VerifySignatureReq)
+    - [VerifySignatureRes](#scuridplatformagentapi-v1-VerifySignatureRes)
+  
+    - [ScuridServerAPI](#scuridplatformagentapi-v1-ScuridPlatformAgentAPI)
+  
+- [Scalar Value Types](#scalar-value-types)
 
-#### Reference file : deviceContext.proto
+
+
+<a name="deviceContext-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## deviceContext.proto
+
+
 
 <a name="deviceContext-DeviceContext"></a>
 
+### DeviceContext
 Device context from the device in relation to the device identity
 
 
-| Field        | Type                                    | Label    | Description                                                                              |
-|--------------|-----------------------------------------|----------|------------------------------------------------------------------------------------------|
-| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent                       |
-| ipAddress    | [string](#string)                       |          | optional, IP address                                                                     |
-| cpu          | [string](#string)                       |          | optional, number of CPUs available                                                       |
-| ram          | [string](#string)                       |          | optional, RAM size on the device                                                         |
-| imeiNumber   | [string](#string)                       |          | optional, International Mobile Equipment Identity, optional, capture if one is available |
-| osType       | [OsInfo](#deviceContext-OsInfo)         |          |                                                                                          |
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent |
+| ipAddress | [string](#string) |  | optional, IP address |
+| cpu | [string](#string) |  | optional, number of CPUs available |
+| ram | [string](#string) |  | optional, RAM size on the device |
+| imeiNumber | [string](#string) |  | optional, International Mobile Equipment Identity, optional, capture if one is available |
+| osType | [OsInfo](#deviceContext-OsInfo) |  |  |
 
 
 
@@ -38,20 +130,39 @@ list of macAddresses from the devices
 | name | [string](#string) |  | interface&#39;s name e.g. en0 |
 
 
+
+
+
+
 <a name="deviceContext-OsInfo"></a>
 
 ### OsInfo
 OsInfo message structure defining standard OS info used within the system
 
 
-| Field  | Type              | Label | Description                          |
-|--------|-------------------|-------|--------------------------------------|
-| osType | [string](#string) |       | optional, e.g. darwin, windows, etc. |
-| arch   | [string](#string) |       | optional, e.g. amd64 etc.            |
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| osType | [string](#string) |  | optional, e.g. darwin, windows, etc. |
+| arch | [string](#string) |  | optional, e.g. amd64 etc. |
 
 
-# Platform API
-#### Reference file platformapi.proto
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="platformapi-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## platformapi.proto
 
 
 
@@ -1204,11 +1315,11 @@ This info will be added to the Platform Agent&#39;s local storage
 
 
 
+ 
 
+ 
 
-
-
-
+ 
 
 
 <a name="scuridplatformagentapi-v1-ScuridPlatformAgentAPI"></a>
@@ -1249,7 +1360,7 @@ This info will be added to the Platform Agent&#39;s local storage
 | DownloadFiles | [DownloadFilesReq](#scuridplatformagentapi-v1-DownloadFilesReq) | [DownloadFilesRes](#scuridplatformagentapi-v1-DownloadFilesRes) stream | Used for downloading device pkgs |
 | FileStorePath | [FileStorePathReq](#scuridplatformagentapi-v1-FileStorePathReq) | [FileStorePathRes](#scuridplatformagentapi-v1-FileStorePathRes) | FileStorePath provides path for the device files |
 
-
+ 
 
 
 

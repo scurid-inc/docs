@@ -1,4 +1,31 @@
-#### Reference file : auth.proto
+# Auth Documentation
+<a name="top"></a>
+
+## Table of Contents
+
+- [auth.proto](#auth-proto)
+    - [LoginReq](#auth-v1-LoginReq)
+    - [LoginRes](#auth-v1-LoginRes)
+    - [RefreshTokenReq](#auth-v1-RefreshTokenReq)
+    - [RefreshTokenRes](#auth-v1-RefreshTokenRes)
+    - [SetInitialPassphraseReq](#auth-v1-SetInitialPassphraseReq)
+    - [SetInitialPassphraseRes](#auth-v1-SetInitialPassphraseRes)
+    - [VerifyTokenReq](#auth-v1-VerifyTokenReq)
+    - [VerifyTokenRes](#auth-v1-VerifyTokenRes)
+  
+    - [Auth](#auth-v1-Auth)
+  
+- [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="auth-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## auth.proto
+
+
+
 <a name="auth-v1-LoginReq"></a>
 
 ### LoginReq

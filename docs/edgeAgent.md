@@ -1,11 +1,58 @@
-These are the set of APIs that are exposed when running `Scurid Edge Agent` on an IoT device.
+# Scurid Edge Agent APIs Documentation
+<a name="top"></a>
 
-#### Reference filename : edgeagent.proto
+## Table of Contents
+
+- [edgeagent.proto](#edgeagent-proto)
+    - [CreateDeviceIdentityReq](#edgeagentapis-v1-CreateDeviceIdentityReq)
+    - [CreateDeviceIdentityRes](#edgeagentapis-v1-CreateDeviceIdentityRes)
+    - [DeleteDeviceIdentityReq](#edgeagentapis-v1-DeleteDeviceIdentityReq)
+    - [DeleteDeviceIdentityRes](#edgeagentapis-v1-DeleteDeviceIdentityRes)
+    - [DownloadFilesReq](#edgeagentapis-v1-DownloadFilesReq)
+    - [DownloadFilesRes](#edgeagentapis-v1-DownloadFilesRes)
+    - [Empty](#edgeagentapis-v1-Empty)
+    - [GetDeviceIdentityReq](#edgeagentapis-v1-GetDeviceIdentityReq)
+    - [GetDeviceIdentityRes](#edgeagentapis-v1-GetDeviceIdentityRes)
+    - [GetOnboardingPackageReq](#edgeagentapis-v1-GetOnboardingPackageReq)
+    - [GetOnboardingPackageRes](#edgeagentapis-v1-GetOnboardingPackageRes)
+    - [GetScuridEdgeAgentVersionRes](#edgeagentapis-v1-GetScuridEdgeAgentVersionRes)
+    - [GetTokenReq](#edgeagentapis-v1-GetTokenReq)
+    - [GetTokenRes](#edgeagentapis-v1-GetTokenRes)
+    - [RegisterDeviceIdentityReq](#edgeagentapis-v1-RegisterDeviceIdentityReq)
+    - [RegisterDeviceIdentityRes](#edgeagentapis-v1-RegisterDeviceIdentityRes)
+    - [SendDeviceDataReq](#edgeagentapis-v1-SendDeviceDataReq)
+    - [SendDeviceDataRes](#edgeagentapis-v1-SendDeviceDataRes)
+    - [SignBytePayloadWithIdentityReq](#edgeagentapis-v1-SignBytePayloadWithIdentityReq)
+    - [SignBytePayloadWithIdentityRes](#edgeagentapis-v1-SignBytePayloadWithIdentityRes)
+    - [SignWithIdentityReq](#edgeagentapis-v1-SignWithIdentityReq)
+    - [SignWithIdentityRes](#edgeagentapis-v1-SignWithIdentityRes)
+    - [VerifyBytePayloadWithIdentityReq](#edgeagentapis-v1-VerifyBytePayloadWithIdentityReq)
+    - [VerifyBytePayloadWithIdentityRes](#edgeagentapis-v1-VerifyBytePayloadWithIdentityRes)
+    - [VerifySignatureReq](#edgeagentapis-v1-VerifySignatureReq)
+    - [VerifySignatureRes](#edgeagentapis-v1-VerifySignatureRes)
+  
+    - [ScuridEdgeAgentAPI](#edgeagentapis-v1-ScuridEdgeAgentAPI)
+  
+- [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="edgeagent-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## edgeagent.proto
+
+
 
 <a name="edgeagentapis-v1-CreateDeviceIdentityReq"></a>
 
 ### CreateDeviceIdentityReq
 left blank intentionally
+
+
+
+
+
 
 <a name="edgeagentapis-v1-CreateDeviceIdentityRes"></a>
 
@@ -231,6 +278,37 @@ Response for registration request from the caller
 
 
 
+<a name="edgeagentapis-v1-SendDeviceDataReq"></a>
+
+### SendDeviceDataReq
+Note: ensure to acquire login token for the agent which is trying to send this data
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| identity | [string](#string) |  | device&#39;s public identity |
+| deviceData | [string](#string) |  | this is the json string |
+
+
+
+
+
+
+<a name="edgeagentapis-v1-SendDeviceDataRes"></a>
+
+### SendDeviceDataRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  | True/False, confirms if the data has been sent successfully, check for error if false |
+
+
+
+
+
+
 <a name="edgeagentapis-v1-SignBytePayloadWithIdentityReq"></a>
 
 ### SignBytePayloadWithIdentityReq
@@ -381,6 +459,7 @@ Response for registration request from the caller
 | RegisterDeviceIdentity | [RegisterDeviceIdentityReq](#edgeagentapis-v1-RegisterDeviceIdentityReq) | [RegisterDeviceIdentityRes](#edgeagentapis-v1-RegisterDeviceIdentityRes) | To be called for registering the device identity for the first time Expects additional device data that will be used for binding the identity with the device |
 | GetToken | [GetTokenReq](#edgeagentapis-v1-GetTokenReq) | [GetTokenRes](#edgeagentapis-v1-GetTokenRes) | GetToken to receive required token from Scurid Platform App Needed in order to access APIs that need authentication from the Scurid Platform App Not used for authentication locally on the Scurid Edge Agent Also used for refreshing the token |
 | DownloadFiles | [DownloadFilesReq](#edgeagentapis-v1-DownloadFilesReq) | [DownloadFilesRes](#edgeagentapis-v1-DownloadFilesRes) | Used for downloading one or more files number of files to download will depend on files prepared by the admin on Scurid Platform App |
+| SendDeviceData | [SendDeviceDataReq](#edgeagentapis-v1-SendDeviceDataReq) | [SendDeviceDataRes](#edgeagentapis-v1-SendDeviceDataRes) | invokes send data services within the Agent to send to the Scurid backend Server |
 
  
 

@@ -1,76 +1,138 @@
-# Logs Documentation
+# MicroScurid Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [log.proto](#log-proto)
-    - [AppLog](#log-AppLog)
-    - [IdentityLog](#log-IdentityLog)
-    - [LogRange](#log-LogRange)
+- [microscurid.proto](#microscurid-proto)
+    - [Login](#microscurid-v0-Login)
+    - [LoginRes](#microscurid-v0-LoginRes)
+    - [RegisterDeviceIdentity](#microscurid-v0-RegisterDeviceIdentity)
+    - [RegisterDeviceIdentityRes](#microscurid-v0-RegisterDeviceIdentityRes)
+    - [ReqMetadata](#microscurid-v0-ReqMetadata)
+    - [VerifySignature](#microscurid-v0-VerifySignature)
+  
+    - [ReqMetadata.ReqType](#microscurid-v0-ReqMetadata-ReqType)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="log-proto"></a>
+<a name="microscurid-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## log.proto
+## microscurid.proto
 
 
 
-<a name="log-AppLog"></a>
+<a name="microscurid-v0-Login"></a>
 
-### AppLog
+### Login
+Used for log in
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| username | [string](#string) |  | public DID |
+
+
+
+
+
+
+<a name="microscurid-v0-LoginRes"></a>
+
+### LoginRes
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| type | [string](#string) |  | INFO, WARN, DEBUG, TRACE, ERROR |
-| message | [string](#string) |  | string value of the message |
-| eventTime | [int64](#int64) |  | UNIX NANO timestamp |
+| token | [string](#string) |  | short lived encrypted token returned by the server on successful login |
 
 
 
 
 
 
-<a name="log-IdentityLog"></a>
+<a name="microscurid-v0-RegisterDeviceIdentity"></a>
 
-### IdentityLog
+### RegisterDeviceIdentity
+RegisterDeviceIdentity contains the required structure to register a newly generated Identity on the hardware
+TODO: Enhance with other hardware details to include DeviceContext
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| did | [string](#string) |  | DID generated on the device |
+| unixTime | [int64](#int64) |  | time of request |
+| deviceName | [string](#string) |  | device name provided by the user |
+
+
+
+
+
+
+<a name="microscurid-v0-RegisterDeviceIdentityRes"></a>
+
+### RegisterDeviceIdentityRes
+RegisterDeviceIdentityRes returns required response.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="microscurid-v0-ReqMetadata"></a>
+
+### ReqMetadata
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| action | [string](#string) |  | e.g. approved, revoked, pending or rejected. |
-| eventTimestamp | [int64](#int64) |  | recorded timestamp of the event |
-| signature | [string](#string) |  | tamper evident signature on the |
-| platformDID | [string](#string) |  | user who performed the action - currently this is going to be the Platform DID |
-| did | [string](#string) |  | identity for device or agents |
+| reqType | [ReqMetadata.ReqType](#microscurid-v0-ReqMetadata-ReqType) |  |  |
+| registerDeviceIdentity | [RegisterDeviceIdentity](#microscurid-v0-RegisterDeviceIdentity) | optional |  |
+| verifySignature | [VerifySignature](#microscurid-v0-VerifySignature) | optional |  |
+| login | [Login](#microscurid-v0-Login) | optional |  |
 
 
 
 
 
 
-<a name="log-LogRange"></a>
+<a name="microscurid-v0-VerifySignature"></a>
 
-### LogRange
+### VerifySignature
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| from | [int64](#int64) |  | start timestamp |
-| to | [int64](#int64) |  | stop timestamp |
+| signature | [string](#string) |  | TODO add data later |
 
 
 
 
 
  
+
+
+<a name="microscurid-v0-ReqMetadata-ReqType"></a>
+
+### ReqMetadata.ReqType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UnknownReq | 0 | UnknownReq, default fallback field in case unknown enum information is sent from the MicroScurid |
+| IdentityRegistration | 1 | IdentityRegistration, used for registering an incoming request with DID (identity) from the device via MicroScurid |
+| Verify | 2 | Verify, used for verifying the signature coming along with the identity and the |
+
 
  
 

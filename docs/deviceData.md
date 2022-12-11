@@ -1,70 +1,120 @@
-# Logs Documentation
+# Device Data Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [log.proto](#log-proto)
-    - [AppLog](#log-AppLog)
-    - [IdentityLog](#log-IdentityLog)
-    - [LogRange](#log-LogRange)
+- [deviceData.proto](#deviceData-proto)
+    - [BeaconStructure](#deviceData-BeaconStructure)
+    - [DataPacketMetadata](#deviceData-DataPacketMetadata)
+    - [DataTimestamp](#deviceData-DataTimestamp)
+    - [DeviceData](#deviceData-DeviceData)
+    - [GpsCoords](#deviceData-GpsCoords)
+    - [MaWaRouteDataStruct](#deviceData-MaWaRouteDataStruct)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="log-proto"></a>
+<a name="deviceData-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## log.proto
+## deviceData.proto
 
 
 
-<a name="log-AppLog"></a>
+<a name="deviceData-BeaconStructure"></a>
 
-### AppLog
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [string](#string) |  | INFO, WARN, DEBUG, TRACE, ERROR |
-| message | [string](#string) |  | string value of the message |
-| eventTime | [int64](#int64) |  | UNIX NANO timestamp |
-
-
-
-
-
-
-<a name="log-IdentityLog"></a>
-
-### IdentityLog
+### BeaconStructure
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| action | [string](#string) |  | e.g. approved, revoked, pending or rejected. |
-| eventTimestamp | [int64](#int64) |  | recorded timestamp of the event |
-| signature | [string](#string) |  | tamper evident signature on the |
-| platformDID | [string](#string) |  | user who performed the action - currently this is going to be the Platform DID |
-| did | [string](#string) |  | identity for device or agents |
+| uuid | [string](#string) |  |  |
+| major | [int32](#int32) |  |  |
+| minor | [int32](#int32) |  |  |
+| rssi | [int32](#int32) |  |  |
 
 
 
 
 
 
-<a name="log-LogRange"></a>
+<a name="deviceData-DataPacketMetadata"></a>
 
-### LogRange
+### DataPacketMetadata
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| from | [int64](#int64) |  | start timestamp |
-| to | [int64](#int64) |  | stop timestamp |
+| signature | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="deviceData-DataTimestamp"></a>
+
+### DataTimestamp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| timestamp | [int64](#int64) |  | device&#39;s UTC timestamp UNIX nanoseconds |
+
+
+
+
+
+
+<a name="deviceData-DeviceData"></a>
+
+### DeviceData
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| timestamp | [DataTimestamp](#deviceData-DataTimestamp) |  |  |
+| data | [string](#string) |  | contains device data |
+| metadata | [DataPacketMetadata](#deviceData-DataPacketMetadata) |  |  |
+
+
+
+
+
+
+<a name="deviceData-GpsCoords"></a>
+
+### GpsCoords
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| latitude | [string](#string) |  |  |
+| longitude | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="deviceData-MaWaRouteDataStruct"></a>
+
+### MaWaRouteDataStruct
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| timestamp | [DataTimestamp](#deviceData-DataTimestamp) |  |  |
+| beacon | [BeaconStructure](#deviceData-BeaconStructure) | optional |  |
+| gpsCoords | [GpsCoords](#deviceData-GpsCoords) | optional |  |
+| metadata | [DataPacketMetadata](#deviceData-DataPacketMetadata) |  |  |
 
 
 

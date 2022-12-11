@@ -1,9 +1,25 @@
-# Device Context
+# Device Context Documentation
+<a name="top"></a>
 
-#### Reference file : deviceContext.proto
+## Table of Contents
+
+- [deviceContext.proto](#deviceContext-proto)
+    - [DeviceContext](#deviceContext-DeviceContext)
+    - [MacAddress](#deviceContext-MacAddress)
+    - [OsInfo](#deviceContext-OsInfo)
+  
+- [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="deviceContext-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
 
 ## deviceContext.proto
 
+
+
+<a name="deviceContext-DeviceContext"></a>
 
 ### DeviceContext
 Device context from the device in relation to the device identity

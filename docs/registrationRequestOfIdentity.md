@@ -12,11 +12,11 @@ Click on the device you want to approve, and click on approve at the bottom of t
 
 ![scurid_app_approve](img/scurid_app_registry_details.png)
 
-The approval process takes some time as it is registering the data on the blockchain.
+The approval process takes a few seconds to register the transaction on Scurid SSI service, which in turns registers the data on distributed ledger.
 
 ![scurid_app_approval_process](img/scurid_app_loading_after_approval.png)
 
-When the approval is done, you should reach a screen like this.
+When the approval is done, you should be able to see confirmation on the Scurid App for respective identity.
 Click anywhere outside the modal to exit.
 
 ![scurid_app_after_approval_done](img/scurid_app_after_approval_done.png)

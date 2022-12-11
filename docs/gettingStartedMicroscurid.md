@@ -1,13 +1,14 @@
-## Getting Started with Microscurid
+## Getting Started with MicroScurid
 
 ### Overview
 
-Microscurid-c is the C implementation of some of the features from Scurid Edge Agents.
-Microscurid-c can be used to generate identities and register them on the server via TLS communication on MCUs and Linux systems.
+MicroScurid-c is the C implementation of some features from Scurid Edge Agent.
+MicroScurid-c can be used to generate identities and register them on the server via TLS communication on Microcontrollers(MCUs) and Linux systems.
+For communication with Scurid Server it utilizes data structures defined and governed by standard proto buffers, via Nanopb library.
 
-### Setting up
+### Getting access to the library
 
-Contact us at TODO: email address or link
+Contact us at info@scurid.com
 
 ### Platform Details
 
