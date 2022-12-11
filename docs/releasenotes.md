@@ -19,8 +19,8 @@
 * Added TCP server to handle communication with Microcontrollers
 * Several new internal APIs for subsystems, and data stream handling
 * Region and connection handler for CockroachDB
-* Database creation support with CockroachDB
-* 
+* Database creation via CockroachDB
+* Queries and batch management for data storage
 
 ### MicroScurid-C
 * Create distributed identity (DID)
