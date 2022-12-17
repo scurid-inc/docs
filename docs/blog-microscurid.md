@@ -99,6 +99,8 @@ In `properties -> C/C++ Build -> Settings`, check the following
 
 ### 2. Preparation on the Scurid App
 
+Before running the server, we need to fill in our certificate info in `config.yaml`.
+
 We need to run the server first in root mode. You should get the following logs.
 
 ```
@@ -112,4 +114,13 @@ $ sudo ./imagebuild/service-v22.0.1-alpha.0-darwin
 
 Next open the Scurid App. The App should open the following page:
 
-![deploy_type_config](img/scurid_app_deploy_type_config.png){ width=800 }
+![app_onboard_deploy_type_config](img/app_onboard_deploy_type_config.png){ width=800 }
+
+Choose any directory for the storage.
+Next, we fill in the user info.
+
+![app_onboard_user_info](img/app_onboard_user_info.png){ width=800 }
+
+Finally, we set up the master password (for the beta version, please be careful as there is no password reset feature).
+
+![app_onboard_master_password](img/app_onboard_master_password.png){ width=800 }
