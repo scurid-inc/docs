@@ -41,7 +41,7 @@ static wiz_NetInfo g_net_info = { .mac = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
 
 We also need to paste the certificate to use for encryption in `Drivers/TLS/certificate.h`.
 
-```Drivers/TLS/certificate.h
+```
 
 const char	self_signed_certificate[] =	\
 "-----BEGIN CERTIFICATE-----\n" \
@@ -58,24 +58,9 @@ const char	self_signed_certificate[] =	\
 #### 3. Fix the conflict between macros.
 
 There may also be some conflicts between the W5500 and STM32 library.
-Modify `MR` => `W_MR` in the following file.
+Modify `MR` => `W_MR` in the `/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethernet/W5500/w5500.h`.
 
-```/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethernet/W5500/w5500.h
-/**
- * @ingroup Common_register_group
- * @brief Mode Register address(R/W)\n
- * @ref MR is used for S/W reset, ping block mode, PPPoE mode and etc.
- * @details Each bit of @ref MR defined as follows.
- * <table>
- * 		<tr>  <td>7</td> <td>6</td> <td>5</td> <td>4</td> <td>3</td> <td>2</td> <td>1</td> <td>0</td>   </tr>
- * 		<tr>  <td>RST</td> <td>Reserved</td> <td>WOL</td> <td>PB</td> <td>PPPoE</td> <td>Reserved</td> <td>FARP</td> <td>Reserved</td> </tr>
- * </table>
- * - \ref MR_RST		 	: Reset
- * - \ref MR_WOL       	: Wake on LAN
- * - \ref MR_PB         : Ping block
- * - \ref MR_PPPOE      : PPPoE mode
- * - \ref MR_FARP			: Force ARP mode
- */
+```w5500.h
 #define W_MR                 (_W5500_IO_BASE_ + (0x0000 << 8) + (WIZCHIP_CREG_BLOCK << 3))
 
 // ...............
