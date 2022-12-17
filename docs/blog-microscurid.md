@@ -124,3 +124,11 @@ Next, we fill in the user info.
 Finally, we set up the master password (for the beta version, please be careful as there is no password reset feature).
 
 ![app_onboard_master_password](img/app_onboard_master_password.png){ width=800 }
+
+We can skip configuring the storage for now.
+
+![app_data_storage_config](img/app_data_storage_config.png){ width=800 }
+
+We are finally done with the onboarding for Scurid App! Congrats!
+
+![app_onboard_success](img/app_onboard_success.png){ width=800 }
