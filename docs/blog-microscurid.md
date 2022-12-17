@@ -118,9 +118,22 @@ sDate.Date = 0x26;
 sDate.Year = 0x2022;
 ```
 
-### 2. Preparation on the Scurid App
+### 2. Preparation on the server and the Scurid App
 
 Before running the server, we need to fill in our certificate info in `config.yaml`.
+Make sure to fill in all the required fields. The code below is an example with all the required fields filled in.
+
+```
+ServerCert:
+  CommonName: localhost
+  Country: JP
+  Province: Tokyo
+  Locality: Tokyo
+  Organization: ScuridInc.
+  OrganizationalUnit: Software Team
+  EmailAddress: info@scurid.com
+  LifetimeDays: 730 # default 2 years, minimum 1 month, maximum 10 years
+```
 
 We need to run the server first in root mode. You should get the following logs.
 
@@ -153,3 +166,14 @@ We can skip configuring the storage for now.
 We are finally done with the onboarding for Scurid App! Congrats!
 
 ![app_onboard_success](img/app_onboard_success.png){ width=800 }
+
+The following files will be created in the storage directory we chose in the onboarding.
+
+```
+000001.vlog
+DISCARD
+00001.mem
+KEYREGISTRY
+MANIFEST
+LOCK
+```
