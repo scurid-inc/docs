@@ -4,7 +4,7 @@ This tutorial provides a simplified overview on generating, approving device ide
 
 We will use the example code in the microscurid-c library.
 
-### 1. About the server and microscurid-c code
+## 1. About the server and microscurid-c code
 
 If we want to run the server and microscurid-c in an on-premise environment, we need to have the server and the MCU ready first.
 
@@ -12,12 +12,12 @@ If we want to run the server and microscurid-c in an on-premise environment, we 
 - The microscurid-c library currently works on the STM32WB55 series. Another adapter to connect to the ethernet may be needed as well. Download the microscurid-c code [here](example.com)
 - The Scurid App will be used for approving the register requests of identities. Download the Scurid App [here](example.com)
 
-### 2. Preparation on the MCU side: configuring the network info
+## 2. Preparation on the MCU side: configuring the network info
 
 We will open the example code of the microscurid-c library in the STM32 Cube IDE.
 Download the STM32 Cube IDE [here](https://www.st.com/en/development-tools/stm32cubeide.html)
 
-#### 1. Configure the network
+### 1. Configure the network
 
 Before compiling and transferring the example code to our MCU, we first need to configure the network settings. In `app_freertos.c`, configure the server port and IP address as below.
 
@@ -39,7 +39,7 @@ static wiz_NetInfo g_net_info = { .mac = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
 		};
 ```
 
-#### 2. Paste your certificate
+### 2. Paste your certificate
 
 We also need to paste the certificate to use for encryption in `Drivers/TLS/certificate.h`.
 
@@ -57,7 +57,7 @@ const char	self_signed_certificate[] =	\
 
 ```
 
-#### 3. Fix the conflict between macros.
+### 3. Fix the conflict between macros.
 
 There may also be some conflicts between the W5500 and STM32 library.
 Modify `MR` => `W_MR` in the `/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethernet/W5500/w5500.h`.
@@ -90,14 +90,14 @@ Modify `MR` => `W_MR` in the `/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethern
 		WIZCHIP_READ(W_MR)
 ```
 
-#### 4. Make sure the Cube IDE has access to the library
+### 4. Make sure the Cube IDE has access to the library
 
 In `properties -> C/C++ Build -> Settings`, check the following
 
 - that the middlewares and their search paths are configured correctly in `MCU GCC Compiler -> Include Paths` 
 - that the microscurid library and their search paths are configured correctly in `MCU GCC Linker -> Libraries`
 
-#### 5. Configuring the RTC timer
+### 5. Configuring the RTC timer
 
 The RTC timer must be configured to provide an accurate timestamp. Configure them here in: `microscurid-c/examples/p-nucleo-wb55/Core/Src/main.c`
 
@@ -118,7 +118,7 @@ sDate.Date = 0x26;
 sDate.Year = 0x2022;
 ```
 
-### 2. Preparation on the server and the Scurid App
+## 2. Preparation on the server and the Scurid App
 
 Before running the server, we need to fill in our certificate info in `config.yaml`.
 Make sure to fill in all the required fields. The code below is an example with all the required fields filled in.
@@ -177,3 +177,37 @@ KEYREGISTRY
 MANIFEST
 LOCK
 ```
+
+## 3. Send the data from MCU
+
+It is time to run the example code on the MCU.
+Click the run icon on the IDE.
+
+It takes about 3 minutes to establish the TLS connection and send the identity over to the server.
+
+## 4. Approving on the Scurid App
+
+Once the data is sent via the TLS connection, you can approve the device on the Scurid App.
+
+Login to the Scurid App and open the `Identities` tab.
+Inside the `Identities` tab, open the `Pending` tab.
+You should see a register request if it was sent properly to the server.
+
+![scurid_app_pending](img/scurid_app_registry_pending.png)
+
+Click on the device you want to approve, and click on approve at the bottom of the page
+
+![scurid_app_approve](img/scurid_app_registry_details.png)
+
+The approval process takes a few seconds to register the transaction on Scurid SSI service, which in turns registers the data on distributed ledger.
+
+![scurid_app_approval_process](img/scurid_app_loading_after_approval.png)
+
+When the approval is done, you should be able to see confirmation on the Scurid App for respective identity.
+Click anywhere outside the modal to exit.
+
+![scurid_app_after_approval_done](img/scurid_app_after_approval_done.png)
+
+The approved identity will appear in the `Approved` tab.
+
+![scurid_app_approved_tab](img/scurid_app_approved_tab.png)
