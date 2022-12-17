@@ -4,16 +4,18 @@ This tutorial provides a simplified overview on generating, approving device ide
 
 We will use the example code in the microscurid-c library.
 
-### 1. Server and MCU setup
+### 1. About the server and microscurid-c code
 
-First, we need to have the server and the MCU ready.
+If we want to run the server and microscurid-c in an on-premise environment, we need to have the server and the MCU ready first.
 
-- You will need to run the Scurid server binary on a machine of your choice (we will skip the details in this blog). Make sure to have the specific port (in this tutorial, `8888`) open so that the MCU can make requests to the server.
-- The microscurid-c library currently works on the STM32WB55 series. Another adapter to connect to the ethernet may be needed as well.
+- You will need to run the Scurid server binary on a machine of your choice (we will skip the details in this blog). Make sure to have the specific port (in this tutorial, `8888`) open so that the MCU can make requests to the server. Download the server code [here](example.com)
+- The microscurid-c library currently works on the STM32WB55 series. Another adapter to connect to the ethernet may be needed as well. Download the microscurid-c code [here](example.com)
+- The Scurid App will be used for approving the register requests of identities. Download the Scurid App [here](example.com)
 
 ### 2. Preparation on the MCU side: configuring the network info
 
-We will use the example code in the microscurid-c library.
+We will open the example code of the microscurid-c library in the STM32 Cube IDE.
+Download the STM32 Cube IDE [here](https://www.st.com/en/development-tools/stm32cubeide.html)
 
 #### 1. Configure the network
 
@@ -88,4 +90,10 @@ Modify `MR` => `W_MR` in the `/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethern
 		WIZCHIP_READ(W_MR)
 ```
 
-In this tutorial, we are using the STM32 Cube IDE.
+#### 4. Make sure the Cube IDE has access to the library
+
+
+
+### 2. Preparation on the Scurid App
+
+
