@@ -97,6 +97,27 @@ In `properties -> C/C++ Build -> Settings`, check the following
 - that the middlewares and their search paths are configured correctly in `MCU GCC Compiler -> Include Paths` 
 - that the microscurid library and their search paths are configured correctly in `MCU GCC Linker -> Libraries`
 
+#### 5. Configuring the RTC timer
+
+The RTC timer must be configured to provide an accurate timestamp. Configure them here in: `microscurid-c/examples/p-nucleo-wb55/Core/Src/main.c`
+
+```main.c
+sTime.Hours = 0x11;
+sTime.Minutes = 0x32;
+sTime.Seconds = 0x0;
+sTime.SubSeconds = 0x0;
+sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+{
+    Error_Handler();
+}
+sDate.WeekDay = RTC_WEEKDAY_SATURDAY;
+sDate.Month = RTC_MONTH_NOVEMBER;
+sDate.Date = 0x26;
+sDate.Year = 0x2022;
+```
+
 ### 2. Preparation on the Scurid App
 
 Before running the server, we need to fill in our certificate info in `config.yaml`.
