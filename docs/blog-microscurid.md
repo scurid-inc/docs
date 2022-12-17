@@ -92,8 +92,24 @@ Modify `MR` => `W_MR` in the `/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethern
 
 #### 4. Make sure the Cube IDE has access to the library
 
+In `properties -> C/C++ Build -> Settings`, check the following
 
+- that the middlewares and their search paths are configured correctly in `MCU GCC Compiler -> Include Paths` 
+- that the microscurid library and their search paths are configured correctly in `MCU GCC Linker -> Libraries`
 
 ### 2. Preparation on the Scurid App
 
+We need to run the server first in root mode. You should get the following logs.
 
+```
+$ sudo ./imagebuild/service-v22.0.1-alpha.0-darwin
+2022-12-18 00:20:27.000 DBG connected to Scurid SSI Service beta2.scurid.com:443
+2022-12-18 00:20:27.000 DBG found path for store
+...
+2022-12-18 00:20:29.000 INF License is activated!
+
+```
+
+Next open the Scurid App. The App should open the following page:
+
+![deploy_type_config](img/scurid_app_deploy_type_config.png){ width=800 }
