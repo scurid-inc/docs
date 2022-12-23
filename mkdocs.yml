@@ -47,7 +47,8 @@ nav:
       - 'Create Identity Using Microscurid': 'createIdentity.md'
       - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
       - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
-      - 'Blog: End to end tutorial using microscurid-c': 'blog-microscurid.md'
+  - 'Blogs':
+      - 'Building application with MicroScurid-C': 'blog-microscurid.md'
   - 'APIs':
       - 'gRPC':
           - 'Scurid Edge Agent': 'edgeAgent.md'
