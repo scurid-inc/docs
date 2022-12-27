@@ -25,7 +25,9 @@ plugins:
   - search
 markdown_extensions:
   # enables the tabs options on the pages
+  - admonition
   - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
   - tables
@@ -47,6 +49,8 @@ nav:
       - 'Create Identity Using Microscurid': 'createIdentity.md'
       - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
       - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
+  - 'Integrate':
+      - 'Scurid Distributed ID for PTC ThingWorx IoT platform': 'integration-thingworx.md'
   - 'Blogs':
       - 'An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.': 'blog-microscurid.md'
   - 'APIs':
