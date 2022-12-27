@@ -64,11 +64,11 @@ Scurid Edge Agent will perform following automated tasks
 
       Approving the Agent/Device's identity will trigger following automated events :
 
-      * Registering the approval transaction on Scurid hosted distributed ledger under Scurid SSI Service.
+      * Registering an identity in Scurid will trigger transaction on Scurid hosted distributed ledger under Scurid SSI Service.
       * Generation of Approval signature, by signing the request from the Scurid Edge Agent, its device context, timestamps
       * Next, Scurid server will trigger the request to ThingWorx to :
         * Create New User, using the public key/public ID of the Scurid Edge Agent ![see](img/twx-usercreation.png)
-        * Create New Application Key, using the user from previous step ![see](img/applicationkey_twx.png)
+        * Create New Application Key, referencing the user from previous step ![see](img/applicationkey_twx.png)
    6. Approval Key from the `Parent identity`, which belongs to you when you installed Scurid stack - this automatically gets created 
    7. Agent's own identity and some other contextual information like approval date etc. 
 
