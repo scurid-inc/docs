@@ -1,6 +1,8 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Scurid
 theme:
+  logo: img/scurid/logo/scurid-logo.png
+  favicon: img/scurid/logo/favicon.png
   # currently used theme for the docs
   name: material
   palette:
@@ -11,6 +13,7 @@ theme:
     - navigation.indexes
     - navigation.tracking
     - content.tabs.link
+    - content.code.copy
 plugins:
   - mike:
       # these fields are all optional; the defaults are as below...
