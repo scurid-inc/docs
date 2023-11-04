@@ -1,11 +1,29 @@
 # Quickstart
 
-This page covers how to get started with Scurid Platform by downloading and setting up software elements to on required IoT hardware and the dashboard to manage it 
+## Overview
+This page covers how to get started with Scurid Platform by downloading and setting up software elements to on required IoT hardware and the dashboard to manage it.
+
+Scurid platform consists of three main components :
+
+1. Scurid Edge Agent
+2. Scurid Server
+3. Desktop App (mobile app coming soon)
+
+You can use Scurid Platform in two ways :
+
+1. Managed deployment, where we host the Scurid server for you reducing your infrastructural overhead.
+2. On-Premise deployment, where you host the Server on your own infrastructure for complete control.
+
+!!! note
+
+    If you are interested in Managed deployment, add your request here [Support](https://support.scurid.cloud){ .md-button }
+
 
 ### Step 1 : Download and setup Scurid App & Backend server
 
 #### Pre-requisite for Scurid App
-1. Ensure that the user running the application has sufficient rights to execute the application, you may have to make the app executable on linux for that run
+1. Ensure that the user running the application has sufficient rights to execute the application, you may have to make the app executable on linux. 
+For that run
 === "linux"
     
     ```shell
@@ -23,7 +41,7 @@ This page covers how to get started with Scurid Platform by downloading and sett
     
 #### Scurid Platform app, is divided into two parts
 
-a. Scurid App, which is a desktop native application for ID management, configuration & analytics. Download for your platform : [here](https://drive.google.com/drive/folders/1NognB5ughI3p_EdF26Bx851z9H8ErOVe?usp=sharing) 
+a. Scurid App, which is a desktop native application for ID management, configuration & analytics. Download for your platform : [here](https://scurid.com/downloads) 
 
 b. Scurid Backend, is a server supporting the App functionalities and managing the communication with all the agents deployed in your IoT Ecosystem. Can be deployed on `On-Premise` or `Managed` 
 
@@ -31,7 +49,7 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
 
     1. Download the binary for your platform from [here](https://drive.google.com/drive/folders/1cy_GmsOhy23SdMFTmfclmlHoKtDz7p_s?usp=sharing)
     2. Create a config folder accessible by the binary, and create config.yaml file, with following
-        ```shell
+        ```yaml
         ServerCert:
          CommonName: example.com
          Country: JP
@@ -40,7 +58,13 @@ b. Scurid Backend, is a server supporting the App functionalities and managing t
          Organization: Example Inc
          OrganizationalUnit: Software Team
          EmailAddress: info@example.com
-         LifetimeDays: 730 # default 2 years, minimum 1 month, maximum 10 years
+         LifetimeDays: 30
+         SubjectAlternativeNames:
+            - "*.yourcompany.com"
+         CertStorageDirectory: certs
+        Monitoring:
+         Port: 8081 #default
+         Address: localhost #default
         ```
     3. Open a terminal and execute the binary
     === "linux"
