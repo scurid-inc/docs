@@ -77,13 +77,11 @@ extra:
   # enables icons in the Footer
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/scurid_me
+      link: https://twitter.com/ScuridInc
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/scurid-ai-tech
+      link: https://www.linkedin.com/company/scurid-inc/
     - icon: fontawesome/brands/slack
-      link: https://scurid-community.slack.com/
-    - icon: fontawesome/brands/medium
-      link: https://scurid.medium.com/
+      link: https://join.slack.com/t/scurid-community/shared_invite/zt-23un0enx0-W8vVMyYR_QtCWJQ04xBsTw
   version:
     provider: mike
     default: latest
