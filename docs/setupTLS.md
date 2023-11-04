@@ -2,6 +2,8 @@
 
 === "STM32"
     STM32 uses [Mbed TLS](https://github.com/Mbed-TLS/mbedtls) and its APIs.
+
+    Certificates are issued by Scurid, contact us at info@scurid.com.
     Add the content of the certificate to `examples/p-nucleo-wb55/Drivers/TLS/certificate.h`.
     To use the certificate in STM32, we must format the file so that it resembles the one below:
 
