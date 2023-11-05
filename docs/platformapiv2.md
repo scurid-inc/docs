@@ -1,184 +1,70 @@
-# Platform APIv2 Documentation
+# Platform API v2 Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [deviceContext.proto](#deviceContext-proto)
-    - [DeviceContext](#deviceContext-DeviceContext)
-    - [MacAddress](#deviceContext-MacAddress)
-    - [OsInfo](#deviceContext-OsInfo)
-  
-- [log.proto](#log-proto)
-    - [AppLog](#log-AppLog)
-    - [IdentityLog](#log-IdentityLog)
-    - [LogRange](#log-LogRange)
-  
 - [platformapiv2.proto](#platformapiv2-proto)
     - [AgentsStruct](#platform-v2-AgentsStruct)
+    - [ConfigureAgentReq](#platform-v2-ConfigureAgentReq)
+    - [ConfigureAgentRes](#platform-v2-ConfigureAgentRes)
+    - [CreateUserReq](#platform-v2-CreateUserReq)
+    - [CreateUserRes](#platform-v2-CreateUserRes)
+    - [DeleteUserReq](#platform-v2-DeleteUserReq)
+    - [DeleteUserRes](#platform-v2-DeleteUserRes)
+    - [DownloadReleaseZipReq](#platform-v2-DownloadReleaseZipReq)
+    - [DownloadReleaseZipRes](#platform-v2-DownloadReleaseZipRes)
+    - [DownloadReq](#platform-v2-DownloadReq)
+    - [DownloadRes](#platform-v2-DownloadRes)
     - [GetAgentInfoReq](#platform-v2-GetAgentInfoReq)
     - [GetAgentInfoRes](#platform-v2-GetAgentInfoRes)
     - [GetAgentsListReq](#platform-v2-GetAgentsListReq)
     - [GetAgentsListRes](#platform-v2-GetAgentsListRes)
     - [GetAppLogsReq](#platform-v2-GetAppLogsReq)
     - [GetAppLogsRes](#platform-v2-GetAppLogsRes)
+    - [GetAppOnboardingInfoReq](#platform-v2-GetAppOnboardingInfoReq)
+    - [GetAppOnboardingInfoRes](#platform-v2-GetAppOnboardingInfoRes)
     - [GetIDSettingsReq](#platform-v2-GetIDSettingsReq)
     - [GetIDSettingsRes](#platform-v2-GetIDSettingsRes)
     - [GetIdentityInfoReq](#platform-v2-GetIdentityInfoReq)
     - [GetIdentityInfoRes](#platform-v2-GetIdentityInfoRes)
     - [GetIdentityLogReq](#platform-v2-GetIdentityLogReq)
     - [GetIdentityLogRes](#platform-v2-GetIdentityLogRes)
+    - [GetIntegrationConfigReq](#platform-v2-GetIntegrationConfigReq)
+    - [GetIntegrationConfigRes](#platform-v2-GetIntegrationConfigRes)
+    - [GetReleasesReq](#platform-v2-GetReleasesReq)
+    - [GetReleasesRes](#platform-v2-GetReleasesRes)
+    - [GetUserInfoReq](#platform-v2-GetUserInfoReq)
+    - [GetUserInfoRes](#platform-v2-GetUserInfoRes)
+    - [GetUsersReq](#platform-v2-GetUsersReq)
+    - [GetUsersRes](#platform-v2-GetUsersRes)
+    - [InviteUserReq](#platform-v2-InviteUserReq)
+    - [InviteUserRes](#platform-v2-InviteUserRes)
     - [RecordAppLogsReq](#platform-v2-RecordAppLogsReq)
     - [RecordAppLogsRes](#platform-v2-RecordAppLogsRes)
     - [RegisterAgentReq](#platform-v2-RegisterAgentReq)
     - [RegisterAgentRes](#platform-v2-RegisterAgentRes)
+    - [RequestRegistrationCodeReq](#platform-v2-RequestRegistrationCodeReq)
+    - [RequestRegistrationCodeRes](#platform-v2-RequestRegistrationCodeRes)
+    - [ResetPasswordReq](#platform-v2-ResetPasswordReq)
+    - [ResetPasswordRes](#platform-v2-ResetPasswordRes)
     - [RevokeAgentReq](#platform-v2-RevokeAgentReq)
     - [RevokeAgentRes](#platform-v2-RevokeAgentRes)
+    - [ScuridAppOnboardingInfo](#platform-v2-ScuridAppOnboardingInfo)
     - [SetIDSettingsReq](#platform-v2-SetIDSettingsReq)
     - [SetIDSettingsRes](#platform-v2-SetIDSettingsRes)
+    - [StoreAppOnboardingInfoReq](#platform-v2-StoreAppOnboardingInfoReq)
+    - [StoreAppOnboardingInfoRes](#platform-v2-StoreAppOnboardingInfoRes)
+    - [StoreIntegrationConfigReq](#platform-v2-StoreIntegrationConfigReq)
+    - [StoreIntegrationConfigRes](#platform-v2-StoreIntegrationConfigRes)
+    - [UpdateUserPasswordReq](#platform-v2-UpdateUserPasswordReq)
+    - [UpdateUserPasswordRes](#platform-v2-UpdateUserPasswordRes)
     - [VerifyAgentReq](#platform-v2-VerifyAgentReq)
     - [VerifyAgentRes](#platform-v2-VerifyAgentRes)
   
-    - [ScuridServerV2](#platform-v2-Platform)
+    - [Platform](#platform-v2-Platform)
     - [Subsystems](#platform-v2-Subsystems)
   
 - [Scalar Value Types](#scalar-value-types)
-
-
-
-<a name="deviceContext-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## deviceContext.proto
-
-
-
-<a name="deviceContext-DeviceContext"></a>
-
-### DeviceContext
-Device context from the device in relation to the device identity
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent |
-| ipAddress | [string](#string) |  | optional, IP address |
-| cpu | [string](#string) |  | optional, number of CPUs available |
-| ram | [string](#string) |  | optional, RAM size on the device |
-| imeiNumber | [string](#string) |  | optional, International Mobile Equipment Identity, optional, capture if one is available |
-| osType | [OsInfo](#deviceContext-OsInfo) |  |  |
-
-
-
-
-
-
-<a name="deviceContext-MacAddress"></a>
-
-### MacAddress
-list of macAddresses from the devices
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| mtu | [int32](#int32) |  | optional, maximum transmission unit |
-| macAddress | [string](#string) |  | optional |
-| name | [string](#string) |  | interface&#39;s name e.g. en0 |
-
-
-
-
-
-
-<a name="deviceContext-OsInfo"></a>
-
-### OsInfo
-OsInfo message structure defining standard OS info used within the system
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| osType | [string](#string) |  | optional, e.g. darwin, windows, etc. |
-| arch | [string](#string) |  | optional, e.g. amd64 etc. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="log-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## log.proto
-
-
-
-<a name="log-AppLog"></a>
-
-### AppLog
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [string](#string) |  | INFO, WARN, DEBUG, TRACE, ERROR |
-| message | [string](#string) |  | string value of the message |
-| eventTime | [int64](#int64) |  | UNIX NANO timestamp |
-
-
-
-
-
-
-<a name="log-IdentityLog"></a>
-
-### IdentityLog
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| action | [string](#string) |  | e.g. approved, revoked, pending or rejected. |
-| eventTimestamp | [int64](#int64) |  | recorded timestamp of the event |
-| signature | [string](#string) |  | tamper evident signature on the |
-| platformDID | [string](#string) |  | user who performed the action - currently this is going to be the Platform DID |
-| did | [string](#string) |  | identity for device or agents |
-
-
-
-
-
-
-<a name="log-LogRange"></a>
-
-### LogRange
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| from | [int64](#int64) |  | start timestamp |
-| to | [int64](#int64) |  | stop timestamp |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
 
 
 
@@ -210,6 +96,166 @@ OsInfo message structure defining standard OS info used within the system
 | platformIdentity | [string](#string) |  | platform&#39;s identity |
 | approvalKey | [bytes](#bytes) |  | post approval this key is returned to the agent for reference DeviceContext &#43; Requested on &#43; ApprovedOn &#43; Agent&#39;s DID. THIS is also used as the key which will be delivered to |
 | verifiedOn | [int64](#int64) |  | Unix timestamp for verification |
+| integrationDetails | [integration.IntegrationDetails](#integration-IntegrationDetails) |  | default is nil, if agent is configured with any integration, this will be populated |
+| signatureOnIntegration | [signature.Signature](#signature-Signature) |  | signature of the Scurid Server&#39;s identity on the integration details. This is used to verify the integrity of the integration details. |
+| storageSchemaMetadata | [storageSchemaMetadata.StoreSchemaMetadataRequest](#storageSchemaMetadata-StoreSchemaMetadataRequest) |  | default is nil, if agent is configured with any storage schema, this will be populated |
+| storageTableName | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-ConfigureAgentReq"></a>
+
+### ConfigureAgentReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agentID | [string](#string) |  | AgentID is the DID of the agent to be configured |
+| integrationDetails | [integration.IntegrationDetails](#integration-IntegrationDetails) |  | IntegrationDetails is the configuration to be applied to the agent |
+| agentAlias | [string](#string) |  | agentAlias custom alias for the agent |
+| storeSchemaMetadataRequest | [storageSchemaMetadata.StoreSchemaMetadataRequest](#storageSchemaMetadata-StoreSchemaMetadataRequest) |  | defines the storage schema structure applied to the agent data storage |
+| storageTableName | [string](#string) |  | defines the storage table name for the agent data storage this will be used for creating the database table name; in reference to the RDBMS storage structure |
+
+
+
+
+
+
+<a name="platform-v2-ConfigureAgentRes"></a>
+
+### ConfigureAgentRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [bool](#bool) |  | Status is the status of the configuration operation |
+
+
+
+
+
+
+<a name="platform-v2-CreateUserReq"></a>
+
+### CreateUserReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user | [user.v1.User](#user-v1-User) |  |  |
+| userData | [user.v1.UserData](#user-v1-UserData) |  |  |
+| inviteKey | [string](#string) |  | this is the key that will be used to invite the user, and would have been sent to the user when sending the invite. |
+
+
+
+
+
+
+<a name="platform-v2-CreateUserRes"></a>
+
+### CreateUserRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-DeleteUserReq"></a>
+
+### DeleteUserReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-DeleteUserRes"></a>
+
+### DeleteUserRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-DownloadReleaseZipReq"></a>
+
+### DownloadReleaseZipReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| version | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-DownloadReleaseZipRes"></a>
+
+### DownloadReleaseZipRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| file | [release.CompleteReleaseZip](#release-CompleteReleaseZip) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-DownloadReq"></a>
+
+### DownloadReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset | [release.Asset](#release-Asset) | repeated |  |
+
+
+
+
+
+
+<a name="platform-v2-DownloadRes"></a>
+
+### DownloadRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| version | [release.DownloadVersion](#release-DownloadVersion) |  |  |
 
 
 
@@ -297,6 +343,36 @@ intentionally left empty
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | log | [log.AppLog](#log-AppLog) |  | returns log structure |
+
+
+
+
+
+
+<a name="platform-v2-GetAppOnboardingInfoReq"></a>
+
+### GetAppOnboardingInfoReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| platformIdentity | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-GetAppOnboardingInfoRes"></a>
+
+### GetAppOnboardingInfoRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| onboardingInfo | [ScuridAppOnboardingInfo](#platform-v2-ScuridAppOnboardingInfo) |  |  |
 
 
 
@@ -397,6 +473,152 @@ response message for GetIdentityInfo
 
 
 
+<a name="platform-v2-GetIntegrationConfigReq"></a>
+
+### GetIntegrationConfigReq
+left empty
+
+
+
+
+
+
+<a name="platform-v2-GetIntegrationConfigRes"></a>
+
+### GetIntegrationConfigRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| thingworx | [integration.ThingWorx](#integration-ThingWorx) |  |  |
+| hawkbit | [integration.Hawkbit](#integration-Hawkbit) |  |  |
+| azure | [integration.Azure](#integration-Azure) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-GetReleasesReq"></a>
+
+### GetReleasesReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| timestamp | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | use this to filter the releases; field is optional |
+| version | [google.protobuf.StringValue](#google-protobuf-StringValue) |  | use this to filter the releases; if not provided, field is optional |
+
+
+
+
+
+
+<a name="platform-v2-GetReleasesRes"></a>
+
+### GetReleasesRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| list | [release.ReleaseStruct](#release-ReleaseStruct) | repeated |  |
+
+
+
+
+
+
+<a name="platform-v2-GetUserInfoReq"></a>
+
+### GetUserInfoReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-GetUserInfoRes"></a>
+
+### GetUserInfoRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| userData | [user.v1.UserData](#user-v1-UserData) |  |  |
+| userOperation | [user.v1.UserOperation](#user-v1-UserOperation) |  |  |
+| role | [user.v1.Role](#user-v1-Role) |  |  |
+| inviteKey | [string](#string) |  | this is the key that will be used to invite the user, and would have been sent to the user when sending the invite. |
+
+
+
+
+
+
+<a name="platform-v2-GetUsersReq"></a>
+
+### GetUsersReq
+left empty
+
+
+
+
+
+
+<a name="platform-v2-GetUsersRes"></a>
+
+### GetUsersRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| usersList | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="platform-v2-InviteUserReq"></a>
+
+### InviteUserReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| userInvite | [user.v1.UserInvite](#user-v1-UserInvite) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-InviteUserRes"></a>
+
+### InviteUserRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="platform-v2-RecordAppLogsReq"></a>
 
 ### RecordAppLogsReq
@@ -460,6 +682,66 @@ response message for GetIdentityInfo
 
 
 
+<a name="platform-v2-RequestRegistrationCodeReq"></a>
+
+### RequestRegistrationCodeReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-RequestRegistrationCodeRes"></a>
+
+### RequestRegistrationCodeRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  | if a valid email was received server will send a code and return here true; else false |
+
+
+
+
+
+
+<a name="platform-v2-ResetPasswordReq"></a>
+
+### ResetPasswordReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-ResetPasswordRes"></a>
+
+### ResetPasswordRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  | if a valid email was received server will send a code and return here true; else false |
+
+
+
+
+
+
 <a name="platform-v2-RevokeAgentReq"></a>
 
 ### RevokeAgentReq
@@ -493,6 +775,21 @@ response message for GetIdentityInfo
 
 
 
+<a name="platform-v2-ScuridAppOnboardingInfo"></a>
+
+### ScuridAppOnboardingInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| onboardingInfo | [string](#string) |  | this must be a json formatted string |
+
+
+
+
+
+
 <a name="platform-v2-SetIDSettingsReq"></a>
 
 ### SetIDSettingsReq
@@ -517,6 +814,101 @@ SetIDSettingsRes is the response from the backend
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | result | [bool](#bool) |  | returns true if successful |
+
+
+
+
+
+
+<a name="platform-v2-StoreAppOnboardingInfoReq"></a>
+
+### StoreAppOnboardingInfoReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| platformIdentity | [string](#string) |  |  |
+| onboardingInfo | [ScuridAppOnboardingInfo](#platform-v2-ScuridAppOnboardingInfo) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-StoreAppOnboardingInfoRes"></a>
+
+### StoreAppOnboardingInfoRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-StoreIntegrationConfigReq"></a>
+
+### StoreIntegrationConfigReq
+StoreIntegrationConfigReq send one or all config at once
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| thingworx | [integration.ThingWorx](#integration-ThingWorx) |  |  |
+| hawkbit | [integration.Hawkbit](#integration-Hawkbit) |  |  |
+| azure | [integration.Azure](#integration-Azure) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-StoreIntegrationConfigRes"></a>
+
+### StoreIntegrationConfigRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  | default is false, if successful returns True |
+
+
+
+
+
+
+<a name="platform-v2-UpdateUserPasswordReq"></a>
+
+### UpdateUserPasswordReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| email | [string](#string) |  |  |
+| code | [string](#string) |  |  |
+| newPassword | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="platform-v2-UpdateUserPasswordRes"></a>
+
+### UpdateUserPasswordRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  | if user was updated successfully return true; else false |
 
 
 
@@ -573,6 +965,7 @@ SetIDSettingsRes is the response from the backend
 | RegisterAgent | [RegisterAgentReq](#platform-v2-RegisterAgentReq) | [RegisterAgentRes](#platform-v2-RegisterAgentRes) | RegisterAgent approves a pending agent in the system |
 | RevokeAgent | [RevokeAgentReq](#platform-v2-RevokeAgentReq) | [RevokeAgentRes](#platform-v2-RevokeAgentRes) | RevokeAgent revokes an agent&#39;s identity |
 | VerifyAgent | [VerifyAgentReq](#platform-v2-VerifyAgentReq) | [VerifyAgentRes](#platform-v2-VerifyAgentRes) | VerifyAgent verifies agent&#39;s authenticity against the Scurid SSI service |
+| ConfigureAgent | [ConfigureAgentReq](#platform-v2-ConfigureAgentReq) | [ConfigureAgentRes](#platform-v2-ConfigureAgentRes) | ConfigureAgent helps modify Scurid Edge Agent behaviour |
 
 
 <a name="platform-v2-Subsystems"></a>
@@ -587,6 +980,21 @@ Provides configuration possibilities for different components in the system
 | GetIdentityLog | [GetIdentityLogReq](#platform-v2-GetIdentityLogReq) | [GetIdentityLogRes](#platform-v2-GetIdentityLogRes) stream | GetIdentityLog provides list of log recorded on activities performed on identities. This covers both agent and non agent identities. |
 | RecordAppLogs | [RecordAppLogsReq](#platform-v2-RecordAppLogsReq) | [RecordAppLogsRes](#platform-v2-RecordAppLogsRes) | RecordAppLogs records Scurid App logs |
 | GetAppLogs | [GetAppLogsReq](#platform-v2-GetAppLogsReq) | [GetAppLogsRes](#platform-v2-GetAppLogsRes) stream | GetAppLogs fetches app log persisted as history |
+| StoreIntegrationConfig | [StoreIntegrationConfigReq](#platform-v2-StoreIntegrationConfigReq) | [StoreIntegrationConfigRes](#platform-v2-StoreIntegrationConfigRes) | Stores Integration configuration in Scurid Server storage This is a global configuration and will be used by all identities |
+| GetIntegrationConfig | [GetIntegrationConfigReq](#platform-v2-GetIntegrationConfigReq) | [GetIntegrationConfigRes](#platform-v2-GetIntegrationConfigRes) | GetIntegrationConfig fetches currently stored integration configuration from Scurid Server This is a global configuration and will be used by all identities |
+| StoreAppOnboardingInfo | [StoreAppOnboardingInfoReq](#platform-v2-StoreAppOnboardingInfoReq) | [StoreAppOnboardingInfoRes](#platform-v2-StoreAppOnboardingInfoRes) | Stores the user onboarding information created |
+| GetAppOnboardingInfo | [GetAppOnboardingInfoReq](#platform-v2-GetAppOnboardingInfoReq) | [GetAppOnboardingInfoRes](#platform-v2-GetAppOnboardingInfoRes) | Fetches the user onboarding information created |
+| CreateUser | [CreateUserReq](#platform-v2-CreateUserReq) | [CreateUserRes](#platform-v2-CreateUserRes) | Creates a new App User in the Scurid Server |
+| InviteUser | [InviteUserReq](#platform-v2-InviteUserReq) | [InviteUserRes](#platform-v2-InviteUserRes) | Sends invite to a new user |
+| GetUsers | [GetUsersReq](#platform-v2-GetUsersReq) | [GetUsersRes](#platform-v2-GetUsersRes) | GetUsers returns list of users |
+| DeleteUser | [DeleteUserReq](#platform-v2-DeleteUserReq) | [DeleteUserRes](#platform-v2-DeleteUserRes) | DeleteUser deletes a user |
+| GetUserInfo | [GetUserInfoReq](#platform-v2-GetUserInfoReq) | [GetUserInfoRes](#platform-v2-GetUserInfoRes) | GetUserInfo returns user info |
+| ResetPassword | [ResetPasswordReq](#platform-v2-ResetPasswordReq) | [ResetPasswordRes](#platform-v2-ResetPasswordRes) | Resets the password of a user |
+| UpdateUserPassword | [UpdateUserPasswordReq](#platform-v2-UpdateUserPasswordReq) | [UpdateUserPasswordRes](#platform-v2-UpdateUserPasswordRes) | UpdateUserPassword updates the user |
+| GetReleases | [GetReleasesReq](#platform-v2-GetReleasesReq) | [GetReleasesRes](#platform-v2-GetReleasesRes) | Get versions list |
+| Download | [DownloadReq](#platform-v2-DownloadReq) | [DownloadRes](#platform-v2-DownloadRes) stream | Called by clients to Download file(s) |
+| DownloadReleaseZip | [DownloadReleaseZipReq](#platform-v2-DownloadReleaseZipReq) | [DownloadReleaseZipRes](#platform-v2-DownloadReleaseZipRes) stream | Request to download a zip file, containing all the files in the release from Edge Agent, Server &amp; App etc. Request only need the version number |
+| RequestRegistrationCode | [RequestRegistrationCodeReq](#platform-v2-RequestRegistrationCodeReq) | [RequestRegistrationCodeRes](#platform-v2-RequestRegistrationCodeRes) | RequestRegistrationCode generates a registration code for the user Call this API if the code which user has, has already expire or is invalid |
 
  
 

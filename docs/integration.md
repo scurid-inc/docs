@@ -1,141 +1,114 @@
-# MicroScurid-C API Documentation
+# Integration API Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [microscurid.proto](#microscurid-proto)
-    - [Login](#microscurid-v0-Login)
-    - [LoginRes](#microscurid-v0-LoginRes)
-    - [RegisterDeviceIdentity](#microscurid-v0-RegisterDeviceIdentity)
-    - [RegisterDeviceIdentityRes](#microscurid-v0-RegisterDeviceIdentityRes)
-    - [ReqMetadata](#microscurid-v0-ReqMetadata)
-    - [VerifySignature](#microscurid-v0-VerifySignature)
-  
-    - [ReqMetadata.ReqType](#microscurid-v0-ReqMetadata-ReqType)
+- [integration.proto](#integration-proto)
+    - [Azure](#integration-Azure)
+    - [Hawkbit](#integration-Hawkbit)
+    - [IntegrationDetails](#integration-IntegrationDetails)
+    - [IntegrationStatus](#integration-IntegrationStatus)
+    - [ThingWorx](#integration-ThingWorx)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="microscurid-proto"></a>
+<a name="integration-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## microscurid.proto
+## integration.proto
 
 
 
-<a name="microscurid-v0-Login"></a>
+<a name="integration-Azure"></a>
 
-### Login
-Used for log in
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| username | [string](#string) |  | public DID |
-
-
-
-
-
-
-<a name="microscurid-v0-LoginRes"></a>
-
-### LoginRes
-
+### Azure
+For Azure IoT &amp; Azure Device Provisioning Service
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| token | [string](#string) |  | short lived encrypted token returned by the server on successful login |
+| csrSigningCertificate | [bytes](#bytes) |  | this is the certificate used to sign the CSR to issue device certificates |
+| privateKey | [bytes](#bytes) |  | this is the private key used to sign the CSR to issue device certificates |
 
 
 
 
 
 
-<a name="microscurid-v0-RegisterDeviceIdentity"></a>
+<a name="integration-Hawkbit"></a>
 
-### RegisterDeviceIdentity
-RegisterDeviceIdentity contains the required structure to register a newly generated Identity on the hardware
-TODO: Enhance with other hardware details to include DeviceContext
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| did | [string](#string) |  | DID generated on the device |
-| unixTime | [int64](#int64) |  | time of request |
-| deviceName | [string](#string) |  | device name provided by the user |
-
-
-
-
-
-
-<a name="microscurid-v0-RegisterDeviceIdentityRes"></a>
-
-### RegisterDeviceIdentityRes
-RegisterDeviceIdentityRes returns required response.
+### Hawkbit
+For Hawkbit Server
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| result | [bool](#bool) |  |  |
+| hawkbitURL | [string](#string) |  | hawkbit server URL &amp; port information e.g. https://localhost:8080 |
+| username | [string](#string) |  | username from Hawkbit server |
+| password | [string](#string) |  | password from Hawkbit server |
 
 
 
 
 
 
-<a name="microscurid-v0-ReqMetadata"></a>
+<a name="integration-IntegrationDetails"></a>
 
-### ReqMetadata
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| reqType | [ReqMetadata.ReqType](#microscurid-v0-ReqMetadata-ReqType) |  |  |
-| registerDeviceIdentity | [RegisterDeviceIdentity](#microscurid-v0-RegisterDeviceIdentity) | optional |  |
-| verifySignature | [VerifySignature](#microscurid-v0-VerifySignature) | optional |  |
-| login | [Login](#microscurid-v0-Login) | optional |  |
-
-
-
-
-
-
-<a name="microscurid-v0-VerifySignature"></a>
-
-### VerifySignature
-
+### IntegrationDetails
+IntegrationDetails contains information on integration with 3rd party platforms
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| signature | [string](#string) |  |  |
-| msgHashPayload | [string](#string) |  |  |
-| did | [string](#string) |  |  |
-| compressedPublicKey | [string](#string) |  |  |
+| hawkbitTargetSecretKey | [string](#string) |  | a target in Hawkbit is device, when a device is pre-provisioned it will create a secret key which is specific to each device |
+| deviceCertificateSigningRequest | [string](#string) |  | this is the certificate signing request received from the agent. |
+| deviceCertificate | [bytes](#bytes) |  | if Azure is enabled, and agent is approved, scurid server will sign the request to generate the certificate, which we can store here |
+| integrationStatus | [IntegrationStatus](#integration-IntegrationStatus) |  |  |
+| thingworxApplicationKey | [string](#string) |  | this is the device application key issued from ThingWorx |
+| thingworxAppKeyName | [string](#string) |  | this is the name of the app key in ThingWorx |
+| csrCustom | [certificate.v1.CSRCustom](#certificate-v1-CSRCustom) |  | this is the custom CSR information |
+
+
+
+
+
+
+<a name="integration-IntegrationStatus"></a>
+
+### IntegrationStatus
+IntegrationStatus should be used to track which 3rd party integrations are enabled.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| thingWorxEnabled | [bool](#bool) |  | is thingworx integration enabled |
+| hawkbitEnabled | [bool](#bool) |  | is hawkbit integration enabled |
+| azureEnabled | [bool](#bool) |  | is azure integration enabled |
+
+
+
+
+
+
+<a name="integration-ThingWorx"></a>
+
+### ThingWorx
+For Thingworx Server
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| thingWorxURL | [string](#string) |  | thingworx server and port information e.g. https://localhost:443/Thingworx |
+| appKey | [string](#string) |  | thingworx app key created for Scurid server to authenticate with |
+| useThingWorxEntityNameToDownloadAppKey | [bool](#bool) |  | if true, then the app key will be downloaded from thingworx using the entity name |
 
 
 
 
 
  
-
-
-<a name="microscurid-v0-ReqMetadata-ReqType"></a>
-
-### ReqMetadata.ReqType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| UnknownReq | 0 | UnknownReq, default fallback field in case unknown enum information is sent from the MicroScurid |
-| IdentityRegistration | 1 | IdentityRegistration, used for registering an incoming request with DID (identity) from the device via MicroScurid |
-| Verify | 2 | Verify, used for verifying the signature coming along with the identity and the |
-
 
  
 

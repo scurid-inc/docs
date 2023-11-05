@@ -5,9 +5,9 @@ This page covers how to get started with Scurid Platform by downloading and sett
 
 Scurid platform consists of three main components :
 
-1. Scurid Edge Agent
-2. Scurid Server
-3. Desktop App (mobile app coming soon)
+1. Scurid [Edge Agent](https://www.scurid.com/products/edge-agent) and [MicroScurid-C SDK](https://www.scurid.com/products/micro-scurid-c)
+2. Scurid [Server](https://www.scurid.com/products/server)
+3. Desktop [App](https://www.scurid.com/products/app) (mobile app coming soon)
 
 You can use Scurid Platform in two ways :
 

@@ -1,70 +1,32 @@
-# Log API Documentation
+# Signature API Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [log.proto](#log-proto)
-    - [AppLog](#log-AppLog)
-    - [IdentityLog](#log-IdentityLog)
-    - [LogRange](#log-LogRange)
+- [signature.proto](#signature-proto)
+    - [Signature](#signature-Signature)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="log-proto"></a>
+<a name="signature-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## log.proto
+## signature.proto
 
 
 
-<a name="log-AppLog"></a>
+<a name="signature-Signature"></a>
 
-### AppLog
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [string](#string) |  | INFO, WARN, DEBUG, TRACE, ERROR |
-| message | [string](#string) |  | string value of the message |
-| eventTime | [int64](#int64) |  | UNIX NANO timestamp |
-
-
-
-
-
-
-<a name="log-IdentityLog"></a>
-
-### IdentityLog
-
+### Signature
+defines standard signature for all messages
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| action | [string](#string) |  | e.g. approved, revoked, pending or rejected. |
-| eventTimestamp | [int64](#int64) |  | recorded timestamp of the event |
-| signature | [string](#string) |  | tamper evident signature on the |
-| platformDID | [string](#string) |  | user who performed the action - currently this is going to be the Platform DID |
-| did | [string](#string) |  | identity for device or agents |
-
-
-
-
-
-
-<a name="log-LogRange"></a>
-
-### LogRange
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| from | [int64](#int64) |  | start timestamp |
-| to | [int64](#int64) |  | stop timestamp |
+| signature | [bytes](#bytes) |  | Signature of the message |
+| utcUnixTimestamp | [int64](#int64) |  | UTC timestamp in nanoseconds; captured at the time of signing |
 
 
 

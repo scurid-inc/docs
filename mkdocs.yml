@@ -3,10 +3,22 @@ site_name: Scurid
 theme:
   logo: img/scurid/logo/scurid-logo.png
   favicon: img/scurid/logo/favicon.png
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
   # currently used theme for the docs
   name: material
   palette:
-    primary: black
+    # Palette toggle for light mode
+    - scheme: blue grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     # used for defining the navigation configuration
     - navigation.expand
@@ -59,14 +71,18 @@ nav:
   - 'APIs':
       - 'gRPC':
           - 'Scurid Edge Agent': 'edgeAgent.md'
-          - 'Scurid Backend':
+          - 'Scurid Server':
               - 'Auth' : 'auth.md'
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
               - 'Device Context' : 'deviceContext.md'
               - 'Device Data' : 'deviceData.md'
-              - 'MicroScurid' : 'microscurid.md'
               - 'Logs' : 'logapi.md'
+              - 'Certificate' : 'certificate.md'
+              - 'Integration' : 'integration.md'
+              - 'Platform Internal' : 'platform-internals.md'
+              - 'Signature' : 'signature.md'
+          - 'MicroScurid-C SDK' : 'microscurid.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:

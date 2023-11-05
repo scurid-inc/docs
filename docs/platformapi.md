@@ -1,13 +1,8 @@
-# Platform API Documentation
+# Platform APIs Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [deviceContext.proto](#deviceContext-proto)
-    - [DeviceContext](#deviceContext-DeviceContext)
-    - [MacAddress](#deviceContext-MacAddress)
-    - [OsInfo](#deviceContext-OsInfo)
-  
 - [platformapi.proto](#platformapi-proto)
     - [AddTagsReq](#scuridplatformagentapi-v1-AddTagsReq)
     - [AddTagsRes](#scuridplatformagentapi-v1-AddTagsRes)
@@ -84,78 +79,9 @@
     - [VerifySignatureReq](#scuridplatformagentapi-v1-VerifySignatureReq)
     - [VerifySignatureRes](#scuridplatformagentapi-v1-VerifySignatureRes)
   
-    - [ScuridServerAPI](#scuridplatformagentapi-v1-ScuridPlatformAgentAPI)
+    - [ScuridPlatformAgentAPI](#scuridplatformagentapi-v1-ScuridPlatformAgentAPI)
   
 - [Scalar Value Types](#scalar-value-types)
-
-
-
-<a name="deviceContext-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## deviceContext.proto
-
-
-
-<a name="deviceContext-DeviceContext"></a>
-
-### DeviceContext
-Device context from the device in relation to the device identity
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| macAddresses | [MacAddress](#deviceContext-MacAddress) | repeated | optional, all MAC addresses available to be picked up by the agent |
-| ipAddress | [string](#string) |  | optional, IP address |
-| cpu | [string](#string) |  | optional, number of CPUs available |
-| ram | [string](#string) |  | optional, RAM size on the device |
-| imeiNumber | [string](#string) |  | optional, International Mobile Equipment Identity, optional, capture if one is available |
-| osType | [OsInfo](#deviceContext-OsInfo) |  |  |
-
-
-
-
-
-
-<a name="deviceContext-MacAddress"></a>
-
-### MacAddress
-list of macAddresses from the devices
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| mtu | [int32](#int32) |  | optional, maximum transmission unit |
-| macAddress | [string](#string) |  | optional |
-| name | [string](#string) |  | interface&#39;s name e.g. en0 |
-
-
-
-
-
-
-<a name="deviceContext-OsInfo"></a>
-
-### OsInfo
-OsInfo message structure defining standard OS info used within the system
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| osType | [string](#string) |  | optional, e.g. darwin, windows, etc. |
-| arch | [string](#string) |  | optional, e.g. amd64 etc. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
 
 
 
@@ -796,6 +722,7 @@ struct to be attached to the Platform&#39;s DID registration
 | isEnterpriseUser | [bool](#bool) |  |  |
 | enterpriseFullName | [string](#string) |  |  |
 | did | [string](#string) |  |  |
+| emailRegistrationCode | [string](#string) |  | this is the code sent to the user&#39;s email for verification |
 
 
 

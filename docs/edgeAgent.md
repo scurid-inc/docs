@@ -1,4 +1,4 @@
-# Scurid Edge Agent APIs Documentation
+# Edge Agent API Documentation
 <a name="top"></a>
 
 ## Table of Contents
@@ -22,6 +22,8 @@
     - [RegisterDeviceIdentityRes](#edgeagentapis-v1-RegisterDeviceIdentityRes)
     - [SendDeviceDataReq](#edgeagentapis-v1-SendDeviceDataReq)
     - [SendDeviceDataRes](#edgeagentapis-v1-SendDeviceDataRes)
+    - [SendDeviceDataWithCustomFieldsReq](#edgeagentapis-v1-SendDeviceDataWithCustomFieldsReq)
+    - [SendDeviceDataWithCustomFieldsRes](#edgeagentapis-v1-SendDeviceDataWithCustomFieldsRes)
     - [SignBytePayloadWithIdentityReq](#edgeagentapis-v1-SignBytePayloadWithIdentityReq)
     - [SignBytePayloadWithIdentityRes](#edgeagentapis-v1-SignBytePayloadWithIdentityRes)
     - [SignWithIdentityReq](#edgeagentapis-v1-SignWithIdentityReq)
@@ -309,6 +311,37 @@ Note: ensure to acquire login token for the agent which is trying to send this d
 
 
 
+<a name="edgeagentapis-v1-SendDeviceDataWithCustomFieldsReq"></a>
+
+### SendDeviceDataWithCustomFieldsReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agentDID | [string](#string) |  |  |
+| data | [string](#string) | repeated | array of JSON formatted data |
+
+
+
+
+
+
+<a name="edgeagentapis-v1-SendDeviceDataWithCustomFieldsRes"></a>
+
+### SendDeviceDataWithCustomFieldsRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="edgeagentapis-v1-SignBytePayloadWithIdentityReq"></a>
 
 ### SignBytePayloadWithIdentityReq
@@ -460,6 +493,7 @@ Note: ensure to acquire login token for the agent which is trying to send this d
 | GetToken | [GetTokenReq](#edgeagentapis-v1-GetTokenReq) | [GetTokenRes](#edgeagentapis-v1-GetTokenRes) | GetToken to receive required token from Scurid Platform App Needed in order to access APIs that need authentication from the Scurid Platform App Not used for authentication locally on the Scurid Edge Agent Also used for refreshing the token |
 | DownloadFiles | [DownloadFilesReq](#edgeagentapis-v1-DownloadFilesReq) | [DownloadFilesRes](#edgeagentapis-v1-DownloadFilesRes) | Used for downloading one or more files number of files to download will depend on files prepared by the admin on Scurid Platform App |
 | SendDeviceData | [SendDeviceDataReq](#edgeagentapis-v1-SendDeviceDataReq) | [SendDeviceDataRes](#edgeagentapis-v1-SendDeviceDataRes) | invokes send data services within the Agent to send to the Scurid backend Server |
+| SendDeviceDataWithCustomFields | [SendDeviceDataWithCustomFieldsReq](#edgeagentapis-v1-SendDeviceDataWithCustomFieldsReq) | [SendDeviceDataWithCustomFieldsRes](#edgeagentapis-v1-SendDeviceDataWithCustomFieldsRes) | SendDeviceDataWithCustomFields this is used to send data to the Scurid backend Server with JSON formatted with custom fields |
 
  
 
