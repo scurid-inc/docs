@@ -26,6 +26,8 @@ theme:
     - navigation.tracking
     - content.tabs.link
     - content.code.copy
+    - navigation.instant
+    - navigation.instant.progress
 plugins:
   - mike:
       # these fields are all optional; the defaults are as below...
@@ -49,11 +51,12 @@ markdown_extensions:
   # Used for aligning the images
   - attr_list
   - md_in_html
-# used for controlling the pages and the sub tree under the pages on the doc
+# used for controlling the pages and the subtree under the pages on the doc
 nav:
   - Home: 'index.md'
   - 'Getting started':
       - 'Quickstart': 'quickstart.md'
+      - 'Deployment Options': 'deployment-options.md'
       - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
       - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
       - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
