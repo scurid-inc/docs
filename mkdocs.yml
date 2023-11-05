@@ -31,7 +31,7 @@ theme:
 plugins:
   - mike:
       # these fields are all optional; the defaults are as below...
-      version_selector: true   # set to false to leave out the version selector
+      version_selector: true   # set to false, to leave out the version selector
       css_dir: css             # the directory to put the version selector's CSS
       javascript_dir: js       # the directory to put the version selector's JS
       canonical_version: null  # the version for <link rel="canonical">; `null`
@@ -54,8 +54,8 @@ markdown_extensions:
 # used for controlling the pages and the subtree under the pages on the doc
 nav:
   - Home: 'index.md'
-  - 'Getting started':
-      - 'Quickstart': 'quickstart.md'
+  - 'Get started':
+      - 'Quickstart On Premise': 'quickstart-on-premise.md'
       - 'Deployment Options': 'deployment-options.md'
 
       - 'Logging': 'logs.md'
