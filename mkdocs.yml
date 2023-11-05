@@ -57,24 +57,29 @@ nav:
   - 'Getting started':
       - 'Quickstart': 'quickstart.md'
       - 'Deployment Options': 'deployment-options.md'
-      - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
-      - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
-      - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
+
       - 'Logging': 'logs.md'
       - 'Glossary': 'glossary.md'
-  - 'MicroScurid':
-      - 'How to Get Started with Microscurid': 'gettingStartedMicroscurid.md'
-      - 'Create Identity Using Microscurid': 'createIdentity.md'
-      - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
-      - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
+  - 'For Edge':
+      - 'Scurid Edge Agent':
+        - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
+        - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
+        - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
+      - 'MicroScurid-C SDK':
+        - 'How to Get Started with MicroScurid-C SDK': 'gettingStartedMicroscurid.md'
+        - 'Create Identity Using MicroScurid-C SDK': 'createIdentity.md'
+        - 'How to Setup TLS Using MicroScurid-C SDK': 'setupTLS.md'
+        - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
   - 'Integrate':
       - 'Scurid Distributed ID for PTC ThingWorx IoT platform': 'integration-thingworx.md'
   - 'Blogs':
       - 'An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.': 'blog-microscurid.md'
   - 'APIs':
       - 'gRPC':
-          - 'Scurid Edge Agent': 'edgeAgent.md'
-          - 'Scurid Server':
+          - 'For Edge':
+            - 'Scurid Edge Agent': 'edgeAgent.md'
+            - 'MicroScurid-C SDK' : 'microscurid.md'
+          - 'Server':
               - 'Auth' : 'auth.md'
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
@@ -85,7 +90,6 @@ nav:
               - 'Integration' : 'integration.md'
               - 'Platform Internal' : 'platform-internals.md'
               - 'Signature' : 'signature.md'
-          - 'MicroScurid-C SDK' : 'microscurid.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:
