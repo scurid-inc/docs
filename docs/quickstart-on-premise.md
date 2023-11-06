@@ -80,7 +80,8 @@ This steps sets up the server and certain configurations that are needed in orde
 8. Enter your name and click next ![name](img/v23-0-2/first-last-name.png)
 9. Enter the code sent on your email, and click next ![code](img/v23-0-2/verify-code.png)
 10. Create a 13 character long master passphrase, and click next ![passphrase](img/v23-0-2/master-passphrase.png)
-11. We offer built in support for CockroachDB's Managed Serverless (perfect for PoCs and starter projects) or connect your own CockroachDB instance. ![cockroachdb](img/v23-0-2/db-setup.png), or you can skip this step and configure it later.
+11. We offer built in support for CockroachDB's Managed Serverless (perfect for PoCs and starter projects) or connect your own CockroachDB instance, or you can skip this step and configure it later. ![cockroachdb](img/v23-0-2/db-setup.png)
+
 
 That's it. You are now ready to start deploying agents and start creating new identities using them.
 
@@ -91,15 +92,16 @@ Agent is a single binary, which can be easily configured to run as a service, on
 
 If you are downloading the agent for the first time on `linux` or related platform you may need to make the binary executable using 
 
+Example : 
 ```shell
 sudo chmod +x scuridedgeagent-linux-arm7 
 ```
-Note: It must be ensured that you have downloaded the correct binary for your platform.
 
-Execute the binary, ensure that the terminal is not closed
+Execute the binary, ensure that the terminal is not closed if the agent is not configured to run as a service.
 
+Example :
 ```shell
-./scuridedgeagent-linux-xxx
+./scuridedgeagent-linux-xxx -spaaddr 192.168.1.232:443 -syncrate 30s
 ```
 
 If you do require to close the terminal you can run the service in the background and then disown , e.g.
