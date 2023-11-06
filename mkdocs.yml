@@ -55,9 +55,11 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - 'Get started':
-      - 'Quickstart On Premise': 'quickstart-on-premise.md'
+      - 'Quickstart':
+        - 'Overview' : 'quickstart-overview.md'
+        - 'On Premise': 'quickstart-on-premise.md'
+        - 'Managed': 'quickstart-for-managed.md'
       - 'Deployment Options': 'deployment-options.md'
-
       - 'Logging': 'logs.md'
       - 'Glossary': 'glossary.md'
   - 'For Edge':
