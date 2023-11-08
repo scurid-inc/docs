@@ -40,7 +40,7 @@ mike deploy --push --update-aliases <release number> latest
 example :
 Use rebase if there are git issues with remote branch
 ```shell
-mike deploy --push --update-aliases v22.0.0-alpha.2 latest --rebase
+mike deploy --push --update-aliases v23.0.2.1 latest --rebase
 ```
 
 Default doc version setup
