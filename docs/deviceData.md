@@ -1,4 +1,4 @@
-# Device Data Documentation
+# Device Data API Documentation
 <a name="top"></a>
 
 ## Table of Contents
@@ -8,8 +8,12 @@
     - [DataPacketMetadata](#deviceData-DataPacketMetadata)
     - [DataTimestamp](#deviceData-DataTimestamp)
     - [DeviceData](#deviceData-DeviceData)
-    - [GpsCoords](#deviceData-GpsCoords)
+    - [GetAgentDataReq](#deviceData-GetAgentDataReq)
+    - [GetAgentDataRes](#deviceData-GetAgentDataRes)
+    - [GetAgentDataStatReq](#deviceData-GetAgentDataStatReq)
+    - [GetAgentDataStatRes](#deviceData-GetAgentDataStatRes)
     - [MaWaRouteDataStruct](#deviceData-MaWaRouteDataStruct)
+    - [QueryStruct](#deviceData-QueryStruct)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -79,7 +83,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | timestamp | [DataTimestamp](#deviceData-DataTimestamp) |  |  |
-| data | [string](#string) |  | contains device data |
+| data | [string](#string) |  | contains device data formatted in json |
 | metadata | [DataPacketMetadata](#deviceData-DataPacketMetadata) |  |  |
 
 
@@ -87,34 +91,80 @@
 
 
 
-<a name="deviceData-GpsCoords"></a>
+<a name="deviceData-GetAgentDataReq"></a>
 
-### GpsCoords
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| latitude | [string](#string) |  |  |
-| longitude | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="deviceData-MaWaRouteDataStruct"></a>
-
-### MaWaRouteDataStruct
+### GetAgentDataReq
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| timestamp | [DataTimestamp](#deviceData-DataTimestamp) |  |  |
-| beacon | [BeaconStructure](#deviceData-BeaconStructure) | optional |  |
-| gpsCoords | [GpsCoords](#deviceData-GpsCoords) | optional |  |
-| metadata | [DataPacketMetadata](#deviceData-DataPacketMetadata) |  |  |
+| agentID | [string](#string) |  |  |
+| query | [QueryStruct](#deviceData-QueryStruct) |  |  |
+
+
+
+
+
+
+<a name="deviceData-GetAgentDataRes"></a>
+
+### GetAgentDataRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| data | [DeviceData](#deviceData-DeviceData) |  | json data stored in the database |
+| deviceDataColumnNames | [string](#string) |  | json formatted column names |
+
+
+
+
+
+
+<a name="deviceData-GetAgentDataStatReq"></a>
+
+### GetAgentDataStatReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agentID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="deviceData-GetAgentDataStatRes"></a>
+
+### GetAgentDataStatRes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dataCount | [int64](#int64) |  |  |
+| totalVerifiableData | [int64](#int64) |  |  |
+| totalUnverifiableData | [int64](#int64) |  |  |
+| listOfUnverifiableData | [int64](#int64) | repeated | todo: send list of rowid in the future |
+| statsLastUpdatedOn | [int64](#int64) |  |  |
+
+
+
+
+<a name="deviceData-QueryStruct"></a>
+
+### QueryStruct
+used for querying data from the backend for a specific time range
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| startTimestamp | [int64](#int64) |  |  |
+| endTimestamp | [int64](#int64) |  |  |
 
 
 

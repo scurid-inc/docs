@@ -4,7 +4,7 @@ This tutorial provides a simplified overview on generating, approving device ide
 
 ## Initial setup & pre-requisite
 
-Before starting ensure that one time user on-boarding has been finished with Scurid. See the [quickstart guide.](quickstart.md) 
+Before starting ensure that one time user on-boarding has been finished with Scurid. See the [quickstart guide.](quickstart/quickstart-on-premise.md) 
 
 Use the example code in the microscurid-c library available [here](https://github.com/scurid-inc/microscurid-c/tags) for download.
 

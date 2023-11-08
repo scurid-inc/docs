@@ -1,20 +1,37 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Scurid
 theme:
+  logo: img/scurid/logo/scurid-logo.png
+  favicon: img/scurid/logo/favicon.png
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
   # currently used theme for the docs
   name: material
   palette:
-    primary: black
+    # Palette toggle for light mode
+    - scheme: blue grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     # used for defining the navigation configuration
     - navigation.expand
     - navigation.indexes
     - navigation.tracking
     - content.tabs.link
+    - content.code.copy
+    - navigation.instant
+    - navigation.instant.progress
 plugins:
   - mike:
       # these fields are all optional; the defaults are as below...
-      version_selector: true   # set to false to leave out the version selector
+      version_selector: true   # set to false, to leave out the version selector
       css_dir: css             # the directory to put the version selector's CSS
       javascript_dir: js       # the directory to put the version selector's JS
       canonical_version: null  # the version for <link rel="canonical">; `null`
@@ -34,36 +51,47 @@ markdown_extensions:
   # Used for aligning the images
   - attr_list
   - md_in_html
-# used for controlling the pages and the sub tree under the pages on the doc
+# used for controlling the pages and the subtree under the pages on the doc
 nav:
   - Home: 'index.md'
-  - 'Getting started':
-      - 'Quickstart': 'quickstart.md'
-      - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
-      - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
-      - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
+  - 'Get started':
+      - 'Overview': 'quickstart-overview.md'
+      - 'Deployment Options': 'deployment-options.md'
+      - 'Quickstart':
+        - 'On Premise': 'quickstart/quickstart-on-premise.md'
+        - 'Managed': 'quickstart/quickstart-for-managed.md'
       - 'Logging': 'logs.md'
       - 'Glossary': 'glossary.md'
-  - 'MicroScurid':
-      - 'How to Get Started with Microscurid': 'gettingStartedMicroscurid.md'
-      - 'Create Identity Using Microscurid': 'createIdentity.md'
-      - 'How to Setup TLS Using Microscurid': 'setupTLS.md'
-      - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
+  - 'For Edge':
+      - 'Scurid Edge Agent':
+        - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
+        - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
+        - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
+      - 'MicroScurid-C SDK':
+        - 'How to Get Started with MicroScurid-C SDK': 'gettingStartedMicroscurid.md'
+        - 'Create Identity Using MicroScurid-C SDK': 'createIdentity.md'
+        - 'How to Setup TLS Using MicroScurid-C SDK': 'setupTLS.md'
+        - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
   - 'Integrate':
       - 'Scurid Distributed ID for PTC ThingWorx IoT platform': 'integration-thingworx.md'
   - 'Blogs':
       - 'An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.': 'blog-microscurid.md'
   - 'APIs':
       - 'gRPC':
-          - 'Scurid Edge Agent': 'edgeAgent.md'
-          - 'Scurid Backend':
+          - 'For Edge':
+            - 'Scurid Edge Agent': 'edgeAgent.md'
+            - 'MicroScurid-C SDK' : 'microscurid.md'
+          - 'Server':
               - 'Auth' : 'auth.md'
               - 'Platform API' : 'platformapi.md'
               - 'Platform API v2' : 'platformapiv2.md'
               - 'Device Context' : 'deviceContext.md'
               - 'Device Data' : 'deviceData.md'
-              - 'MicroScurid' : 'microscurid.md'
               - 'Logs' : 'logapi.md'
+              - 'Certificate' : 'certificate.md'
+              - 'Integration' : 'integration.md'
+              - 'Platform Internal' : 'platform-internals.md'
+              - 'Signature' : 'signature.md'
   - 'Releases':
       - 'Scurid Release Notes': 'releasenotes.md'
 extra:
@@ -74,13 +102,11 @@ extra:
   # enables icons in the Footer
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/scurid_me
+      link: https://twitter.com/ScuridInc
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/scurid-ai-tech
+      link: https://www.linkedin.com/company/scurid-inc/
     - icon: fontawesome/brands/slack
-      link: https://scurid-community.slack.com/
-    - icon: fontawesome/brands/medium
-      link: https://scurid.medium.com/
+      link: https://join.slack.com/t/scurid-community/shared_invite/zt-23un0enx0-W8vVMyYR_QtCWJQ04xBsTw
   version:
     provider: mike
     default: latest

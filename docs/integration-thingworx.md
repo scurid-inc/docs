@@ -31,7 +31,7 @@ This integration is for users who :
     * [Things](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx/Help/Composer/Things/Things.html)
     * [User](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx/Help/Composer/Security/Users/Users.html)
     * [Application Key](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx/Help/Composer/Security/ApplicationKeys/ApplicationKeys.html)
-* Have installed and completed Scurid installation & on-boarding, see [Quickstart](quickstart.md) guide
+* Have installed and completed Scurid installation & on-boarding, see [Quickstart](quickstart/quickstart-on-premise.md) guide
 
 ## Enabling ThingWorx with Scurid's Digital Identity
 

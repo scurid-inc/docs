@@ -1,141 +1,63 @@
-# MicroScurid-C API Documentation
+# Certificate API Documentation
 <a name="top"></a>
 
 ## Table of Contents
 
-- [microscurid.proto](#microscurid-proto)
-    - [Login](#microscurid-v0-Login)
-    - [LoginRes](#microscurid-v0-LoginRes)
-    - [RegisterDeviceIdentity](#microscurid-v0-RegisterDeviceIdentity)
-    - [RegisterDeviceIdentityRes](#microscurid-v0-RegisterDeviceIdentityRes)
-    - [ReqMetadata](#microscurid-v0-ReqMetadata)
-    - [VerifySignature](#microscurid-v0-VerifySignature)
-  
-    - [ReqMetadata.ReqType](#microscurid-v0-ReqMetadata-ReqType)
+- [certificate.proto](#certificate-proto)
+    - [CSR](#certificate-v1-CSR)
+    - [CSRCustom](#certificate-v1-CSRCustom)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="microscurid-proto"></a>
+<a name="certificate-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## microscurid.proto
+## certificate.proto
 
 
 
-<a name="microscurid-v0-Login"></a>
+<a name="certificate-v1-CSR"></a>
 
-### Login
-Used for log in
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| username | [string](#string) |  | public DID |
-
-
-
-
-
-
-<a name="microscurid-v0-LoginRes"></a>
-
-### LoginRes
+### CSR
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| token | [string](#string) |  | short lived encrypted token returned by the server on successful login |
+| data | [bytes](#bytes) |  | certificate signing request from the grpc server |
+| lifetime | [int32](#int32) |  | lifetime of certificate |
 
 
 
 
 
 
-<a name="microscurid-v0-RegisterDeviceIdentity"></a>
+<a name="certificate-v1-CSRCustom"></a>
 
-### RegisterDeviceIdentity
-RegisterDeviceIdentity contains the required structure to register a newly generated Identity on the hardware
-TODO: Enhance with other hardware details to include DeviceContext
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| did | [string](#string) |  | DID generated on the device |
-| unixTime | [int64](#int64) |  | time of request |
-| deviceName | [string](#string) |  | device name provided by the user |
-
-
-
-
-
-
-<a name="microscurid-v0-RegisterDeviceIdentityRes"></a>
-
-### RegisterDeviceIdentityRes
-RegisterDeviceIdentityRes returns required response.
+### CSRCustom
+CSRCustom provides custom fields for the certificate signing request
+currently to be used for agent configuration
+more fields can be added as needed in the future to expand the functionality
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| result | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="microscurid-v0-ReqMetadata"></a>
-
-### ReqMetadata
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| reqType | [ReqMetadata.ReqType](#microscurid-v0-ReqMetadata-ReqType) |  |  |
-| registerDeviceIdentity | [RegisterDeviceIdentity](#microscurid-v0-RegisterDeviceIdentity) | optional |  |
-| verifySignature | [VerifySignature](#microscurid-v0-VerifySignature) | optional |  |
-| login | [Login](#microscurid-v0-Login) | optional |  |
-
-
-
-
-
-
-<a name="microscurid-v0-VerifySignature"></a>
-
-### VerifySignature
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| signature | [string](#string) |  |  |
-| msgHashPayload | [string](#string) |  |  |
-| did | [string](#string) |  |  |
-| compressedPublicKey | [string](#string) |  |  |
+| commonName | [string](#string) |  | common name of the certificate |
+| country | [string](#string) |  | country of the certificate |
+| province | [string](#string) |  | province of the certificate |
+| locality | [string](#string) |  | locality of the certificate |
+| organization | [string](#string) |  | organization of the certificate |
+| organizationalUnit | [string](#string) |  | organizational unit of the certificate |
+| emailAddress | [string](#string) |  | email address of the certificate |
+| lifetimeDays | [int32](#int32) |  | lifetime of certificate |
 
 
 
 
 
  
-
-
-<a name="microscurid-v0-ReqMetadata-ReqType"></a>
-
-### ReqMetadata.ReqType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| UnknownReq | 0 | UnknownReq, default fallback field in case unknown enum information is sent from the MicroScurid |
-| IdentityRegistration | 1 | IdentityRegistration, used for registering an incoming request with DID (identity) from the device via MicroScurid |
-| Verify | 2 | Verify, used for verifying the signature coming along with the identity and the |
-
 
  
 

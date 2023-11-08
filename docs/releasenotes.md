@@ -1,5 +1,41 @@
 # Release Notes
 
+## October 29, 2023
+
+## General changes
+* Integrations across IoT and OT platforms like Hawkbit, PTC ThingWorx to automate identity and device onboarding. 
+* Automated Azure IoT device certificate delivery to IoT devices running Edge Agent. 
+* Enhanced user on-boarding process.
+* Invite new users to join your organization.
+* Email verification and password reset.
+* Data collection and storage in Self-hosted CockroachDB.
+* Bugfixes and performance improvements.
+* Adoption of QBFT consensus algorithm in Scurid SSI.
+* Performance monitoring *(in beta)*
+* New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+### Scurid App
+* Users can now configure agents to send data to self-hosted CockroachDB.
+* Ability to change and enhance agent name.
+* Create custom data structures for agents, by defining data structure in JSON format.
+* Allow custom DB table creation and assignment to agents.
+* Built-in reporting on data signing and verification on each agent.
+* Simple pricing tiers, including free developer tier, available during sign-up.
+* Invite new users to join your organization through simple user management.
+* Release management widget to keep track of latest releases directly from the App.
+
+### Scurid Server
+* Promethues integration for performance monitoring
+* Rate limiting on all gRPC API calls
+* Region and connection handler for CockroachDB
+* Built in email server for supporting new user invites
+
+### Scurid Edge Agent
+* Support for new data streaming APIs.
+* Built in data signing and verification for each agent during data collection.
+* New config.ymal file on the deivce to track agent configuration downloaded from the server. 
+
+
 ## December 11, 2022
 
 ## General changes

@@ -1,4 +1,4 @@
-# Auth Documentation
+# Auth API Documentation
 <a name="top"></a>
 
 ## Table of Contents
@@ -10,6 +10,7 @@
     - [RefreshTokenRes](#auth-v1-RefreshTokenRes)
     - [SetInitialPassphraseReq](#auth-v1-SetInitialPassphraseReq)
     - [SetInitialPassphraseRes](#auth-v1-SetInitialPassphraseRes)
+    - [UserStruct](#auth-v1-UserStruct)
     - [VerifyTokenReq](#auth-v1-VerifyTokenReq)
     - [VerifyTokenRes](#auth-v1-VerifyTokenRes)
   
@@ -34,7 +35,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| username | [string](#string) |  | public DID |
+| user | [UserStruct](#auth-v1-UserStruct) |  | public DID or username |
 | password | [string](#string) |  | signed public DID &#43; requestTime from the edge agent |
 | requestTime | [int64](#int64) |  | edge agent&#39;s unix int64 UTC timestamp |
 
@@ -112,6 +113,22 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | result | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="auth-v1-UserStruct"></a>
+
+### UserStruct
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| userDID | [string](#string) |  |  |
+| username | [string](#string) |  |  |
 
 
 
