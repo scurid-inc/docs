@@ -1,9 +1,12 @@
 
-Quickstart is designed to help you get started with Scurid platform. 
+Quickstart is designed to help you get started with Scurid platform. It covers the following topics:
+
+* [Quickstart On-Premise](quickstart/quickstart-on-premise.md)
+* [Quickstart For Managed](quickstart/quickstart-for-managed.md)
 
 !!! note "Need help with managed instance configuration details ?"
 
-    Raise your request here [Support](https://support.scurid.cloud){ .md-button }
+    We're always there to help! Raise your request here [Support](https://support.scurid.cloud){ .md-button }
 
 !!! info
    
@@ -16,14 +19,11 @@ Quickstart is designed to help you get started with Scurid platform.
 
 
 ### Downloads
-Navigate to [Getting Started](https://www.scurid.com/get-started) to download the latest version of Scurid software components.
+Navigate to [Getting Started](https://www.scurid.com/get-started) to download the latest version of Scurid software components. There are builds available for `linux`, `macos` and `windows` platforms for `Server`, `App` and for `Edge Agents` we have pre-built binaries for several IoT Edge hardware platforms. Download the appropriate build for your platform.
+
 
 ??? info "Service Agreement"
 
     By downloading Scurid Software you agree to the [Service Agreement](https://www.scurid.com/service-agreement)
-
-#### Download Scurid App
-
-There are builds available for `linux`, `macos` and `windows` platforms. Download the appropriate build for your platform.
 
  

@@ -1,7 +1,7 @@
 # Quickstart - On-Premise
 
 ## Overview
-This page covers how to get started with Scurid Platform with on-premise deployment - by downloading and setting up required software components on your own infrastructure.
+This page covers how to get started with Scurid Platform with on-premise deployment.
 
 !!! info
    
@@ -18,6 +18,7 @@ This page covers how to get started with Scurid Platform with on-premise deploym
 
 
 ### Downloads
+
 Navigate to [Getting Started](https://www.scurid.com/get-started) to download the latest version of Scurid software components.
 
 ??? info "Service Agreement"
@@ -70,17 +71,17 @@ Download the appropriate build for your platform from the downloads page. There 
 ## Step 2 : Launching Scurid Server and App
 This steps sets up the server and certain configurations that are needed in order to complete the user on-boarding process.
 
-1. Launch the Scurid App ![Launch](img/v23-0-2/scurid-launch.png)  
-2. Select Create a new instance, fill in your valid email address and accept the terms of service to Sign up ![Create new instance](img/v23-0-2/create-new-instance.png)
+1. Launch the Scurid App ![Launch](../img/v23-0-2/scurid-launch.png)  
+2. Select Create a new instance, fill in your valid email address and accept the terms of service to Sign up ![Create new instance](../img/v23-0-2/create-new-instance.png)
 3. Above step will email you with a code to verify your email
 4. On the next screen pick the best pricing plan that suits your need. Scurid offers a free plan for non production use.
-5. Select On-Premise and fill in the required server address, port and storage directory where you'd like Scurid Server to persist its data ![Server Configuration](img/v23-0-2/on-premise-server-details.png)
-6. Select User type and click next ![User Type](img/v23-0-2/select-user-type.png)
-7. Select your country, ![country](img/v23-0-2/select-country.png)
-8. Enter your name and click next ![name](img/v23-0-2/first-last-name.png)
-9. Enter the code sent on your email, and click next ![code](img/v23-0-2/verify-code.png)
-10. Create a 13 character long master passphrase, and click next ![passphrase](img/v23-0-2/master-passphrase.png)
-11. We offer built in support for CockroachDB's Managed Serverless (perfect for PoCs and starter projects) or connect your own CockroachDB instance, or you can skip this step and configure it later. ![cockroachdb](img/v23-0-2/db-setup.png)
+5. Select On-Premise and fill in the required server address, port and storage directory where you'd like Scurid Server to persist its data ![Server Configuration](../img/v23-0-2/on-premise-server-details.png)
+6. Select User type and click next ![User Type](../img/v23-0-2/select-user-type.png)
+7. Select your country, ![country](../img/v23-0-2/select-country.png)
+8. Enter your name and click next ![name](../img/v23-0-2/first-last-name.png)
+9. Enter the code sent on your email, and click next ![code](../img/v23-0-2/verify-code.png)
+10. Create a 13 character long master passphrase, and click next ![passphrase](../img/v23-0-2/master-passphrase.png)
+11. We offer built in support for CockroachDB's Managed Serverless (perfect for PoCs and starter projects) or connect your own CockroachDB instance, or you can skip this step and configure it later. ![cockroachdb](../img/v23-0-2/db-setup.png)
 
 
 That's it. You are now ready to start deploying agents and start creating new identities using them.
@@ -103,13 +104,3 @@ Example :
 ```shell
 ./scuridedgeagent-linux-xxx -spaaddr 192.168.1.232:443 -syncrate 30s
 ```
-
-If you do require to close the terminal you can run the service in the background and then disown , e.g.
-
-```shell
-./scuridedgeagent-linux-arm7 &
-disown
-```
-
-The agent by default logs out some of the default configurations like the port details etc., additionally the agent starts listening on `localhost`
- 
