@@ -24,6 +24,10 @@ Navigate to [Getting Started](https://www.scurid.com/get-started) to download th
 
     By downloading Scurid Software you agree to the [Service Agreement](https://www.scurid.com/service-agreement)
 
+#### Download Scurid Edge Agent
+
+There are builds available for a variety of hardware and OS platforms. Download the appropriate build for your platform. Please check the download page for the latest supported platforms.
+
 #### Download Scurid App
 
 There are builds available for `linux`, `macos` and `windows` platforms. Download the appropriate build for your platform.
