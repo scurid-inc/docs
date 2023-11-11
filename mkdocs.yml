@@ -41,7 +41,7 @@ plugins:
   # enables the search bar, with search functionality
   - search
 markdown_extensions:
-  # enables the tabs options on the pages
+  # enables the tabs options on the pag
   - admonition
   - pymdownx.superfences
   - pymdownx.details
@@ -62,6 +62,7 @@ nav:
         - 'Managed': 'quickstart/quickstart-for-managed.md'
       - 'Logging': 'logs.md'
       - 'Glossary': 'glossary.md'
+  - Monitoring: 'monitoring.md'
   - 'For Edge':
       - 'Scurid Edge Agent':
         - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
