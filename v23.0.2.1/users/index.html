@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../integration-thingworx/">
+        <link rel="prev" href="../glossary/">
       
       
-        <link rel="next" href="../edgeAgent/">
+        <link rel="next" href="../monitoring/">
       
       
       <link rel="icon" href="../img/scurid/logo/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board. - Scurid</title>
+        <title>User Management - Scurid</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#initial-setup-pre-requisite" class="md-skip">
+        <a href="#pre-requisites" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.
+              User Management
             
           </span>
         </div>
@@ -484,9 +484,27 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../users/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    User Management
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -495,6 +513,45 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-inviting-a-user" class="md-nav__link">
+    Creating and inviting a user
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accepting-an-invite" class="md-nav__link">
+    Accepting an invite
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -892,8 +949,6 @@
       
   
   
-    
-  
   
     
     
@@ -904,12 +959,14 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -923,7 +980,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Blogs
@@ -934,27 +991,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../blog-microscurid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -963,107 +1002,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#initial-setup-pre-requisite" class="md-nav__link">
-    Initial setup &amp; pre-requisite
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-about-the-server-and-microscurid-c-code" class="md-nav__link">
-    1. About the server and microscurid-c code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-preparation-on-the-mcu-configuring-the-network-info" class="md-nav__link">
-    2. Preparation on the MCU : configuring the network info
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Preparation on the MCU : configuring the network info">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-configure-the-network" class="md-nav__link">
-    1. Configure the network
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-paste-your-certificate" class="md-nav__link">
-    2. Paste your certificate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fix-the-conflict-between-macros" class="md-nav__link">
-    3. Fix the conflict between macros.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-ensure-cube-ide-access-to-the-library" class="md-nav__link">
-    4. Ensure Cube IDE access to the library
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-configuring-the-rtc-timer" class="md-nav__link">
-    5. Configuring the RTC timer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-preparation-on-the-server-and-the-scurid-app" class="md-nav__link">
-    2. Preparation on the server and the Scurid App
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-generate-and-send-the-identity-request-from-mcu" class="md-nav__link">
-    3. Generate and send the identity request from MCU
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-approving-the-mcu-identity-on-the-scurid-app" class="md-nav__link">
-    4. Approving the MCU identity on the Scurid App
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1631,84 +1569,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#initial-setup-pre-requisite" class="md-nav__link">
-    Initial setup &amp; pre-requisite
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-about-the-server-and-microscurid-c-code" class="md-nav__link">
-    1. About the server and microscurid-c code
+  <a href="#creating-and-inviting-a-user" class="md-nav__link">
+    Creating and inviting a user
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-preparation-on-the-mcu-configuring-the-network-info" class="md-nav__link">
-    2. Preparation on the MCU : configuring the network info
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Preparation on the MCU : configuring the network info">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-configure-the-network" class="md-nav__link">
-    1. Configure the network
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-paste-your-certificate" class="md-nav__link">
-    2. Paste your certificate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fix-the-conflict-between-macros" class="md-nav__link">
-    3. Fix the conflict between macros.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-ensure-cube-ide-access-to-the-library" class="md-nav__link">
-    4. Ensure Cube IDE access to the library
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-configuring-the-rtc-timer" class="md-nav__link">
-    5. Configuring the RTC timer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-preparation-on-the-server-and-the-scurid-app" class="md-nav__link">
-    2. Preparation on the server and the Scurid App
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-generate-and-send-the-identity-request-from-mcu" class="md-nav__link">
-    3. Generate and send the identity request from MCU
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-approving-the-mcu-identity-on-the-scurid-app" class="md-nav__link">
-    4. Approving the MCU identity on the Scurid App
+  <a href="#accepting-an-invite" class="md-nav__link">
+    Accepting an invite
   </a>
   
 </li>
@@ -1728,162 +1604,27 @@
                   
 
 
-  <h1>An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.</h1>
+  <h1>User Management</h1>
 
-<p><img style="width:75px;" src="../img/reishi_mitani_profile_photo.png"> <span style="color:gray">Author: Reishi Mitani, Software engineer, Intern </span>.</p>
-<p>This tutorial provides a simplified overview on generating, approving device identity with the microscurid-c library, and approving it using Scurid App.</p>
-<h2 id="initial-setup-pre-requisite">Initial setup &amp; pre-requisite</h2>
-<p>Before starting ensure that one time user on-boarding has been finished with Scurid. See the <a href="../quickstart/quickstart-on-premise/">quickstart guide.</a> </p>
-<p>Use the example code in the microscurid-c library available <a href="https://github.com/scurid-inc/microscurid-c/tags">here</a> for download.</p>
-<h2 id="1-about-the-server-and-microscurid-c-code">1. About the server and microscurid-c code</h2>
-<p>For an on-premise deployment Scurid app, server and microscurid-c will be needed.</p>
-<ul>
-<li>Run the Scurid server binary supported on platforms <code>MacOs</code>, <code>Linux</code>, or <code>Windows</code> . Make sure to have the specific port (in this tutorial, <code>8888</code>) open so that the MCU can make requests to the server. Download the server from <a href="https://drive.google.com/drive/folders/1nuMr7S9HYsjOBsEJQoDYTbnwi1I4uPiB">here</a></li>
-<li>The microscurid-c library currently works on the <code>STM32WB55</code> series. Another adapter to connect to the ethernet may be needed as well. Download the microscurid-c code <a href="https://github.com/scurid-inc/microscurid-c/tags">here</a></li>
-<li>The Scurid App will be used for approving the registration requests of identities from the MCU. Download the Scurid App <a href="https://drive.google.com/drive/folders/1nuMr7S9HYsjOBsEJQoDYTbnwi1I4uPiB">here</a></li>
-</ul>
-<h2 id="2-preparation-on-the-mcu-configuring-the-network-info">2. Preparation on the MCU : configuring the network info</h2>
-<p>We will open the example code of the microscurid-c library in the <code>STM32 Cube IDE</code>.
-Download the STM32 Cube IDE <a href="https://www.st.com/en/development-tools/stm32cubeide.html">here</a></p>
-<h3 id="1-configure-the-network">1. Configure the network</h3>
-<p>Before compiling and transferring the example code to our MCU, we first need to configure the network settings. In <code>app_freertos.c</code>, configure the server port and IP address as below.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#define BACKEND_SERVER_PORT 8888</span>
-<span class="p">...</span>
-<span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BACKEND_SERVER_IP</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">192</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">128</span><span class="p">};</span>
-</code></pre></div>
-<p>We will also need to configure the subnet mask and gateway server IP address, and whether we want to enable DHCP.</p>
-<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">wiz_NetInfo</span><span class="w"> </span><span class="n">g_net_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">.</span><span class="n">mac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="p">},</span><span class="c1">// MAC address, we fill them with zeros since they are unnecessary for now</span>
-<span class="w">        </span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="w"> </span><span class="p">},</span><span class="w">                    </span><span class="c1">// // IP address, fill in random numbers if using DHCP</span>
-<span class="w">        </span><span class="p">.</span><span class="n">sn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">254</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w">                     </span><span class="c1">// Subnet Mask</span>
-<span class="w">        </span><span class="p">.</span><span class="n">gw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">                     </span><span class="c1">// Gateway</span>
-<span class="w">        </span><span class="p">.</span><span class="n">dns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">                    </span><span class="c1">// DNS server</span>
-<span class="w">        </span><span class="p">.</span><span class="n">dhcp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NETINFO_DHCP</span><span class="w">                        </span><span class="c1">// DHCP enable/disable</span>
-<span class="w">        </span><span class="p">};</span>
-</code></pre></div>
-<h3 id="2-paste-your-certificate">2. Paste your certificate</h3>
-<p>We also need to paste the certificate, which is to be used for encryption in <code>Drivers/TLS/certificate.h</code>.</p>
-<p>We'll use the subordinate ca certificate generate from Scurid for this blog.</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w">  </span><span class="n">self_signed_certificate</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>\
-<span class="s">&quot;-----BEGIN CERTIFICATE-----</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;MIIGTjCCBDagAwIBAgIUAKvvmZw3VLawhM9mvTKFJubPj78wDQYJKoZIhvcNAQEL</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;BQAwZDELMAkGA1UEBhMCanAxDjAMBgNVBAgTBXRva3lvMQ4wDAYDVQQHEwV0b2t5</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;...</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;bzEPMA0GA1UEChMGc2N1cmlkMQ8wDQYDVQQLEwZzY3VyaWQxEzARBgNVBAMTCnNj</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;dXJpZC5jb20wHhcNMjIwOTI4MDQyODQ2WhcNMzExMjI4MjA0NTUxWjBkMQswCQYD</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;D+mhQS2JfxyOjx2RmiJUqTCJRBvSTk0DfMItaFxV+BJ5nA==</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span>\
-<span class="s">&quot;-----END CERTIFICATE-----</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="3-fix-the-conflict-between-macros">3. Fix the conflict between macros.</h3>
-<p>There may also be some conflicts between the <code>W5500</code> and <code>STM32</code> library.
-Modify <code>MR</code> =&gt; <code>W_MR</code> in the <code>/p-nucleo-wb55/Middlewares/ioLibrary_Driver/Ethernet/W5500/w5500.h</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#define W_MR                 (_W5500_IO_BASE_ + (0x0000 &lt;&lt; 8) + (WIZCHIP_CREG_BLOCK &lt;&lt; 3))</span>
-
-<span class="c1">// ...............</span>
-
-<span class="c1">/////////////////////////////////</span>
-<span class="c1">// Common Register I/O function //</span>
-<span class="c1">/////////////////////////////////</span>
-<span class="cm">/**</span>
-<span class="cm"> * @ingroup Common_register_access_function</span>
-<span class="cm"> * @brief Set Mode Register</span>
-<span class="cm"> * @param (uint8_t)mr The value to be set.</span>
-<span class="cm"> * @sa getMR()</span>
-<span class="cm"> */</span>
-<span class="cp">#define setMR(mr) \</span>
-<span class="cp">    WIZCHIP_WRITE(W_MR,mr)</span>
-
-
-<span class="cm">/**</span>
-<span class="cm"> * @ingroup Common_register_access_function</span>
-<span class="cm"> * @brief Get Mode Register</span>
-<span class="cm"> * @return uint8_t. The value of Mode register.</span>
-<span class="cm"> * @sa setMR()</span>
-<span class="cm"> */</span>
-<span class="cp">#define getMR() \</span>
-<span class="cp">        WIZCHIP_READ(W_MR)</span>
-</code></pre></div>
-<h3 id="4-ensure-cube-ide-access-to-the-library">4. Ensure Cube IDE access to the library</h3>
-<p>In <code>properties -&gt; C/C++ Build -&gt; Settings</code>, check the following</p>
-<ul>
-<li>the middlewares and their search paths are configured correctly in <code>MCU GCC Compiler -&gt; Include Paths</code> </li>
-<li>the microscurid library and their search paths are configured correctly in <code>MCU GCC Linker -&gt; Libraries</code></li>
-</ul>
-<h3 id="5-configuring-the-rtc-timer">5. Configuring the RTC timer</h3>
-<p>The RTC timer must be configured to provide an accurate timestamp. Configure them here in: <code>microscurid-c/examples/p-nucleo-wb55/Core/Src/main.c</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">sTime</span><span class="p">.</span><span class="n">Hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x11</span><span class="p">;</span>
-<span class="n">sTime</span><span class="p">.</span><span class="n">Minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x32</span><span class="p">;</span>
-<span class="n">sTime</span><span class="p">.</span><span class="n">Seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0</span><span class="p">;</span>
-<span class="n">sTime</span><span class="p">.</span><span class="n">SubSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0</span><span class="p">;</span>
-<span class="n">sTime</span><span class="p">.</span><span class="n">DayLightSaving</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RTC_DAYLIGHTSAVING_NONE</span><span class="p">;</span>
-<span class="n">sTime</span><span class="p">.</span><span class="n">StoreOperation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RTC_STOREOPERATION_RESET</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">HAL_RTC_SetTime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hrtc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sTime</span><span class="p">,</span><span class="w"> </span><span class="n">RTC_FORMAT_BCD</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">HAL_OK</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">Error_Handler</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="n">sDate</span><span class="p">.</span><span class="n">WeekDay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RTC_WEEKDAY_SATURDAY</span><span class="p">;</span>
-<span class="n">sDate</span><span class="p">.</span><span class="n">Month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RTC_MONTH_NOVEMBER</span><span class="p">;</span>
-<span class="n">sDate</span><span class="p">.</span><span class="n">Date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x26</span><span class="p">;</span>
-<span class="n">sDate</span><span class="p">.</span><span class="n">Year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2022</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="2-preparation-on-the-server-and-the-scurid-app">2. Preparation on the server and the Scurid App</h2>
-<p>Before running the server, we need to fill in our certificate info in <code>config.yaml</code>.
-Make sure to fill in all the required fields. The code below is an example with all the required fields filled in.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">ServerCert</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">CommonName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-<span class="w">  </span><span class="nt">Country</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JP</span>
-<span class="w">  </span><span class="nt">Province</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tokyo</span>
-<span class="w">  </span><span class="nt">Locality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tokyo</span>
-<span class="w">  </span><span class="nt">Organization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScuridInc.</span>
-<span class="w">  </span><span class="nt">OrganizationalUnit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Software Team</span>
-<span class="w">  </span><span class="nt">EmailAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info@scurid.com</span>
-<span class="w">  </span><span class="nt">LifetimeDays</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">730</span><span class="w"> </span><span class="c1"># default 2 years, minimum 1 month, maximum 10 years</span>
-</code></pre></div>
-<p>Launch the server if config provided correctly you may see following log.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./imagebuild/service-v22.0.1-alpha.0-darwin
-<span class="m">2022</span>-12-18<span class="w"> </span><span class="m">00</span>:20:27.000<span class="w"> </span>DBG<span class="w"> </span>connected<span class="w"> </span>to<span class="w"> </span>Scurid<span class="w"> </span>SSI<span class="w"> </span>Service<span class="w"> </span>xxx.scurid.com:443
-<span class="m">2022</span>-12-18<span class="w"> </span><span class="m">00</span>:20:27.000<span class="w"> </span>DBG<span class="w"> </span>found<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>store
-...
-<span class="m">2022</span>-12-18<span class="w"> </span><span class="m">00</span>:20:29.000<span class="w"> </span>INF<span class="w"> </span>License<span class="w"> </span>is<span class="w"> </span>activated!
-</code></pre></div>
-<p>Next open the Scurid App. The App should open the following page:</p>
-<p><img alt="app_onboard_deploy_type_config" src="../img/app_onboard_deploy_type_config.png" width="400" /></p>
-<p>Choose any directory for the storage.
-Next, we fill in the user info.</p>
-<p><img alt="app_onboard_user_info" src="../img/app_onboard_user_info.png" width="400" /></p>
-<p>Finally, we set up the master password (for the beta version, please be careful as there is no password reset feature, yet).</p>
-<p><img alt="app_onboard_master_password" src="../img/app_onboard_master_password.png" width="400" /></p>
-<p>We can skip configuring the storage for now.</p>
-<p><img alt="app_data_storage_config" src="../img/app_data_storage_config.png" width="400" /></p>
-<p>We are finally done with the on-boarding for Scurid App! Congrats!</p>
-<p><img alt="app_onboard_success" src="../img/app_onboard_success.png" width="400" /></p>
-<p>The following files will be created in the storage directory we chose in the on-boarding. DO NOT manually edit / move these files.</p>
-<div class="highlight"><pre><span></span><code><span class="m">000001</span>.vlog
-DISCARD
-<span class="m">00001</span>.mem
-KEYREGISTRY
-MANIFEST
-LOCK
-</code></pre></div>
-<h2 id="3-generate-and-send-the-identity-request-from-mcu">3. Generate and send the identity request from MCU</h2>
-<p>It is time to run the example code on the MCU.
-Click the run icon on the IDE.</p>
-<p>It takes about 3 minutes to establish the TLS connection and send the identity over to the server.</p>
-<h2 id="4-approving-the-mcu-identity-on-the-scurid-app">4. Approving the MCU identity on the Scurid App</h2>
-<p>Once the data is sent via the TLS connection, you can approve the device on the Scurid App.</p>
-<p>Login to the Scurid App and open the <code>Identities</code> tab.
-Inside the <code>Identities</code> tab, open the <code>Pending</code> tab.
-You should see a pending identity, if it was sent properly to the server.</p>
-<p><img alt="scurid_app_pending" src="../img/scurid_app_registry_pending.png" width="400" /></p>
-<p>Each identity is bound to its underlying hardware, click on the pending device identity &amp; click approve at the bottom of the identity card.</p>
-<p><img alt="scurid_app_approve" src="../img/scurid_app_registry_details.png" width="400" /></p>
-<p>The approval process takes a few seconds to register the transaction on Scurid SSI service, which in turns registers the data on distributed ledger.</p>
-<p><img alt="scurid_app_approval_process" src="../img/scurid_app_loading_after_approval.png" width="400" /></p>
-<p>When the approval is done, you should be able to see confirmation on the Scurid App for respective identity.
-Click anywhere outside the modal to exit.</p>
-<p><img alt="scurid_app_after_approval_done" src="../img/scurid_app_after_approval_done.png" width="400" /></p>
-<p>The approved identity will appear in the <code>Approved</code> tab.</p>
-<p><img alt="scurid_app_approved_tab" src="../img/scurid_app_approved_tab.png" width="400" /></p>
-<p>That's it your microcontroller is now ready with an unique digital identity which be used for authentication and authorization with any IoT/IIoT Platform.</p>
+<p>Using Scurid Server and App you can create and invite users in your organization to work with you.</p>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<p>Ensure that you have successfully installed and configured Scurid Server and App.</p>
+<h2 id="creating-and-inviting-a-user">Creating and inviting a user</h2>
+<ol>
+<li>Open Scurid App and login with your passphrase created during the onboarding process. <img alt="onboarding process" src="../img/v23-0-2/login.png" /></li>
+<li>Click on <code>Settings</code> then <code>Users</code> and click on Add new user. <img alt="onboarding process" src="../img/v23-0-2/invite-user.png" /></li>
+<li>Fill in the required details and click on <code>Invite</code>. <img alt="onboarding process" src="../img/v23-0-2/invite-form.png" /></li>
+<li>The user will receive an email with an invite code valid for 24hrs. If the user fails to complete the invitation process within 24hrs, you can resend the invite code by filling up the invite form.</li>
+</ol>
+<h2 id="accepting-an-invite">Accepting an invite</h2>
+<ol>
+<li>Download the app from <a href="https://scurid.com/downloads">Downloads</a></li>
+<li>Launch the app and toggle to <code>Sign into an existing server</code></li>
+<li>Click on <img alt="Accept your invitation" src="../img/v23-0-2/scurid-launch.png" /></li>
+<li>Enter the server and port your were invited to and click on <code>Next</code>. <img alt="Accept your invitation" src="../img/v23-0-2/existing-server-info.png" /></li>
+<li>Complete the form, including the invite code you received in your email and click on <code>Next</code>. <img alt="Accept your invitation" src="../img/v23-0-2/accept-user-invite-form.png" /></li>
+<li>Once done, app will reload to show the login page. Click on <code>Sign into an existing server</code> and login with your email and password you just created. <img alt="Accept your invitation" src="../img/v23-0-2/invited-user-login.png" /></li>
+</ol>
 
 
   
