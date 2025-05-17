@@ -7,6 +7,10 @@ You may need to configure or reconfigure the Scurid Desktop App for several reas
 
 For this reason, the Scurid Desktop App allows you to configure the Scurid Server IP address and port. This is a one-time configuration that is required only when you first install the app or if you need to change the server settings.
 
+!!! info
+    
+    If you are upgrading from a previous version, app will automatically detect `scurid_config` file and will remove the old configuration.
+
 ## To Configure the Scurid Desktop App
 
 1. Download and launch the Scurid App from [https://scurid.com/downloads](https://scurid.com/downloads).
