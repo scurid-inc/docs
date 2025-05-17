@@ -62,11 +62,13 @@ nav:
         - 'Managed': 'quickstart/quickstart-for-managed.md'
       - 'App':
         - 'Startup Configuration': 'update_app_startup_config.md'
+        - Access Management:
+          - User Group: 'user_group_mgmt.md'
+          - User Management: 'users.md'
         - 'Logging':
            - 'Overview': 'logs.md'
            - 'Features': 'log_features.md'
       - 'Glossary': 'glossary.md'
-  - User Management: 'users.md'
   - Monitoring: 'monitoring.md'
   - 'For Edge':
       - 'Scurid Edge Agent':
