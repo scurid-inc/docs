@@ -1,4 +1,5 @@
 You may need to configure or reconfigure the Scurid Desktop App for several reasons, including:
+
 * Accessing new features or updates
 * Change in the Scurid Server IP address or port
 * Reinstalling the app with a different Scurid Server IP address or port
