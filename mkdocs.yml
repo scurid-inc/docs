@@ -60,7 +60,9 @@ nav:
       - 'Quickstart':
         - 'On Premise': 'quickstart/quickstart-on-premise.md'
         - 'Managed': 'quickstart/quickstart-for-managed.md'
-      - 'Logging': 'logs.md'
+      - 'Logging':
+          - 'Overview':'logs.md'
+          - 'Features': 'logs_features.md'
       - 'Glossary': 'glossary.md'
   - User Management: 'users.md'
   - Monitoring: 'monitoring.md'
