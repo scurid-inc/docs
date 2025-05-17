@@ -61,7 +61,7 @@ nav:
         - 'On Premise': 'quickstart/quickstart-on-premise.md'
         - 'Managed': 'quickstart/quickstart-for-managed.md'
       - 'App':
-        - 'Startup Configuration': update_app_startup_config.md
+        - 'Startup Configuration': 'update_app_startup_config.md'
         - 'Logging':
            - 'Overview': 'logs.md'
            - 'Features': 'log_features.md'
