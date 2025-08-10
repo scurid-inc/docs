@@ -1,6 +1,6 @@
 # Command-line flags
 
-Table of server flags defined in flag.go with defaults.
+Flags to help you configure the server at startup. These flags can be set in the command line when starting the server.
 
 | Flag | Default | Description                                                                                                 |
 |---|---|-------------------------------------------------------------------------------------------------------------|
