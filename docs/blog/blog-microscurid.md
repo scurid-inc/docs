@@ -4,7 +4,7 @@ This tutorial provides a simplified overview on generating, approving device ide
 
 ## Initial setup & pre-requisite
 
-Before starting ensure that one time user on-boarding has been finished with Scurid. See the [quickstart guide.](quickstart/quickstart-on-premise.md) 
+Before starting ensure that one time user on-boarding has been finished with Scurid. See the [quickstart guide.](../quickstart/quickstart-on-premise.md) 
 
 Use the example code in the microscurid-c library available [here](https://github.com/scurid-inc/microscurid-c/tags) for download.
 
@@ -154,24 +154,24 @@ $ ./imagebuild/service-v22.0.1-alpha.0-darwin
 
 Next open the Scurid App. The App should open the following page:
 
-![app_onboard_deploy_type_config](img/app_onboard_deploy_type_config.png){ width=400 }
+![app_onboard_deploy_type_config](../img/app_onboard_deploy_type_config.png){ width=400 }
 
 Choose any directory for the storage.
 Next, we fill in the user info.
 
-![app_onboard_user_info](img/app_onboard_user_info.png){ width=400 }
+![app_onboard_user_info](../img/app_onboard_user_info.png){ width=400 }
 
 Finally, we set up the master password (for the beta version, please be careful as there is no password reset feature, yet).
 
-![app_onboard_master_password](img/app_onboard_master_password.png){ width=400 }
+![app_onboard_master_password](../img/app_onboard_master_password.png){ width=400 }
 
 We can skip configuring the storage for now.
 
-![app_data_storage_config](img/app_data_storage_config.png){ width=400 }
+![app_data_storage_config](../img/app_data_storage_config.png){ width=400 }
 
 We are finally done with the on-boarding for Scurid App! Congrats!
 
-![app_onboard_success](img/app_onboard_success.png){ width=400 }
+![app_onboard_success](../img/app_onboard_success.png){ width=400 }
 
 The following files will be created in the storage directory we chose in the on-boarding. DO NOT manually edit / move these files.
 
@@ -199,23 +199,23 @@ Login to the Scurid App and open the `Identities` tab.
 Inside the `Identities` tab, open the `Pending` tab.
 You should see a pending identity, if it was sent properly to the server.
 
-![scurid_app_pending](img/scurid_app_registry_pending.png){ width=400 }
+![scurid_app_pending](../img/scurid_app_registry_pending.png){ width=400 }
 
 Each identity is bound to its underlying hardware, click on the pending device identity & click approve at the bottom of the identity card.
 
-![scurid_app_approve](img/scurid_app_registry_details.png){ width=400 }
+![scurid_app_approve](../img/scurid_app_registry_details.png){ width=400 }
 
 The approval process takes a few seconds to register the transaction on Scurid SSI service, which in turns registers the data on distributed ledger.
 
-![scurid_app_approval_process](img/scurid_app_loading_after_approval.png){ width=400 }
+![scurid_app_approval_process](../img/scurid_app_loading_after_approval.png){ width=400 }
 
 When the approval is done, you should be able to see confirmation on the Scurid App for respective identity.
 Click anywhere outside the modal to exit.
 
-![scurid_app_after_approval_done](img/scurid_app_after_approval_done.png){ width=400 }
+![scurid_app_after_approval_done](../img/scurid_app_after_approval_done.png){ width=400 }
 
 The approved identity will appear in the `Approved` tab.
 
-![scurid_app_approved_tab](img/scurid_app_approved_tab.png){ width=400 }
+![scurid_app_approved_tab](../img/scurid_app_approved_tab.png){ width=400 }
 
 That's it your microcontroller is now ready with an unique digital identity which be used for authentication and authorization with any IoT/IIoT Platform.

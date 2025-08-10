@@ -61,13 +61,13 @@ nav:
         - 'On Premise': 'quickstart/quickstart-on-premise.md'
         - 'Managed': 'quickstart/quickstart-for-managed.md'
       - 'App':
-        - 'Startup Configuration': 'update_app_startup_config.md'
+        - 'Startup Configuration': 'app/update_app_startup_config.md'
         - Access Management:
-          - User Group: 'user_group_mgmt.md'
-          - User Management: 'users.md'
+          - User Group: 'app/user_group_mgmt.md'
+          - User Management: 'app/users.md'
         - 'Logging':
-           - 'Overview': 'logs.md'
-           - 'Features': 'log_features.md'
+           - 'Overview': 'app/logs.md'
+           - 'Features': 'app/log_features.md'
       - 'Server':
           - 'Flags': 'server/flags.md'
       - 'Glossary': 'glossary.md'
@@ -75,35 +75,35 @@ nav:
   - 'For Edge':
       - 'Scurid Edge Agent':
         - 'Zero-trust to trusted Device Identity': 'zero-trusttotrustedIdentityforyourIoTDevice.md'
-        - 'Autonomous Device and agent setup': 'autonomousDeviceOnboarding.md'
+        - 'Autonomous Device and agent setup': 'app/autonomousDeviceOnboarding.md'
         - 'Identity Context enabled file transfer': 'identityContextEnabledFileTransfer.md'
       - 'MicroScurid-C SDK':
-        - 'How to Get Started with MicroScurid-C SDK': 'gettingStartedMicroscurid.md'
-        - 'Create Identity Using MicroScurid-C SDK': 'createIdentity.md'
-        - 'How to Setup TLS Using MicroScurid-C SDK': 'setupTLS.md'
-        - 'Handling the Registration Request of Identity on the Scurid App': 'registrationRequestOfIdentity.md'
+        - 'How to Get Started with MicroScurid-C SDK': 'microscurid/gettingStartedMicroscurid.md'
+        - 'Create Identity Using MicroScurid-C SDK': 'microscurid/createIdentity.md'
+        - 'How to Setup TLS Using MicroScurid-C SDK': 'microscurid/setupTLS.md'
+        - 'Handling the Registration Request of Identity on the Scurid App': 'microscurid/registrationRequestOfIdentity.md'
   - 'Integrate':
-      - 'Scurid Distributed ID for PTC ThingWorx IoT platform': 'integration-thingworx.md'
+      - 'Scurid Distributed ID for PTC ThingWorx IoT platform': 'integration/integration-thingworx.md'
   - 'Blogs':
-      - 'An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.': 'blog-microscurid.md'
+      - 'An end-to-end example of how to integrate MicroScurid-C with your STMicrocontroller board.': 'blog/blog-microscurid.md'
   - 'APIs':
       - 'gRPC':
           - 'For Edge':
-            - 'Scurid Edge Agent': 'edgeAgent.md'
-            - 'MicroScurid-C SDK' : 'microscurid.md'
+            - 'Scurid Edge Agent': 'api/grpc/edgeAgent.md'
+            - 'MicroScurid-C SDK' : 'api/grpc/microscurid.md'
           - 'Server':
-              - 'Auth' : 'auth.md'
-              - 'Platform API' : 'platformapi.md'
-              - 'Platform API v2' : 'platformapiv2.md'
-              - 'Device Context' : 'deviceContext.md'
-              - 'Device Data' : 'deviceData.md'
-              - 'Logs' : 'logapi.md'
-              - 'Certificate' : 'certificate.md'
-              - 'Integration' : 'integration.md'
-              - 'Platform Internal' : 'platform-internals.md'
-              - 'Signature' : 'signature.md'
+              - 'Auth' : 'api/grpc/auth.md'
+              - 'Platform API' : 'api/grpc/platformapi.md'
+              - 'Platform API v2' : 'api/grpc/platformapiv2.md'
+              - 'Device Context' : 'api/grpc/deviceContext.md'
+              - 'Device Data' : 'api/grpc/deviceData.md'
+              - 'Logs' : 'api/grpc/logapi.md'
+              - 'Certificate' : 'api/grpc/certificate.md'
+              - 'Integration' : 'api/grpc/integration.md'
+              - 'Platform Internal' : 'api/grpc/platform-internals.md'
+              - 'Signature' : 'api/grpc/signature.md'
   - 'Releases':
-      - 'Scurid Release Notes': 'releasenotes.md'
+      - 'Scurid Release Notes': 'releasenotes/releasenotes.md'
 extra:
   analytics:
     provider: google

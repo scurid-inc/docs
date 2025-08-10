@@ -19,9 +19,9 @@ Agent framework, as part of the core functionality, enables you to have your dev
 Once the agent is installed and successfully run on an IoT hardware, it will send out on-boarding request which can be reviewed either via `Scurid App` or `Scurid Backend's APIs`  
 
 ### Scurid App
-1. Launch the app to review the pending agents ![pending agents](img/pendingagents.png){ width=800 }
-2. Select the agent to review and approve. Notice along with the agent identity - it also sends out the related hardware details ![pending agents](img/pendingAgentDetails.png){ width=800 } 
-3. Once approved, agent will be available for use via the approved list ![pending agents](img/approvedagent.png){ width=800 }
+1. Launch the app to review the pending agents ![pending agents](../img/pendingagents.png){ width=800 }
+2. Select the agent to review and approve. Notice along with the agent identity - it also sends out the related hardware details ![pending agents](../img/pendingAgentDetails.png){ width=800 } 
+3. Once approved, agent will be available for use via the approved list ![pending agents](../img/approvedagent.png){ width=800 }
 
 
 ### Scurid backend's APIs
@@ -44,8 +44,8 @@ By default, this is disabled - requiring manual approval of the identities.
 
 To enable automatic identity approval, enable required configuration in the ID subsystem, which can be accessed via 
 #### Option 1 : Enable via App's UI
-1. Navigate to the `Settings` page ![general settings](img/generalsettings.png){ width=800 }
-2. Switch to Identities and enable the `Auto Approve` setting ![id settings](img/identitiesAutoApproveOn.png){ width=800 } 
+1. Navigate to the `Settings` page ![general settings](../img/generalsettings.png){ width=800 }
+2. Switch to Identities and enable the `Auto Approve` setting ![id settings](../img/identitiesAutoApproveOn.png){ width=800 } 
 
 #### Option 2 : Enable via Backend APIs
 1. API endpoint group named `Subsystems` which contains two APIs

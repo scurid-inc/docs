@@ -31,7 +31,7 @@ This integration is for users who :
     * [Things](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx/Help/Composer/Things/Things.html)
     * [User](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx/Help/Composer/Security/Users/Users.html)
     * [Application Key](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx/Help/Composer/Security/ApplicationKeys/ApplicationKeys.html)
-* Have installed and completed Scurid installation & on-boarding, see [Quickstart](quickstart/quickstart-on-premise.md) guide
+* Have installed and completed Scurid installation & on-boarding, see [Quickstart](../quickstart/quickstart-on-premise.md) guide
 
 ## Enabling ThingWorx with Scurid's Digital Identity
 
@@ -56,19 +56,19 @@ Scurid Edge Agent will perform following automated tasks
    4. Collects required device context which is made up of different kind of hardware information like
       1. Information about OS & RAM
       2. MAC addresses, etc. 
-      3. This device context is bundled together with the public key, created in step 2, then sent to the Scurid App, this is visible in `Home > Agents > Pending` ![see](img/pendingagent_twx.png)
-        a. Click on the Pending identity to see the Public ID, ![see](img/pendingagent_publicid_twx.png)  
-        b. Switch to `Device Context` to see hardware information ![see](img/pendingagent_dc_twx.png)
+      3. This device context is bundled together with the public key, created in step 2, then sent to the Scurid App, this is visible in `Home > Agents > Pending` ![see](../img/pendingagent_twx.png)
+        a. Click on the Pending identity to see the Public ID, ![see](../img/pendingagent_publicid_twx.png)  
+        b. Switch to `Device Context` to see hardware information ![see](../img/pendingagent_dc_twx.png)
       4. Scurid Edge Agent will wait for the Approval from the user on Scurid App
-   5. To approve an agent's identity navigate to the `Home > Agents > Pending > Click on the Pending Agent > Click Approve` ![see](img/approvedagent_twx.png). 
+   5. To approve an agent's identity navigate to the `Home > Agents > Pending > Click on the Pending Agent > Click Approve` ![see](../img/approvedagent_twx.png). 
 
       Approving the Agent/Device's identity will trigger following automated events :
 
       * Registering an identity in Scurid will trigger transaction on Scurid hosted distributed ledger under Scurid SSI Service.
       * Generation of Approval signature, by signing the request from the Scurid Edge Agent, its device context, timestamps
       * Next, Scurid server will trigger the request to ThingWorx to :
-        * Create New User, using the public key/public ID of the Scurid Edge Agent ![see](img/twx-usercreation.png)
-        * Create New Application Key, referencing the user from previous step ![see](img/applicationkey_twx.png)
+        * Create New User, using the public key/public ID of the Scurid Edge Agent ![see](../img/twx-usercreation.png)
+        * Create New Application Key, referencing the user from previous step ![see](../img/applicationkey_twx.png)
    6. Approval Key from the `Parent identity`, which belongs to you when you installed Scurid stack - this automatically gets created 
    7. Agent's own identity and some other contextual information like approval date etc. 
 
