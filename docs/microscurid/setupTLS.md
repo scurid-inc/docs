@@ -68,7 +68,7 @@
     ```
 
     If running locally, you can check on Wireshark what is happening.
-    The flow graph should look similar to here: ![flow_graph](img/tls_flow_graph.png)
+    The flow graph should look similar to here: ![flow_graph](../img/tls_flow_graph.png)
 
 === "AMD64"
     Coming soon.
