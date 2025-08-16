@@ -62,6 +62,7 @@ nav:
         - 'Managed': 'quickstart/quickstart-for-managed.md'
       - 'App':
         - 'Startup Configuration': 'app/update_app_startup_config.md'
+        - 'File Management': 'app/file_management.md'
         - Access Management:
           - User Group: 'app/user_group_mgmt.md'
           - User Management: 'app/users.md'
