@@ -2020,7 +2020,22 @@
 
   <h1>File management</h1>
 
-
+<p>Scurid allows you to manage files on the device, including downloading, uploading, and deleting files. The file management APIs are designed to be simple and efficient, allowing you to interact with files on the device seamlessly.
+Scurid Edge Agent will automatically download files from the server to the device, managed through a synchronization rate.</p>
+<p>Following options allow you to manage the confiugration for the file management:</p>
+<ol>
+<li>Automatic path creation (default is set to <code>false</code>): If the path does not exist, it will be created automatically. This will ensure that the file can be downloaded by the agent on a given path, even if that path does not exist. An error will be logged and visible in the App log, if the path cannot be created.</li>
+<li>File Persistence (default is set to <code>false</code>): If set to <code>true</code>, the file will be persisted on the Server and agent will constantly synchronize the file with the server. If set to <code>false</code>, the file will be downloaded only once and not synchronized with the server.</li>
+<li>Download path in agent (<code>required</code>): The path where the file will be downloaded on the agent. </li>
+<li>File location (<code>required</code>): The location of the file on the device from which files are being uploaded using the Scurid App.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Current limitations</p>
+<ul>
+<li>Subfolders under the selected path are not supported. If they need to be transferred, they must be zipped before.</li>
+<li>Empty files are not supported.</li>
+</ul>
+</div>
 
 
 

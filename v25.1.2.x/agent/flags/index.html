@@ -2108,32 +2108,32 @@
 <tr>
 <td>-port</td>
 <td>string</td>
-<td>":4040"</td>
+<td>:4040</td>
 <td>The port on which the agent will listen.</td>
 </tr>
 <tr>
 <td>-address</td>
 <td>string</td>
-<td>"localhost"</td>
+<td>localhost</td>
 <td>The address for the agent on which it will listen.</td>
 </tr>
 <tr>
 <td>-spaaddr</td>
 <td>string</td>
-<td>"localhost:443"</td>
+<td>localhost:443</td>
 <td>The address of the Scurid Server.</td>
 </tr>
 <tr>
 <td>-store</td>
 <td>string</td>
-<td>"./store"</td>
+<td>./store</td>
 <td>Path where the device's keys/keystore will be stored.</td>
 </tr>
 <tr>
 <td>-pkg</td>
 <td>string</td>
-<td>"./pkg/"</td>
-<td>Path where the device package will be stored. This is the default path where files will be downloaded if DownloadFile API is used. This is not the same for Agent's automatic file download path.</td>
+<td>./pkg/</td>
+<td>Path where the device package will be stored. This is the default path where files will be downloaded when using the DownloadFile API. Note: files that the agent downloads automatically (such as updates or configuration files) are stored in a separate path, not controlled by this flag.</td>
 </tr>
 <tr>
 <td>-syncrate</td>
@@ -2150,7 +2150,7 @@
 <tr>
 <td>-log</td>
 <td>string</td>
-<td>"./log"</td>
+<td>./log</td>
 <td>Folder where logs will be stored (created if missing).</td>
 </tr>
 <tr>
@@ -2168,7 +2168,7 @@
 <tr>
 <td>-localssh</td>
 <td>string</td>
-<td>"localhost:22"</td>
+<td>localhost:22</td>
 <td>Local SSH address for the agent.</td>
 </tr>
 </tbody>
