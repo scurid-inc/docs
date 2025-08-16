@@ -13,3 +13,8 @@ Following options allow you to manage the confiugration for the file management:
     - Subfolders under the selected path are not supported. If they need to be transferred, they must be zipped before.
     - Empty files are not supported.
 
+
+## Uploading Files
+1. Navigate to the agent ![Logs](../img/v25-1-2-x/page1.png)
+2. Select the appropriate path needed for the upload ![Logs](../img/v25-1-2-x/page2.png)
+3. As the upload begins, the progress can be tracked both in the logs and also visually in the UI ![Logs](../img/v25-1-2-x/page3.png)
