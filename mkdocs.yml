@@ -70,6 +70,8 @@ nav:
            - 'Features': 'app/log_features.md'
       - 'Server':
           - 'Flags': 'server/flags.md'
+      - 'Agent':
+          - 'Flags': 'agent/flags.md'
       - 'Glossary': 'glossary.md'
   - Monitoring: 'monitoring.md'
   - 'For Edge':

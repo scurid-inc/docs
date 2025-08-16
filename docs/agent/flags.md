@@ -1,0 +1,16 @@
+## Command-line Flags (from main.go)
+Flags to help you configure the agent at the startup. These flags can be set in the command line when starting the agent or added to a configuration file.
+
+| Flag       | Type     | Default         | Description                                                                                                                                                                                       |
+|------------|----------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -port      | string   | ":4040"         | The port on which the agent will listen.                                                                                                                                                          |
+| -address   | string   | "localhost"     | The address for the agent on which it will listen.                                                                                                                                                |
+| -spaaddr   | string   | "localhost:443" | The address of the Scurid Server.                                                                                                                                                                 |
+| -store     | string   | "./store"       | Path where the device's keys/keystore will be stored.                                                                                                                                             |
+| -pkg       | string   | "./pkg/"        | Path where the device package will be stored. This is the default path where files will be downloaded if DownloadFile API is used. This is not the same for Agent's automatic file download path. |
+| -syncrate  | duration | 10s             | Synchronization/heartbeat rate (e.g., 15s).                                                                                                                                                       |
+| -name      | string   | ""              | The name of the agent. If not defined a custom name will be assigned by the server.                                                                                                               |
+| -log       | string   | "./log"         | Folder where logs will be stored (created if missing).                                                                                                                                            |
+| -logtofile | bool     | false           | If true, logs will be written to file only.                                                                                                                                                       |
+| -sshport   | int      | 2200            | Scurid server SSH port. If this port is changed on the server, it must also be updated here.                                                                                                      |
+| -localssh  | string   | "localhost:22"  | Local SSH address for the agent.                                                                                                                                                                  |
