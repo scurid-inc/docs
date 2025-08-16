@@ -12,9 +12,15 @@ Contains documentation for Scurid platform
 * Make note of whether you are deploying for major or minor release, based on that adjust the version for deployment
 
 
-### Before deploying
+## Work with this repo
+Create an environment and activate it
 
-Since `mike` which we use for versioning our doc won't do it automatically. 
+```shell
+source .venv/bin/activate
+```
+
+Since `mike` which we use for versioning our doc won't do it automatically.
+
 ```shell
 git fetch
 ```
@@ -53,3 +59,7 @@ mike set-default --push latest --rebase
 ```shell
 docker run --rm -v /Users/sushantpandey/go/src/bitbucket.org/scurid/scurid-apis/pkg/grpc/examples/doc:/out -v /Users/sushantpandey/go/src/bitbucket.org/scurid/scurid-apis/pkg/grpc/proto:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,docs.md
 ```
+
+
+
+
