@@ -30,7 +30,8 @@ Following options allow you to manage the configuration for the file management:
 **Tip:** If you want files on the agent to always exist and be updated when files on the server are re-uploaded, enable the File Persistence flag.
 
 !!! note "Known Issues with Unreliable Networks"
-    For highly unreliable networks, it is recommended to enable the File Persistence flag. This ensures that files — especially large ones — are reliably downloaded and not lost due to network interruptions. The agent will continue attempting to download the file until it is complete. On unstable connections, synchronization may take longer, particularly for large files. Appropriate logging will be available in the agent logs to track the status of file downloads and uploads.
+    - For highly unreliable networks, it is recommended to enable the File Persistence flag. This ensures that files — especially large ones — are reliably downloaded and not lost due to network interruptions.
+    - When the App loses connection during upload, this is not correctly highlighted to the user. Enhancement for this is in progress and due for release with v25.1.2.1.
 
 ## File State Handling
 - When files are being uploaded, they have the suffix `.upload`. This suffix remains until the Scurid server verifies the file's integrity and then removed.
@@ -38,3 +39,13 @@ Following options allow you to manage the configuration for the file management:
 
 ## File Synchronization
 The agent synchronizes files based on hashes generated on the server. This ensures that only changed files are updated, maintaining consistency between the agent and server.
+
+## Handling of File transfer inconsistencies
+
+To ensure data integrity and clear status indication, Scurid uses file suffixes during file transfer operations:
+
+- Files being uploaded are given the `.upload` suffix. This indicates the upload is in progress and not yet completed successfully.
+- Files being downloaded are given the `.download` suffix. This indicates the download is in progress and not yet completed successfully.
+- These suffixes are automatically removed once the upload or download operation is successfully finished and the file is verified.
+
+This mechanism helps prevent inconsistencies and ensures that only fully transferred files are available for use on the agent or server.

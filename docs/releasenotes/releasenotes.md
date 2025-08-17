@@ -1,5 +1,51 @@
 # Release Notes
 
+## June 2024
+
+## General changes 
+* Implemented API for Device-to-User mapping.  
+* Exposed device data via new APIs.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* UI enhancement for User Access tab.  
+* Fixed issues with logs, About page, and DB credentials display post-upgrade.  
+* Prevented API calls without a valid token.  
+* Fixed multiple onboarding errors and permission handling issues.  
+
+### Scurid Server
+* Fixed crashes on onboarding, upgrades, and duplicate invites.  
+* Resolved server crashes and error handling for permission failures.  
+* Bugfixes for role visibility, user role updates, and identity search with tags.  
+
+### Scurid Edge Agent
+* Fixed issues uploading data from edge to database.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+## April 2024
+
+## General changes
+* Work started on internal eventing.  
+* Introduced RBAC APIs with role creation and assignment.   
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Enhanced user invite flow with role info and passphrase enforcement.  
+* UI/UX update to map users to devices.  
+* Improved software update widget version handling.  
+* Enabled Stripe self-account management.  
+
+### Scurid Server
+* Fixed multiple onboarding and installation panics (GetRoles, UpsertRole, RegisterAPI).  
+* Added gRPC GetRoles and API authorization checks.  
+* Enhanced TCP API for signature verification.  
+* Server now pushes agent name to config for traceability.  
+
+### Scurid Edge Agent
+* Bugfixes in device identity handling and TLS connectivity.  
+* Support for user-defined agent names and device_user association.
+
 ## October 29, 2023
 
 ## General changes
