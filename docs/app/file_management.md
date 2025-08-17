@@ -18,3 +18,23 @@ Following options allow you to manage the configuration for the file management:
 1. Navigate to the agent ![Logs](../img/v25-1-2-x/page1.png)
 2. Select the appropriate path needed for the upload ![Logs](../img/v25-1-2-x/page2.png)
 3. As the upload begins, the progress can be tracked both in the logs and also visually in the UI ![Logs](../img/v25-1-2-x/page3.png)
+
+## How does the behaviour change with different configurations?
+
+### File Persistence Flag Behaviour
+| File Persistence | Description                                                                                                                                                                                                                                                                                        |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Enabled          | Files are stored on the server as long as space is available. The agent can keep files on the specified path and update them when files are re-uploaded to the server. Also if the files are deleted on the device, the agent will re-download those files given they are avaialble on the server. |
+| Disabled         | Files are immediately deleted from the server after successful download.                                                                                                                                                                                                                           |
+
+**Tip:** If you want files on the agent to always exist and be updated when files on the server are re-uploaded, enable the File Persistence flag.
+
+!!! note "Known Issues with Unreliable Networks"
+    For highly unreliable networks, it is recommended to enable the File Persistence flag. This ensures that files — especially large ones — are reliably downloaded and not lost due to network interruptions. The agent will continue attempting to download the file until it is complete. On unstable connections, synchronization may take longer, particularly for large files. Appropriate logging will be available in the agent logs to track the status of file downloads and uploads.
+
+## File State Handling
+- When files are being uploaded, they have the suffix `.upload`. This suffix remains until the Scurid server verifies the file's integrity and then removed.
+- When the agent is downloading files, they have the suffix `.download` until the download is successfully completed and then removed.
+
+## File Synchronization
+The agent synchronizes files based on hashes generated on the server. This ensures that only changed files are updated, maintaining consistency between the agent and server.
