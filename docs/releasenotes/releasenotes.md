@@ -1,5 +1,55 @@
 # Release Notes
 
+## July 2025
+
+## General changes
+* Enhancements to file upload and download mechanisms across server and agents.  
+* Improvements to SSH tunnel stability and authentication.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Fixed regression where starting SSH window crashed the app.  
+* Fixed issue where update button was disabled despite valid paths.  
+* Corrected agent total count display.  
+* Fixed role visibility issue after creation.  
+* Restored agent details visibility in About page.  
+
+### Scurid Server
+* Enhanced file upload process.  
+* Removed dependency on GetAgentConfig in server-to-app logic.  
+
+### Scurid Edge Agent
+* Fixed regression in file download producing incorrect names.  
+* Implemented temporary file download naming.  
+* Ensured agentDownloadPath and userUploadPath are handled correctly per chunk.  
+* Fixed issue preventing SSH tunnel start with username/password login.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+## May 2025
+
+## General changes
+* Improved file transfer reliability across agents (download path, upload path, and duplicate download fixes).  
+* Added visibility into agent heartbeat and last seen.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Fixed incorrect data shown for last seen across all agents.  
+* Resolved Windows DLL crash causing failed uploads.  
+* Fixed upload progress counter issue.  
+* Investigation and fixes for high memory usage on Windows.  
+
+### Scurid Server
+* Improved GetAgentConfig error handling.  
+* Enhanced file download logs with agent name.  
+* Validation added to prevent illegal values in file paths.  
+
+### Scurid Edge Agent
+* Fixed issues with duplicate file downloads.  
+* Ensured agentDownloadPath and userUploadPath are correctly handled per chunk.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
 ## April 2025
 
 ## General changes
