@@ -1,5 +1,35 @@
 # Release Notes
 
+## April 2025
+
+## General changes
+* Introduced file management across server and agent (upload, download, staging, and persistence).  
+* Introduced secure and traceable file upload to agents.  
+* Added SSH tunneling support between app, server, and edge agent (alpha).  
+* Removed legacy `scurid_config` file and redefined onboarding process.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Added logging when user starts SSH.  
+* Fixed invalid updates display.  
+* Improved input validation for server and port.  
+* Prevented API calls if required fields are empty during upload setup.  
+
+### Scurid Server
+* Enhanced file stage mechanism handling.  
+* Updates received from edge when errors occur during downloads.  
+* Input validation improvements.  
+* Handling Codemagic build issues.  
+
+### Scurid Edge Agent
+* Added upload setting flags for file management.  
+* Enhanced download mechanism with auto-directory creation.  
+* Proper error handling when auto create folder is disabled.  
+* Fixed table not found error when opening agent card.  
+* Secure SSH key exchange with server for authentication.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
 ## June 2024
 
 ## General changes 
