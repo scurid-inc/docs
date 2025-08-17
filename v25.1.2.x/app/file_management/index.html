@@ -593,6 +593,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-does-the-behaviour-change-with-different-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does the behaviour change with different configurations?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does the behaviour change with different configurations?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-persistence-flag-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Persistence Flag Behaviour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-state-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      File State Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Synchronization
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2100,6 +2142,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-does-the-behaviour-change-with-different-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does the behaviour change with different configurations?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does the behaviour change with different configurations?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-persistence-flag-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Persistence Flag Behaviour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-state-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      File State Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Synchronization
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2120,7 +2204,7 @@
 
 <p>Scurid allows you to manage files on the device, including downloading, uploading, and deleting files. The file management APIs are designed to be simple and efficient, allowing you to interact with files on the device seamlessly.
 Scurid Edge Agent will automatically download files from the server to the device, managed through a synchronization rate.</p>
-<p>Following options allow you to manage the confiugration for the file management:</p>
+<p>Following options allow you to manage the configuration for the file management:</p>
 <ol>
 <li>Automatic path creation (default is set to <code>false</code>): If the path does not exist, it will be created automatically. This will ensure that the file can be downloaded by the agent on a given path, even if that path does not exist. An error will be logged and visible in the App log, if the path cannot be created.</li>
 <li>File Persistence (default is set to <code>false</code>): If set to <code>true</code>, the file will be persisted on the Server and agent will constantly synchronize the file with the server. If set to <code>false</code>, the file will be downloaded only once and not synchronized with the server.</li>
@@ -2140,6 +2224,38 @@ Scurid Edge Agent will automatically download files from the server to the devic
 <li>Select the appropriate path needed for the upload <img alt="Logs" src="../../img/v25-1-2-x/page2.png" /></li>
 <li>As the upload begins, the progress can be tracked both in the logs and also visually in the UI <img alt="Logs" src="../../img/v25-1-2-x/page3.png" /></li>
 </ol>
+<h2 id="how-does-the-behaviour-change-with-different-configurations">How does the behaviour change with different configurations?</h2>
+<h3 id="file-persistence-flag-behaviour">File Persistence Flag Behaviour</h3>
+<table>
+<thead>
+<tr>
+<th>File Persistence</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enabled</td>
+<td>Files are stored on the server as long as space is available. The agent can keep files on the specified path and update them when files are re-uploaded to the server. Also if the files are deleted on the device, the agent will re-download those files given they are avaialble on the server.</td>
+</tr>
+<tr>
+<td>Disabled</td>
+<td>Files are immediately deleted from the server after successful download.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tip:</strong> If you want files on the agent to always exist and be updated when files on the server are re-uploaded, enable the File Persistence flag.</p>
+<div class="admonition note">
+<p class="admonition-title">Known Issues with Unreliable Networks</p>
+<p>For highly unreliable networks, it is recommended to enable the File Persistence flag. This ensures that files — especially large ones — are reliably downloaded and not lost due to network interruptions. The agent will continue attempting to download the file until it is complete. On unstable connections, synchronization may take longer, particularly for large files. Appropriate logging will be available in the agent logs to track the status of file downloads and uploads.</p>
+</div>
+<h2 id="file-state-handling">File State Handling</h2>
+<ul>
+<li>When files are being uploaded, they have the suffix <code>.upload</code>. This suffix remains until the Scurid server verifies the file's integrity and then removed.</li>
+<li>When the agent is downloading files, they have the suffix <code>.download</code> until the download is successfully completed and then removed.</li>
+</ul>
+<h2 id="file-synchronization">File Synchronization</h2>
+<p>The agent synchronizes files based on hashes generated on the server. This ensures that only changed files are updated, maintaining consistency between the agent and server.</p>
 
 
 
