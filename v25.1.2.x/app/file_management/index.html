@@ -637,6 +637,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#handling-of-file-transfer-inconsistencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling of File transfer inconsistencies
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2209,6 +2218,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#handling-of-file-transfer-inconsistencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling of File transfer inconsistencies
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2272,7 +2290,10 @@ Scurid Edge Agent will automatically download files from the server to the devic
 <p><strong>Tip:</strong> If you want files on the agent to always exist and be updated when files on the server are re-uploaded, enable the File Persistence flag.</p>
 <div class="admonition note">
 <p class="admonition-title">Known Issues with Unreliable Networks</p>
-<p>For highly unreliable networks, it is recommended to enable the File Persistence flag. This ensures that files — especially large ones — are reliably downloaded and not lost due to network interruptions. The agent will continue attempting to download the file until it is complete. On unstable connections, synchronization may take longer, particularly for large files. Appropriate logging will be available in the agent logs to track the status of file downloads and uploads.</p>
+<ul>
+<li>For highly unreliable networks, it is recommended to enable the File Persistence flag. This ensures that files — especially large ones — are reliably downloaded and not lost due to network interruptions.</li>
+<li>When the App loses connection during upload, this is not correctly highlighted to the user. Enhancement for this is in progress and due for release with v25.1.2.1.</li>
+</ul>
 </div>
 <h2 id="file-state-handling">File State Handling</h2>
 <ul>
@@ -2281,6 +2302,14 @@ Scurid Edge Agent will automatically download files from the server to the devic
 </ul>
 <h2 id="file-synchronization">File Synchronization</h2>
 <p>The agent synchronizes files based on hashes generated on the server. This ensures that only changed files are updated, maintaining consistency between the agent and server.</p>
+<h2 id="handling-of-file-transfer-inconsistencies">Handling of File transfer inconsistencies</h2>
+<p>To ensure data integrity and clear status indication, Scurid uses file suffixes during file transfer operations:</p>
+<ul>
+<li>Files being uploaded are given the <code>.upload</code> suffix. This indicates the upload is in progress and not yet completed successfully.</li>
+<li>Files being downloaded are given the <code>.download</code> suffix. This indicates the download is in progress and not yet completed successfully.</li>
+<li>These suffixes are automatically removed once the upload or download operation is successfully finished and the file is verified.</li>
+</ul>
+<p>This mechanism helps prevent inconsistencies and ensures that only fully transferred files are available for use on the agent or server.</p>
 
 
 
