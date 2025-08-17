@@ -63,6 +63,7 @@ nav:
       - 'App':
         - 'Startup Configuration': 'app/update_app_startup_config.md'
         - 'File Management': 'app/file_management.md'
+        - 'Remote Access': 'app/ssh.md'
         - Access Management:
           - User Group: 'app/user_group_mgmt.md'
           - User Management: 'app/users.md'
