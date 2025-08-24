@@ -1,5 +1,151 @@
 # Release Notes
 
+
+## August 2025
+
+## General changes
+* Improved reliability of file upload and download handling in unstable or persistence-off scenarios.  
+* SSH usability improvements.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Added configuration option for SSH font size. 
+* Fixed missing file paths for first file in upload sequence.
+
+### Scurid Server
+* Logging enhancements for file upload and download processes.
+* Empty file path check, leading to server instability.
+
+### Scurid Edge Agent 
+* Resolved partial download issues in unstable networks with persistence off.  
+* Fixed upload termination after network reconnection.  
+
+## July 2025
+
+## General changes
+* Enhancements to file upload and download mechanisms across server and agents.  
+* Improvements to SSH tunnel stability and authentication.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Fixed regression where starting SSH window crashed the app.  
+* Fixed issue where update button was disabled despite valid paths.  
+* Corrected agent total count display.  
+* Fixed role visibility issue after creation.  
+* Restored agent details visibility in About page.  
+
+### Scurid Server
+* Enhanced file upload process.  
+* Removed dependency on GetAgentConfig in server-to-app logic.  
+
+### Scurid Edge Agent
+* Fixed regression in file download producing incorrect names.  
+* Implemented temporary file download naming.  
+* Ensured agentDownloadPath and userUploadPath are handled correctly per chunk.  
+* Fixed issue preventing SSH tunnel start with username/password login.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+## May 2025
+
+## General changes
+* Improved file transfer reliability across agents (download path, upload path, and duplicate download fixes).  
+* Added visibility into agent heartbeat and last seen.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Fixed incorrect data shown for last seen across all agents.  
+* Resolved Windows DLL crash causing failed uploads.  
+* Fixed upload progress counter issue.  
+* Investigation and fixes for high memory usage on Windows.  
+
+### Scurid Server
+* Improved GetAgentConfig error handling.  
+* Enhanced file download logs with agent name.  
+* Validation added to prevent illegal values in file paths.  
+
+### Scurid Edge Agent
+* Fixed issues with duplicate file downloads.  
+* Ensured agentDownloadPath and userUploadPath are correctly handled per chunk.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+## April 2025
+
+## General changes
+* Introduced file management across server and agent (upload, download, staging, and persistence).  
+* Introduced secure and traceable file upload to agents.  
+* Added SSH tunneling support between app, server, and edge agent (alpha).  
+* Removed legacy `scurid_config` file and redefined onboarding process.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Added logging when user starts SSH.  
+* Fixed invalid updates display.  
+* Improved input validation for server and port.  
+* Prevented API calls if required fields are empty during upload setup.  
+
+### Scurid Server
+* Enhanced file stage mechanism handling.  
+* Updates received from edge when errors occur during downloads.  
+* Input validation improvements.  
+* Handling Codemagic build issues.  
+
+### Scurid Edge Agent
+* Added upload setting flags for file management.  
+* Enhanced download mechanism with auto-directory creation.  
+* Proper error handling when auto create folder is disabled.  
+* Fixed table not found error when opening agent card.  
+* Secure SSH key exchange with server for authentication.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+## June 2024
+
+## General changes 
+* Implemented API for Device-to-User mapping.  
+* Exposed device data via new APIs.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* UI enhancement for User Access tab.  
+* Fixed issues with logs, About page, and DB credentials display post-upgrade.  
+* Prevented API calls without a valid token.  
+* Fixed multiple onboarding errors and permission handling issues.  
+
+### Scurid Server
+* Fixed crashes on onboarding, upgrades, and duplicate invites.  
+* Resolved server crashes and error handling for permission failures.  
+* Bugfixes for role visibility, user role updates, and identity search with tags.  
+
+### Scurid Edge Agent
+* Fixed issues uploading data from edge to database.  
+
+New releases will now be published on [Scurid Downloads](https://scurid.com/downloads) page.
+
+## April 2024
+
+## General changes
+* Work started on internal eventing.  
+* Introduced RBAC APIs with role creation and assignment.   
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Enhanced user invite flow with role info and passphrase enforcement.  
+* UI/UX update to map users to devices.  
+* Improved software update widget version handling.  
+* Enabled Stripe self-account management.  
+
+### Scurid Server
+* Fixed multiple onboarding and installation panics (GetRoles, UpsertRole, RegisterAPI).  
+* Added gRPC GetRoles and API authorization checks.  
+* Enhanced TCP API for signature verification.  
+* Server now pushes agent name to config for traceability.  
+
+### Scurid Edge Agent
+* Bugfixes in device identity handling and TLS connectivity.  
+* Support for user-defined agent names and device_user association.
+
 ## October 29, 2023
 
 ## General changes

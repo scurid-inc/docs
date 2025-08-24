@@ -1,4 +1,4 @@
-<img style="width:75px;" src="../img/reishi_mitani_profile_photo.png"> <span style="color:gray">Author: Reishi Mitani, Software engineer, Intern </span>.
+<img style="width:75px;" src="docs/img/reishi_mitani_profile_photo.png"> <span style="color:gray">Author: Reishi Mitani, Software engineer, Intern </span>.
 
 This tutorial provides a simplified overview on generating, approving device identity with the microscurid-c library, and approving it using Scurid App.
 
