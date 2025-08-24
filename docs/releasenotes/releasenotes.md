@@ -1,5 +1,25 @@
 # Release Notes
 
+
+## August 2025
+
+## General changes
+* Improved reliability of file upload and download handling in unstable or persistence-off scenarios.  
+* SSH usability improvements.  
+* Various bugfixes and stability improvements.  
+
+### Scurid App
+* Added configuration option for SSH font size. 
+* Fixed missing file paths for first file in upload sequence.
+
+### Scurid Server
+* Logging enhancements for file upload and download processes.
+* Empty file path check, leading to server instability.
+
+### Scurid Edge Agent 
+* Resolved partial download issues in unstable networks with persistence off.  
+* Fixed upload termination after network reconnection.  
+
 ## July 2025
 
 ## General changes

@@ -32,7 +32,15 @@ While users initiate SSH requests from the Agent, it is the Agent that establish
 6. You can close and reopen the agent card without closing the SSH connection.
 7. To properly close the SSH connection, click on "Close SSH connection".![page7](../img/v25-1-2-x/img7.png)
 
+## Additional configuration and notifications
+
+### Notification
+- Check the live notifications of the SSH tunnel status by clicking on the bell notification. This opens a sidebar that updates in real time to show all connection states. ![page7](../img/v25-1-2-x/img8.png)
+
+### Text Size Adjustment
+* Built in SSH terminal provides the capability to increase or decrease the text size.
+* Use the panel on top of the SSH window ![page7](../img/v25-1-2-x/img9.png)
+
 ## Troubleshooting SSH Connections
 - If SSH is taking a while to establish, possible reasons include agent unavailability, the agent being offline, or unstable network connection.
 - Simply click on "Close SSH connection" and attempt to reinitiate the connection.
-- You can view live notifications of the SSH tunnel status by clicking on the bell notification. This opens a sidebar that updates in real time to show all connection states. ![page7](../img/v25-1-2-x/img8.png)
